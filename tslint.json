@@ -1,0 +1,42 @@
+{
+    "extends": ["tslint:latest", "tslint-react", "tslint-plugin-prettier", "tslint-config-prettier"],
+    "rules": {
+      "prettier": [true, "./config/.prettier"],
+      "arrow-parens": false,
+      "arrow-return-shorthand": [false],
+      "comment-format": [true, "check-space"],
+      "import-blacklist": [true, "rxjs"],
+      "interface-over-type-literal": false,
+      "interface-name": false,
+      "member-access": false,
+      "member-ordering": [false],
+      "newline-before-return": false,
+      "no-any": false,
+      "no-empty-interface": false,
+      "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
+      "no-invalid-this": [true, "check-function-in-method"],
+      "no-null-keyword": false,
+      "no-require-imports": false,
+      "no-switch-case-fall-through": true,
+      "no-this-assignment": [true, {
+        "allow-destructuring": true
+      }],
+      "no-unused-variable": [true, "react"],
+      "object-literal-sort-keys": false,
+      "object-literal-shorthand": false,
+      "one-variable-per-declaration": [false],
+      "only-arrow-functions": [true, "allow-declarations"],
+      "ordered-imports": [false],
+      "prefer-method-signature": false,
+      "prefer-template": [true, "allow-single-concat"],
+      "triple-equals": [true, "allow-null-check"],
+      "typedef": false,
+      "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
+      "no-var-requires": false,
+      "no-unused-expression": false,
+      "no-submodule-imports": false,
+      "no-implicit-dependencies": false,
+      "no-shadowed-variable": false
+    }
+  }
+  

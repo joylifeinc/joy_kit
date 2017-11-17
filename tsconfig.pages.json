@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": ".",
+      "lib": ["es6", "es7", "dom"],
+      "noImplicitAny": false,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "jsx": "react"
+    },
+    "include": [
+        "src/**/*",
+        "typings/**/*"
+      ],
+    "exclude": [
+        "src/**/*.spec.ts",
+        "src/**/*.spec.tsx",
+        "node_modules"
+      ]
+  }
+  
