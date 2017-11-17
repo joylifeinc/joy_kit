@@ -4,11 +4,10 @@ import * as Portal from 'react-portal';
 import { Fragments, createDebugger } from '../../util';
 import { VelocityComponent } from 'velocity-react';
 
-import { ModalLightBox } from './ModalLightBox';
+import { ModalLightBox, Props as ModalLightBoxProps } from './ModalLightBox';
 import { ModalHeader } from './ModalHeader';
 import { ModalContent } from './ModalContent';
 import { ModalActions } from './ModalActions';
-
 
 const debug = createDebugger('JoyKit:Modal');
 
@@ -50,7 +49,7 @@ export interface BaseProps {
 
   /**
    * Called when a close event happens AND right after the closing animation.
-   * IE user presses escape (if enabled), clicks on the background (if enabled), or 
+   * IE user presses escape (if enabled), clicks on the background (if enabled), or
    * triggers a close event (as defined by the developer).
    * @param {SyntheticEvent} e
    */
@@ -70,7 +69,7 @@ export interface BaseProps {
   render?: (props: RenderProps) => any;
 
   /**
-   * In the event where there could be many panels, we don't want to immediately remove it from the DOM. 
+   * In the event where there could be many panels, we don't want to immediately remove it from the DOM.
    *  We reset the close state post closing animation so that it can be re-opened
    */
   resetAfterClosing?: boolean;
@@ -92,7 +91,7 @@ export interface State {
 // Union Types
 //======================
 
-type Type = 'modal' | 'panel-overlay';
+export type Type = 'modal' | 'panel-overlay';
 
 //======================
 // Styling

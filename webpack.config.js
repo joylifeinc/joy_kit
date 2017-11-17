@@ -46,9 +46,10 @@ const generateOutput = (example) => {
 module.exports = (env) => {
 
   const example = !!(env === 'example');
+  const buildexample = !!(env === 'buildexample');
 
-  let entry = generateEntry(example);
-  let output = generateOutput(example);
+  let entry = generateEntry((example || buildexample));
+  let output = generateOutput((example || buildexample));
 
   const plugins = [
     new webpack.NamedModulesPlugin(),
@@ -60,9 +61,9 @@ module.exports = (env) => {
 
   const tsLoader = {
     test: /\.tsx?$/,
-    loader: (!example) ? 
-      [`ts-loader?${JSON.stringify({ configFile: ROOT + '/tsconfig.json' })}`] :
-      [`ts-loader?${JSON.stringify({ configFile: ROOT + '/tsconfig.pages.json' })}`],
+    loader: (example || buildexample) ? 
+      [`ts-loader?${JSON.stringify({ configFile: ROOT + '/tsconfig.pages.json' })}`] :
+      [`ts-loader?${JSON.stringify({ configFile: ROOT + '/tsconfig.json' })}`],
     exclude: /node_modules/
   };
 
@@ -94,6 +95,15 @@ module.exports = (env) => {
       new webpack.NamedModulesPlugin()
     )
   };
+
+  if (buildexample) {
+    plugins.push(
+      new HtmlWebpackPlugin({
+        template: _example_source + 'index.html'
+      }),
+      new webpack.optimize.UglifyJsPlugin()
+    )
+  }
 
   const externals = (example) ? undefined : ([
     'react',

@@ -38,7 +38,7 @@ export interface Props {
 // Union Types
 //======================
 
-type Styles = StyleAttribute | {};
+export type Styles = StyleAttribute | {};
 
 //======================
 // Styling

@@ -8,13 +8,13 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --env=example",
     "build": "webpack --debug --config ./webpack.config.js --env=build",
-    "example-pages": "webpack --debug --config ./webpack.config.js --env=example",
+    "example-pages": "webpack --debug --config ./webpack.config.js --env=buildexample",
     "analyze": "webpack --debug --config ./webpack.config.js --env=analyze",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint -c ./tslint.json -p ./tsconfig.json",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier": "prettier --write --config .prettierrc \"src/**/*.{tsx,jsx,js}\"",
-    "precommit": "stage"
+    "precommit": "npm run example-pages"
   },
   "keywords": [
     "joykit"
@@ -58,13 +58,5 @@
     "webpack": "^3.8.1",
     "webpack-closure-compiler": "^2.1.5",
     "webpack-dev-server": "^2.9.4"
-  },
-  "stage": {
-    "*.{jsx,js,tsx,ts}": [
-      "prettier --write",
-      "npm run lint",
-      "npm run ghpages",
-      "git add"
-    ]
   }
 }

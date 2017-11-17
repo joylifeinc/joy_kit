@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css, StyleAttribute } from 'glamor';
 
-interface Props {
+export interface Props {
   /** The header content */
   children?: React.ReactNode;
 

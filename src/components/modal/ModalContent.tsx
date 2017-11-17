@@ -20,7 +20,7 @@ const contentRules = css({
 /**
  *  Modal content
  */
-const ModalContent = ({ children, className = '', style }: Props) => {
+const ModalContent: React.SFC<Props> = ({ children, className, style }) => {
   if (children) {
     return (
       <div
@@ -32,6 +32,10 @@ const ModalContent = ({ children, className = '', style }: Props) => {
     );
   }
   return null;
+};
+
+ModalContent.defaultProps = {
+  className: ''
 };
 
 export { ModalContent };

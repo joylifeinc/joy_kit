@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { css, keyframes, StyleAttribute } from 'glamor';
 
-import { ModalHeader } from './ModalHeader';
-import { ModalContent } from './ModalContent';
-import { ModalActions } from './ModalActions';
+import { ModalHeader, Props as ModalHeaderProps } from './ModalHeader';
+import { ModalContent, Props as ModalContentProps } from './ModalContent';
+import { ModalActions, Props as ModalActionsProps } from './ModalActions';
 import { ModalPortal, BaseProps } from './ModalPortal';
 
 //======================
 // Interfaces
 //======================
 
-interface Props extends BaseProps {
+export interface Props extends BaseProps {
   /** A modal can vary in size. */
   size?: Size;
 }
 
-interface State {
+export interface State {
   isClosing: boolean;
 }
 
@@ -23,7 +23,7 @@ interface State {
 // Union Types
 //======================
 
-type Size = 'mini' | 'small' | 'normal' | 'large' | 'fullscreen';
+export type Size = 'mini' | 'small' | 'normal' | 'large' | 'fullscreen';
 
 //======================
 // Styling
