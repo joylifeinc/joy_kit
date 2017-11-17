@@ -9,7 +9,7 @@ const options = minimist(process.argv.slice(2));
 const ROOT = path.resolve(".");
 const _source = ROOT + "/src/";
 const _dist = ROOT + "/dist/";
-const _pages = ROOT + "/example_pages/";
+const _pages = ROOT + "/docs/";
 const _example = ROOT + '/example/';
 const _example_source = ROOT + '/example/src/';
 
