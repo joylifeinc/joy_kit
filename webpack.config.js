@@ -16,8 +16,6 @@ const _example_source = ROOT + '/example/src/';
 
 const generateEntry = (example) => {
   return (example) ? ([
-      'react-hot-loader/patch',
-      'webpack/hot/only-dev-server',
       _source + 'index.ts',
       _example_source + 'app.tsx'
     ]) : ({
@@ -86,6 +84,8 @@ module.exports = (env) => {
   };
 
   if (example) {
+    entry.splice(0, 0, 'react-hot-loader/patch')
+    entry.splice(0, 0, 'webpack/hot/only-dev-server')
     tsLoader.loader.splice(0, 0, 'react-hot-loader/webpack');
     plugins.push(
       new HtmlWebpackPlugin({
@@ -105,7 +105,7 @@ module.exports = (env) => {
     )
   }
 
-  const externals = (example) ? undefined : ([
+  const externals = ((example | buildexample)) ? undefined : ([
     'react',
     'react-dom',
     'react-portal',
