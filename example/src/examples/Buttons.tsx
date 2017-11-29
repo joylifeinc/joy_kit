@@ -82,6 +82,25 @@ export class ButtonExamples extends React.Component<{}, {}> {
       <div>
         <h1 {...headerRules}>Button Examples</h1>
         <div {...buttonWrapperRules}>{this.renderBasicButtons()}</div>
+        {/* custom buttons */}
+        <div {...syntaxContainerRules}>
+          <div {...componentContainerRules}>
+            <div {...labelRules}>{`${name} Button`}</div>
+            <div {...buttonRules}>
+              <Button type={'outline'} styleOverride={({width: '100%'})} handleOnClick={() => console.log(name)}>
+                OUTLINE
+              </Button>
+            </div>
+            <SyntaxHighlight
+              codeblock={`<Button 
+              type="outline"
+              handleOnClick={this.onClickHandler}
+              styleOverride={({width: '100%'})} >
+              OUTLINE</Button>`}
+              syntax={'jsx'}
+            />
+          </div>
+        </div>
       </div>
     );
   }

@@ -39,11 +39,12 @@ export interface Props {
 }
 
 export interface ButtonCustomOptions {
-  color: string;
-  backgroundColor: string;
+  color?: string;
+  backgroundColor?: string;
   fontSize?: string;
   padding?: string;
-  ':hover': {
+  width?: string;
+  ':hover'?: {
     backgroundColor?: string;
     color?: string;
     transform?: string;
@@ -128,7 +129,6 @@ const buttonRules: { [index in ButtonType]: any } = {
     backgroundColor: 'rgba(0, 0, 0, 0)',
     border: '1px solid #cccccc',
     borderRadius: '3px',
-    width: '100%',
     ':hover': {
       color: '#6DADFF',
       borderColor: '#6DADFF'
@@ -229,7 +229,7 @@ export const Button = ({
       !children
     )}
     {...noChildrenRules(!children)}
-    {...styleOverride}
+    {...css(styleOverride)}
     onClick={handleOnClick}
   >
     {icon ? (
