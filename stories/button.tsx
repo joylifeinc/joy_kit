@@ -15,9 +15,11 @@ const stories = storiesOf('Buttons', module);
 stories.addDecorator(withKnobs);
 
 stories.add('default', () => {
-  const buttonType = {
-    label: 'Button Types',
-    options: {
+  const title = text('Title', 'Button');
+
+  const value = select(
+    'Button Types',
+    {
       standard: 'Standard',
       primary: 'Primary',
       secondary: 'Secondary',
@@ -26,23 +28,20 @@ stories.add('default', () => {
       link: 'Link',
       outline: 'Outline'
     },
-    defaultValue: 'standard'
-  };
-  const value = select(
-    buttonType.label,
-    buttonType.options,
-    buttonType.defaultValue
+    'standard'
   );
 
   const uppercase = boolean('Uppercase', true);
-  const title = text('Title', 'Button');
+  const disabled = boolean('Disabled', false);
+  const disableMargins = boolean('Disable Margins', false);
 
   return (
     <div>
-      derp
       <Button
         type={value}
         uppercase={uppercase}
+        disabled={disabled}
+        disableMargins={disableMargins}
         handleOnClick={() => console.log('button')}
       >
         {title}
@@ -50,6 +49,45 @@ stories.add('default', () => {
       <SyntaxHighlight
         codeblock={`<Button type="${value}"
         uppercase={${uppercase}} 
+        disabled={${disabled}}
+        disableMargins={${disableMargins}} 
+        handleOnClick={() => console.log('button')}>
+  ${title}
+</Button>
+      `}
+        syntax={'jsx'}
+      />
+    </div>
+  );
+});
+
+stories.add('overrides', () => {
+  const title = text('Title', 'Button');
+
+  const uppercase = boolean('Uppercase', true);
+  const disabled = boolean('Disabled', false);
+  const disableMargins = boolean('Disable Margins', false);
+  const backgroundColorOverride = text('Background Color Overrides', null);
+  const colorOverride = text('Text Color Overrides', null);
+
+  return (
+    <div>
+      <Button
+        uppercase={uppercase}
+        disabled={disabled}
+        disableMargins={disableMargins}
+        backgroundColorOverride={backgroundColorOverride}
+        colorOverride={colorOverride}
+        handleOnClick={() => console.log('button')}
+      >
+        {title}
+      </Button>
+      <SyntaxHighlight
+        codeblock={`<Button uppercase={${uppercase}} 
+        disabled={${disabled}}
+        disableMargins={${disableMargins}} 
+        backgroundColorOverride={${backgroundColorOverride}}
+        colorOverride={${colorOverride}}
         handleOnClick={() => console.log('button')}>
   ${title}
 </Button>
