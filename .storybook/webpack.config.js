@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
 const ROOT = path.resolve(".");
-const STORY_BOOK_STATIC = ROOT + '/storybook-static/';
+const STORY_BOOK_STATIC = ROOT + '/docs/';
 
 const tsLoader = {
   test: /\.tsx?$/,
