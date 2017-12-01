@@ -16,7 +16,7 @@
     "prettier": "prettier --write --config .prettierrc \"src/**/*.{tsx,jsx,js}\"",
     "precommit": "npm run example-pages",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook"
   },
   "keywords": [
     "joykit"
