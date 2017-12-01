@@ -89,7 +89,6 @@ export class ButtonExamples extends React.Component<{}, {}> {
             <div {...buttonRules}>
               <Button
                 type={'outline'}
-                disableMargin="horizontal"
                 styleOverride={{ width: '100%' }}
                 handleOnClick={null}
               >

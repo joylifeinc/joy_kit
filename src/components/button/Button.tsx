@@ -28,9 +28,6 @@ export interface Props {
   /** Adds an icon to the beginning of the button content */
   icon?: string;
 
-  /** Whether or not to disable the default margins */
-  disableMargin?: DisableMarginOptions;
-
   /** Overrides the background color for custom one off buttons */
   backgroundColorOverride?: string;
 
@@ -191,25 +188,10 @@ const iconOnlyRules = (noChildren: boolean) => {
       });
 };
 
-const marginDisableRules = {
-  vertical: {
-    marginTop: 0,
-    marginBottom: 0
-  },
-  horizontal: {
-    marginLeft: 0,
-    marginRight: 0
-  },
-  all: {
-    margin: 0
-  }
-};
-
 const buttonStyleRules = (
   type: ButtonType,
   uppercase,
   disabled,
-  disableMargin,
   icon,
   backgroundColorOverride,
   colorOverride,
@@ -225,7 +207,6 @@ const buttonStyleRules = (
       fontWeight: '600',
       letterSpacing: '1.5px',
       lineHeight: '40px',
-      margin: '5px 20px',
       minWidth: '130px',
       padding: '0 25px',
       outline: 'none',
@@ -258,7 +239,6 @@ const Button = ({
   type,
   uppercase = true,
   disabled = false,
-  disableMargin = null,
   icon,
   backgroundColorOverride,
   colorOverride,
@@ -270,13 +250,11 @@ const Button = ({
       type ? type : 'standard',
       uppercase,
       disabled,
-      disableMargin,
       icon,
       backgroundColorOverride,
       colorOverride,
       !children
     )}
-    {...css(marginDisableRules[disableMargin])}
     {...noChildrenRules(!children)}
     {...css(styleOverride)}
     onClick={handleOnClick}
