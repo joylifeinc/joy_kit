@@ -1,5 +1,5 @@
-import '../node_modules/prismjs/themes/prism.css';
-import '../node_modules/prism-themes/themes/prism-ghcolors.css';
+import '../../node_modules/prismjs/themes/prism.css';
+import '../../node_modules/prism-themes/themes/prism-ghcolors.css';
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
 import * as React from 'react';
@@ -23,7 +23,7 @@ export class SyntaxHighlight extends React.Component<Props, {}> {
   componentDidUpdate() {
     Prism.highlightAll();
   }
-  
+
   render() {
     return (
       <pre>

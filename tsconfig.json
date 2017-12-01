@@ -13,7 +13,6 @@
   },
   "include": [
       "src/**/*",
-      "stories/**/*",
       "typings/**/*"
     ],
   "exclude": [
