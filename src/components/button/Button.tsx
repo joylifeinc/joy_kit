@@ -29,7 +29,7 @@ export interface Props {
   icon?: string;
 
   /** Whether or not to disable the default margins */
-  disableMargins?: boolean;
+  disableMargin?: DisableMarginOptions;
 
   /** Overrides the background color for custom one off buttons */
   backgroundColorOverride?: string;
@@ -43,6 +43,8 @@ export interface Props {
   /** Calls the function when the button is clicked */
   handleOnClick: (e: any) => void;
 }
+
+export type DisableMarginOptions = 'vertical' | 'horizontal' | 'all';
 
 export interface ButtonCustomOptions {
   color?: string;
@@ -189,11 +191,25 @@ const iconOnlyRules = (noChildren: boolean) => {
       });
 };
 
+const marginDisableRules = {
+  vertical: {
+    marginTop: 0,
+    marginBottom: 0
+  },
+  horizontal: {
+    marginLeft: 0,
+    marginRight: 0
+  },
+  all: {
+    margin: 0
+  }
+};
+
 const buttonStyleRules = (
   type: ButtonType,
   uppercase,
   disabled,
-  disableMargins,
+  disableMargin,
   icon,
   backgroundColorOverride,
   colorOverride,
@@ -209,7 +225,7 @@ const buttonStyleRules = (
       fontWeight: '600',
       letterSpacing: '1.5px',
       lineHeight: '40px',
-      margin: !disableMargins && '5px 20px',
+      margin: '5px 20px',
       minWidth: '130px',
       padding: '0 25px',
       outline: 'none',
@@ -236,13 +252,13 @@ const buttonStyleRules = (
     disabledRules(disabled, type)
   );
 
-export const Button = ({
+const Button = ({
   children,
   handleOnClick,
   type,
   uppercase = true,
   disabled = false,
-  disableMargins = false,
+  disableMargin = null,
   icon,
   backgroundColorOverride,
   colorOverride,
@@ -254,12 +270,13 @@ export const Button = ({
       type ? type : 'standard',
       uppercase,
       disabled,
-      disableMargins,
+      disableMargin,
       icon,
       backgroundColorOverride,
       colorOverride,
       !children
     )}
+    {...css(marginDisableRules[disableMargin])}
     {...noChildrenRules(!children)}
     {...css(styleOverride)}
     onClick={handleOnClick}
@@ -270,3 +287,5 @@ export const Button = ({
     {children}
   </button>
 );
+
+export { Button };

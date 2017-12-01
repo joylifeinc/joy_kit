@@ -87,7 +87,12 @@ export class ButtonExamples extends React.Component<{}, {}> {
           <div {...componentContainerRules}>
             <div {...labelRules}>{`${name} Button`}</div>
             <div {...buttonRules}>
-              <Button type={'outline'} styleOverride={({width: '100%'})} handleOnClick={() => console.log(name)}>
+              <Button
+                type={'outline'}
+                disableMargin="all"
+                styleOverride={{ width: '100%' }}
+                handleOnClick={null}
+              >
                 OUTLINE
               </Button>
             </div>
