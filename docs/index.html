@@ -1,46 +1,41 @@
+<html>
 
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="storybook-version" content="3.2.16">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-        <title>Storybook</title>
-        <style>
-          /*
-            When resizing panels, the drag event breaks if the cursor
-            moves over the iframe. Add the 'dragging' class to the body
-            at drag start and remove it when the drag ends.
-           */
-          .dragging iframe {
-            pointer-events: none;
-          }
+<head>
 
-          /* Styling the fuzzy search box placeholders */
-          .searchBox::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: #ddd;
-            font-size: 16px;
-          }
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_light.woff">
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_thin.woff">
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_regular.woff">
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_bold.woff">
 
-          .searchBox::-moz-placeholder { /* Firefox 19+ */
-            color: #ddd;
-            font-size: 16px;
-          }
+    <style>
+        @font-face {
+            font-family: 'proxima-nova';
+            font-weight: 100;
+            src: url('//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_thin.woff') format('woff');
+        }
 
-          .searchBox:focus{
-            border-color: #EEE !important;
-          }
+        @font-face {
+            font-family: 'proxima-nova';
+            font-weight: 300;
+            src: url('//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_light.woff') format('woff');
+        }
 
-          .btn:hover{
-            background-color: #eee
-          }
-        </style>
-        
-      </head>
-      <body style="margin: 0;">
-        <div id="root"></div>
-        <script src="static/manager.e17b7e72e5d9d6ee953c.bundle.js"></script>
-      </body>
-    </html>
-  
+        @font-face {
+            font-family: 'proxima-nova';
+            font-weight: 400;
+            src: url('//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'proxima-nova';
+            font-weight: 700;
+            src: url('//d2uft7zh7kxc3y.cloudfront.net/fonts/proxima-nova_bold.woff') format('woff');
+        };
+    </style>
+</head>
+
+<body>
+    <div id="root" />
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
