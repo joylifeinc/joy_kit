@@ -14,7 +14,9 @@
     "lint": "tslint -c ./tslint.json -p ./tsconfig.json",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier": "prettier --write --config .prettierrc \"src/**/*.{tsx,jsx,js}\"",
-    "precommit": "npm run example-pages"
+    "precommit": "npm run example-pages",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook"
   },
   "keywords": [
     "joykit"
@@ -31,8 +33,14 @@
     "velocity-react": "^1.3.3"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/addon-knobs": "^3.2.16",
+    "@storybook/addon-links": "^3.2.16",
+    "@storybook/addon-options": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "@types/enzyme": "^3.1.3",
     "@types/react-portal": "^3.0.3",
+    "@types/storybook__react": "^3.0.5",
     "clean-webpack-plugin": "^0.1.17",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.28.7",
