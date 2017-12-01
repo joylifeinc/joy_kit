@@ -8,7 +8,7 @@ import {
   select
 } from '@storybook/addon-knobs';
 
-import { SyntaxHighlight } from './syntax';
+import { SyntaxHighlight } from './utils/syntax';
 import { Button } from '../src';
 
 const stories = storiesOf('Buttons', module);
@@ -67,8 +67,8 @@ stories.add('overrides', () => {
   const uppercase = boolean('Uppercase', true);
   const disabled = boolean('Disabled', false);
   const disableMargins = boolean('Disable Margins', false);
-  const backgroundColorOverride = text('Background Color Overrides', null);
-  const colorOverride = text('Text Color Overrides', null);
+  const backgroundColorOverride = text('Background Color Overrides', '');
+  const colorOverride = text('Text Color Overrides', '');
 
   return (
     <div>
@@ -86,8 +86,8 @@ stories.add('overrides', () => {
         codeblock={`<Button uppercase={${uppercase}} 
         disabled={${disabled}}
         disableMargins={${disableMargins}} 
-        backgroundColorOverride={${backgroundColorOverride}}
-        colorOverride={${colorOverride}}
+        backgroundColorOverride={"${backgroundColorOverride}"}
+        colorOverride={"${colorOverride}"}
         handleOnClick={() => console.log('button')}>
   ${title}
 </Button>

@@ -8,7 +8,8 @@ import {
   select
 } from '@storybook/addon-knobs';
 
-import { SyntaxHighlight } from './syntax';
+import { SyntaxHighlight } from './utils/syntax';
+import { withState } from './utils/stateManager';
 import { InputLine } from '../src';
 
 const stories = storiesOf('InputLine', module);
@@ -16,19 +17,26 @@ stories.addDecorator(withKnobs);
 
 stories.add('default', () => {
   const label = text('Label', 'This is where the label would go');
+  const placeholder = text('Placeholder', 'I am a placeholder!');
+  const required = boolean('Required', false);
+  const placeholderToValue = boolean('Placeholder to Value on Keypress', false);
+
+  const InputWithState = withState(InputLine, 'value', 'handleChange');
 
   return (
     <div>
-      <InputLine
-        value={''}
+      <InputWithState
         label={label}
-        handleChange={e => console.log(e.target.value)}
+        placeholder={placeholder}
+        required={required}
       />
       <SyntaxHighlight
         codeblock={`<InputLine
-        value={''}
-        label={'${label}'}
-        handleChange={e => console.log(e.target.value)}
+        value={this.state.value}
+        label={"${label}"}
+        placeholder={"${placeholder}"}
+        required={${required}}
+        handleChange={this.handleChange}
       />`}
         syntax={'jsx'}
       />
