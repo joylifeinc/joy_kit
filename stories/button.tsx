@@ -63,8 +63,8 @@ stories.add('overrides', () => {
 
   const uppercase = boolean('Uppercase', true);
   const disabled = boolean('Disabled', false);
-  const backgroundColorOverride = text('Background Color Overrides', null);
-  const colorOverride = text('Text Color Overrides', null);
+  const backgroundColorOverride = text('Background Color Overrides', '');
+  const colorOverride = text('Text Color Overrides', '');
 
   return (
     <div>
@@ -81,7 +81,7 @@ stories.add('overrides', () => {
         codeblock={`<Button uppercase={${uppercase}} 
         disabled={${disabled}}
         backgroundColorOverride={${backgroundColorOverride}}
-        colorOverride={${colorOverride}}
+        colorOverride={"${colorOverride}"}
         handleOnClick={() => console.log('button')}>
   ${title}
 </Button>
