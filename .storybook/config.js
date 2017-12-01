@@ -1,13 +1,10 @@
-import { configure } from '@storybook/react';
+import{ configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
 setOptions({
-  showLeftPanel: true,
-  selectedAddonPanel: 'knobs'
+  name: "JoyKit",
+  downPanelInRight: true,
+  selectedAddonPanel: '@storybook/addon-knobs/panel'
 })
 
-function loadStories() {
-  require('../stories');
-}
-
-configure(loadStories, module);
+configure(() => require('../stories'), module);
