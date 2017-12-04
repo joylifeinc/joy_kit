@@ -33,7 +33,6 @@ stories.add('default', () => {
 
   const uppercase = boolean('Uppercase', true);
   const disabled = boolean('Disabled', false);
-  const disableMargins = boolean('Disable Margins', false);
 
   return (
     <div>
@@ -41,7 +40,6 @@ stories.add('default', () => {
         type={value}
         uppercase={uppercase}
         disabled={disabled}
-        disableMargins={disableMargins}
         handleOnClick={() => console.log('button')}
       >
         {title}
@@ -50,7 +48,6 @@ stories.add('default', () => {
         codeblock={`<Button type="${value}"
         uppercase={${uppercase}} 
         disabled={${disabled}}
-        disableMargins={${disableMargins}} 
         handleOnClick={() => console.log('button')}>
   ${title}
 </Button>
@@ -66,16 +63,14 @@ stories.add('overrides', () => {
 
   const uppercase = boolean('Uppercase', true);
   const disabled = boolean('Disabled', false);
-  const disableMargins = boolean('Disable Margins', false);
-  const backgroundColorOverride = text('Background Color Overrides', null);
-  const colorOverride = text('Text Color Overrides', null);
+  const backgroundColorOverride = text('Background Color Overrides', '');
+  const colorOverride = text('Text Color Overrides', '');
 
   return (
     <div>
       <Button
         uppercase={uppercase}
         disabled={disabled}
-        disableMargins={disableMargins}
         backgroundColorOverride={backgroundColorOverride}
         colorOverride={colorOverride}
         handleOnClick={() => console.log('button')}
@@ -85,9 +80,8 @@ stories.add('overrides', () => {
       <SyntaxHighlight
         codeblock={`<Button uppercase={${uppercase}} 
         disabled={${disabled}}
-        disableMargins={${disableMargins}} 
         backgroundColorOverride={${backgroundColorOverride}}
-        colorOverride={${colorOverride}}
+        colorOverride={"${colorOverride}"}
         handleOnClick={() => console.log('button')}>
   ${title}
 </Button>

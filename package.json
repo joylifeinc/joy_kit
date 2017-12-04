@@ -6,8 +6,9 @@
   "module": "./src/index.ts",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --env=example",
+    "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.config.js --env=example",
     "build": "webpack --debug --config ./webpack.config.js --env=build",
+    "build-watch": "webpack --debug --watch --config ./webpack.config.js --env=build",
     "example-pages": "webpack --debug --config ./webpack.config.js --env=buildexample",
     "analyze": "webpack --debug --config ./webpack.config.js --env=analyze",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +17,7 @@
     "prettier": "prettier --write --config .prettierrc \"src/**/*.{tsx,jsx,js}\"",
     "precommit": "npm run build-storybook",
     "storybook": "start-storybook -p 6006 -c .storybook",
+    "postpublish": "npm run build",
     "build-storybook": "build-storybook -c .storybook -o docs"
   },
   "keywords": [

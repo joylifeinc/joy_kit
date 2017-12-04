@@ -3,7 +3,7 @@ import { createDebugger, debug } from './debug';
 
 import { KEYCODES } from './keycodes';
 import { isNil, Fragments } from './childrenUtil';
-import { Styles } from './types';
+import { Styles } from './glamorExtensions';
 
 export {
   KEYCODES,
