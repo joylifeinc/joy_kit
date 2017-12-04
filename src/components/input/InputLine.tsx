@@ -3,8 +3,10 @@ import { css } from 'glamor';
 
 export interface Props {
   /** Function to call when input is updated */
-  handleChange: (e: any) => void;
+  handleChange: (e) => void;
 
+  /**Function called when input is blurred */
+  handleBlur?: (e) => void;
   /** Determines if the input is a required field. Defaults to false */
   required?: boolean;
 
@@ -69,6 +71,7 @@ const labelRules = (value: string, error: string) =>
       fontWeight: 'normal',
       position: 'absolute',
       pointerEvents: 'none',
+      opacity: '0.5',
       left: '5px',
       top: '10px',
       transition: '0.2s ease all'
@@ -87,7 +90,7 @@ const inputGroupRules = (value: string, error: string) =>
     margin: '14px 0 45px 0',
     '& > label': labelRules(value, error),
     '& > input': {
-      fontSize: '18px',
+      fontSize: '15px',
       padding: '10px 6px 6px 6px',
       display: 'block',
       width: '100%',
@@ -118,6 +121,7 @@ const inputGroupRules = (value: string, error: string) =>
 
 export const InputLine = ({
   handleChange,
+  handleBlur,
   value,
   label,
   error,
@@ -131,6 +135,7 @@ export const InputLine = ({
       ? handleChange({ currentTarget: { value: placeholder } })
       : null;
   };
+
   return (
     <div {...inputGroupRules(value, error)}>
       <input
@@ -139,13 +144,16 @@ export const InputLine = ({
         value={value}
         onKeyPress={placeholderToValue}
         onChange={handleChange}
+        onBlur={handleBlur}
         required={required}
       />
+
       {!error ? (
         <span className="bar" {...barRules} />
       ) : (
         <span className="error-bar" {...errorBarRules} />
       )}
+
       <span {...errorText}>{error}</span>
       {label ? <label>{label}</label> : null}
     </div>
