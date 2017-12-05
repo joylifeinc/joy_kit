@@ -37,6 +37,10 @@ stories.add('Old Layout', () => {
   // const disableMargins = boolean('Disable Margins', false);
 
   const eventDate = date('Event Date', new Date(1512345600000));
+  const message = text(
+    'Message',
+    'broh broh brhobroh broh brho broh broh brho broh broh brho broh broh brho broh broh brho broh broh brho broh broh brho broh broh brho'
+  );
 
   return (
     <div>
@@ -44,7 +48,7 @@ stories.add('Old Layout', () => {
         ownerName="Romeo"
         location="Oakland, CA"
         eventDate={eventDate}
-        message=""
+        message={message}
       />
     </div>
   );

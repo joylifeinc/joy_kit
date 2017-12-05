@@ -22,7 +22,8 @@ const countdownRules = ({ color, fontSize, fontWeight, margin }: Props) =>
 
 class CountdownTimer extends React.Component<Props, any> {
   static defaultProps = {
-    fontWeight: 400
+    fontWeight: 400,
+    fontSize: 15
   };
 
   private timeLapseInterval;
