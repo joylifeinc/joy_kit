@@ -32,6 +32,11 @@ const previewContainerRules = css({
   borderRadius: '5px'
 });
 
+const contentRules = css({
+  position: 'relative',
+  display: 'flex'
+});
+
 class WebsitePreview extends React.Component<Props> {
   static defaultProps = {
     ownerName: 'Romeo',
@@ -60,17 +65,20 @@ class WebsitePreview extends React.Component<Props> {
     // let formattedDate;
 
     return (
-      <div {...previewContainerRules}>
+      <div className="joy-website-preview" {...previewContainerRules}>
         <WebsitePreviewTopBar ownerName={ownerName} fianceeName={fianceeName} />
-        <WebsitePreviewLeftPane
-          ownerName={ownerName}
-          fianceeName={fianceeName}
-        />
-        <WebsitePreviewRightPane
-          color={baseTextColor}
-          eventDate={eventDate}
-          location={location}
-        />
+        <div {...contentRules}>
+          <WebsitePreviewLeftPane
+            ownerName={ownerName}
+            fianceeName={fianceeName}
+            message={message}
+          />
+          <WebsitePreviewRightPane
+            color={baseTextColor}
+            eventDate={eventDate}
+            location={location}
+          />
+        </div>
       </div>
     );
   }
