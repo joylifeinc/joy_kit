@@ -4,6 +4,8 @@ import { css, StyleAttribute } from 'glamor';
 import { Fragments, weddingNameString } from '../../';
 
 export interface Props {
+  id?: string;
+  className?: string;
   owner: string;
   fiancee?: string;
   useOwnerNameFirst?: boolean;
@@ -12,6 +14,12 @@ export interface Props {
   inline?: boolean;
   styles?: StyleAttribute | object;
 }
+
+const baseRules = (fontSize: any) =>
+  css({
+    fontSize,
+    fontWeight: 100
+  });
 
 const getNameOrder = (
   owner: string,
@@ -44,6 +52,8 @@ const shouldHaveTrailingAmpersand = (
 };
 
 const WeddingName: React.SFC<Props> = ({
+  className,
+  id,
   owner,
   fiancee = '',
   inline,
@@ -58,32 +68,39 @@ const WeddingName: React.SFC<Props> = ({
     useOwnerNameFirst
   );
 
-  const styleRules = css(styles);
+  const styleRules = css(baseRules, styles);
 
+  let content;
   if (inline) {
-    return <div {...styleRules}>{weddingNameString(primary, secondary)}</div>;
+    content = weddingNameString(primary, secondary);
+  } else {
+    trailingAmpersand = shouldHaveTrailingAmpersand(
+      primary,
+      secondary,
+      trailingAmpersand
+    );
+
+    content = (
+      <Fragments>
+        {primary}
+        {secondary &&
+          (wrap ? (
+            <Fragments>
+              {!trailingAmpersand && ' &'}
+              <br />
+              {`${trailingAmpersand ? '& ' : ''} ${secondary}`}
+            </Fragments>
+          ) : (
+            ` & ${secondary}`
+          ))}
+      </Fragments>
+    );
   }
 
-  trailingAmpersand = shouldHaveTrailingAmpersand(
-    primary,
-    secondary,
-    trailingAmpersand
-  );
-
   return (
-    <div {...styleRules}>
-      {primary}
-      {secondary &&
-        (wrap ? (
-          <Fragments>
-            {!trailingAmpersand && ' &'}
-            <br />
-            {`${trailingAmpersand ? '& ' : ''} ${secondary}`}
-          </Fragments>
-        ) : (
-          ` & ${secondary}`
-        ))}
-    </div>
+    <h1 id={id} className={className} {...styleRules}>
+      {content}
+    </h1>
   );
 };
 
