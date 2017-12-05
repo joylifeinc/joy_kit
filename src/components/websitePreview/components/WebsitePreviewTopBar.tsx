@@ -46,10 +46,23 @@ const expandButtonRules = css({
   backgroundColor: '#00cd36'
 });
 
+/**
+ * Old theme styles
+ */
+
+const websiteTitleRules = css(containerRules, {
+  margin: 0
+});
+
 export const WebsitePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
   return (
     <div {...containerRules}>
-      <WeddingName inline owner={ownerName} fiancee={fianceeName} />
+      <WeddingName
+        inline
+        owner={ownerName}
+        fiancee={fianceeName}
+        styles={websiteTitleRules}
+      />
       <div {...buttonContainerRules}>
         <div {...buttonRules} {...closeButtonRules} />
         <div {...buttonRules} {...minimizeButtonRules} />

@@ -1,3 +1,3 @@
 import './button';
 import './inputs';
-import './websitePreview';
+import './websitePreview/websitePreview';
