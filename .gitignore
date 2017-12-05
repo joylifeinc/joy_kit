@@ -1,6 +1,7 @@
 # Project
 dist
 .vscode/
+test_reports
 
 
 # Logs
