@@ -48,6 +48,7 @@ export interface ButtonCustomOptions {
   color?: string;
   backgroundColor?: string;
   fontSize?: string;
+  fontWeight?: string;
   padding?: string;
   width?: string;
   ':hover'?: {
