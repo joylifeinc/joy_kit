@@ -8,6 +8,8 @@ import { DualPanePreviewTopBar } from './components/DualPanePreviewTopBar';
 import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
 import { DualPanePreviewRight } from './components/DualPanePreviewRight';
 
+import { PreviewWrapper } from '../PreviewWrapper';
+
 export interface Props {
   activeFont?: {
     key: string;
@@ -37,13 +39,7 @@ export interface Props {
   };
 }
 
-const previewContainerRules = css({
-  height: '100%',
-  width: '100%',
-  position: 'relative'
-});
-
-const previewRules = (height, width, scale: number) =>
+const previewRules = (height, width) =>
   css({
     borderRadius: '5px',
     boxShadow: '0 15px 60px 0 rgba(0,0,0,.1), 0 32px 75px 0 rgba(0,0,0,.1)',
@@ -55,7 +51,6 @@ const previewRules = (height, width, scale: number) =>
     pointerEvents: 'none',
     position: 'absolute',
     top: '50%',
-    transform: `translateZ(0) translate(-50%,-50%) scale(${scale})`,
     userSelect: 'none',
     width
   });
@@ -66,8 +61,6 @@ const contentRules = css({
 });
 
 class DualPanePreview extends React.Component<Props> {
-  private windowResizeSub;
-
   static defaultProps = {
     activeFont: null,
     theme: null,
@@ -75,40 +68,6 @@ class DualPanePreview extends React.Component<Props> {
       height: 500,
       width: 800
     }
-  };
-
-  state = {
-    scale: 1
-  };
-
-  componentDidMount() {
-    this.setResizeScale();
-  }
-
-  componentWillUnmount() {
-    this.windowResizeSub && this.windowResizeSub.unsubscribe();
-  }
-
-  private setResizeScale = () => {
-    const { width } = this.props.previewOptions;
-    const previewContainer = document.getElementById(
-      'dualPanePreviewContainer'
-    );
-    const SIDE_MARGIN = 20;
-    const windowResize$ = Observable.fromEvent(window, 'resize');
-    this.windowResizeSub = windowResize$.debounceTime(250).subscribe({
-      next: evt => {
-        const containerToPreviewRatio =
-          (previewContainer.offsetWidth - SIDE_MARGIN * 2) / width;
-        if (containerToPreviewRatio < 1) {
-          this.setState({
-            scale: containerToPreviewRatio
-          });
-        } else if (containerToPreviewRatio !== 1) {
-          this.setState({ scale: 1 });
-        }
-      }
-    });
   };
 
   private getFontOverrides = activeFont => {
@@ -212,45 +171,38 @@ class DualPanePreview extends React.Component<Props> {
       fontStylesheetLink
     } = this.getFontOverrides(activeFont);
     return (
-      <div
-        id="dualPanePreviewContainer"
-        data-website-preview="dual-pane"
-        {...previewContainerRules}
-      >
+      <Fragments>
         {fontStylesheetLink}
         {this.getStyleOverrides()}
-        <div
-          id="dualPanePreview"
-          className="joy-website-preview"
-          {...previewRules(
-            previewOptions.height,
-            previewOptions.width,
-            this.state.scale
-          )}
-        >
-          <DualPanePreviewTopBar
-            ownerName={ownerName}
-            fianceeName={fianceeName}
-          />
-          <div {...contentRules}>
-            <DualPanePreviewLeft
-              coverPhoto={coverPhoto}
-              fontOverrides={leftPaneHeaderRules}
-              fianceeName={fianceeName}
+        <PreviewWrapper for="dualPane" previewOptions={previewOptions}>
+          <div
+            className="joy-website-preview"
+            {...previewRules(previewOptions.height, previewOptions.width)}
+          >
+            <DualPanePreviewTopBar
               ownerName={ownerName}
-              message={message}
+              fianceeName={fianceeName}
             />
-            <DualPanePreviewRight
-              activeFont={activeFont}
-              backgroundColor={baseBackgroundColor}
-              color={baseTextColor}
-              eventDate={eventDate}
-              fontOverrides={rightPaneHeaderRules}
-              location={location}
-            />
+            <div {...contentRules}>
+              <DualPanePreviewLeft
+                coverPhoto={coverPhoto}
+                fontOverrides={leftPaneHeaderRules}
+                fianceeName={fianceeName}
+                ownerName={ownerName}
+                message={message}
+              />
+              <DualPanePreviewRight
+                activeFont={activeFont}
+                backgroundColor={baseBackgroundColor}
+                color={baseTextColor}
+                eventDate={eventDate}
+                fontOverrides={rightPaneHeaderRules}
+                location={location}
+              />
+            </div>
           </div>
-        </div>
-      </div>
+        </PreviewWrapper>
+      </Fragments>
     );
   }
 }
