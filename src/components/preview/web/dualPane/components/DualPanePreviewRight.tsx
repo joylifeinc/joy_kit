@@ -83,7 +83,7 @@ const DualPanePreviewRight: React.SFC<Props> = ({
   fontOverrides,
   location
 }) => {
-  let formattedDate;
+  let eventDateMoment = moment(eventDate);
   return (
     <div
       className="right-pane joy-wedding-page-preview"
@@ -103,7 +103,8 @@ const DualPanePreviewRight: React.SFC<Props> = ({
               {location}
             </h2>
             <h4 {...dateRules}>
-              {moment(eventDate).format('dddd, MMMM D, YYYY')}
+              {eventDateMoment.isValid() &&
+                eventDateMoment.format('dddd, MMMM D, YYYY')}
             </h4>
             <CountdownTimer eventDate={eventDate} />
             <div {...ctaButtonContainer}>

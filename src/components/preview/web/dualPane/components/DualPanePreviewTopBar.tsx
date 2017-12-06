@@ -15,7 +15,8 @@ const containerRules = css({
   textTransform: 'uppercase',
   fontWeight: '600',
   letterSpacing: '.2px',
-  lineHeight: '36px'
+  lineHeight: '36px',
+  minHeight: 36
 });
 
 const buttonContainerRules = css({

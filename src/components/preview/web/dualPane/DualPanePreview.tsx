@@ -25,11 +25,11 @@ export interface Props {
   baseTextColor?: string;
   baseTextFill?: string;
   coverPhoto?: string;
-  eventDate: string;
+  eventDate?: string;
   fianceeName?: string;
-  location: string;
-  message: string;
-  ownerName: string;
+  location?: string;
+  message?: string;
+  ownerName?: string;
   theme?: string;
   previewOptions?: {
     height?: number;

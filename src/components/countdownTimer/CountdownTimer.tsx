@@ -3,7 +3,7 @@ import { css } from 'glamor';
 import * as moment from 'moment';
 
 export interface Props {
-  eventDate: string | number;
+  eventDate?: string | number;
   color?: string;
   fontSize?: string | number;
   fontWeight?: string | number;
@@ -111,6 +111,9 @@ class CountdownTimer extends React.Component<Props, any> {
   };
 
   render() {
+    if (!this.props.eventDate || !this.eventMoment.isValid()) {
+      return null;
+    }
     return <h4 {...countdownRules(this.props)}>{this.state.displayText}</h4>;
   }
 }
