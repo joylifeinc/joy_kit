@@ -152,24 +152,25 @@ class DualPanePreview extends React.Component<Props> {
     const { theme, activeFont } = this.props;
     return (
       <div data-style-overrides="">
-        {theme && (
-          <Fragments>
-            <link
-              rel="stylesheet"
-              type="text/css"
-              href={`http://withjoy.com/assets/public/joyStyles3/${
-                theme
-              }/base.css`}
-            />
-            <link
-              rel="stylesheet"
-              type="text/css"
-              href={`http://withjoy.com/assets/public/joyStyles3/${
-                theme
-              }/color.css`}
-            />
-          </Fragments>
-        )}
+        {theme &&
+          theme !== 'blank' && (
+            <Fragments>
+              <link
+                rel="stylesheet"
+                type="text/css"
+                href={`http://withjoy.com/assets/public/joyStyles3/${
+                  theme
+                }/base.css`}
+              />
+              <link
+                rel="stylesheet"
+                type="text/css"
+                href={`http://withjoy.com/assets/public/joyStyles3/${
+                  theme
+                }/color.css`}
+              />
+            </Fragments>
+          )}
       </div>
     );
   };
