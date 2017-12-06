@@ -16,7 +16,8 @@ import {
   PanelOverlay,
   TextBox,
   TopNav,
-  WebsitePreview,
+  WeddingName,
+  DualPanePreview,
   CountdownTimer
 } from './components';
 
@@ -63,7 +64,8 @@ export {
   isChildrenNil,
   Styles,
   weddingNameString,
-  WebsitePreview,
+  WeddingName,
+  DualPanePreview,
   CountdownTimer,
   Colors
 };

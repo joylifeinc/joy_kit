@@ -1,23 +1,22 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-import { CountdownTimer } from '../../';
+import { CountdownTimer } from '../../../../';
 import * as moment from 'moment';
 
 export interface Props {
+  fontOverrides?: any;
   eventDate: string;
   location: string;
   backgroundColor?: string;
   color?: string;
+  activeFont?: object;
 }
 
-const rightPane = (color: string, backgroundColor: string) =>
+const rightPaneRules = (color: string, backgroundColor: string) =>
   css({
     width: '320px',
     height: '464px',
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     borderRadius: '0 0 5px',
     fontSize: '15px',
     backgroundColor,
@@ -78,66 +77,30 @@ const ctaButtonRules = css({
   textAlign: 'center'
 });
 
-const WebsitePreviewRightPane: React.SFC<Props> = ({
+const DualPanePreviewRight: React.SFC<Props> = ({
+  activeFont,
   backgroundColor,
   color,
   eventDate,
+  fontOverrides,
   location
 }) => {
   let formattedDate;
   return (
     <div className="right-pane joy-wedding-page-preview">
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-
-    .joy-wedding-page .joy-wedding-intro h1 {
-        font-size: 68px !important;
-        letter-spacing: -1px !important;
-    }
-    .joy-wedding-page h2 {
-        font-size: 28px !important;
-    }
-    .joy-wedding-page .joy-primary-pane-mobile h2 {
-        font-size: 39.199999999999996px !important;
-    }
-    .joy-wedding-page .joy-wedding-menu .menu-owner{
-        font-size: 26px !important;
-    }
-    .joy-wedding-page h1, .joy-wedding-page h2, .joy-wedding-page .joy-wedding-menu .menu-owner{
-        font-family: Pacifico;
-        font-weight: 400;
-        text-transform:  !important;
-        line-height: 1.2;
-    }
-
-    /* todo: nail down what needs what
-    .joy-wedding-page {
-        font-family: inherit !important;
-    }
-    */
-    /*commented out joy base and accent text to be sure that it is always the
-      primaryLightText (#FFF)*/
-    /*.joy-wedding-page .joy-base-text { color: rgba(255,255,255,1) !important; }*/
-    .joy-wedding-page .joy-base-color { color: rgba(59,66,77,1) !important; }
-    .joy-wedding-page .joy-base-color-bg { background-color: rgba(59,66,77,1) !important; }
-    /*.joy-wedding-page .joy-accent-text { color: rgba(255,255,255,1) !important; }*/
-    .joy-wedding-page .joy-accent-color { color: rgba(242,243,237,1) !important; }
-    .joy-wedding-page .joy-accent-color-bg { background-color: rgba(242,243,237,1) !important; }
-    
-    
-    `
-        }}
-      />
-
-      <div className="joy-wedding-info" {...rightPane(color, backgroundColor)}>
+      <div
+        className="joy-wedding-info"
+        {...rightPaneRules(color, backgroundColor)}
+      >
         <div
           id="welcome"
           className="joy-content-card joy-content-intro"
           {...welcomeContainerRules}
         >
           <div className="info-preview" {...infoPreviewRules}>
-            <h2 {...locationRules}>{location}</h2>
+            <h2 {...locationRules} {...fontOverrides}>
+              {location}
+            </h2>
             <h4 {...dateRules}>
               {moment(eventDate).format('dddd, MMMM D, YYYY')}
             </h4>
@@ -157,8 +120,8 @@ const WebsitePreviewRightPane: React.SFC<Props> = ({
   );
 };
 
-WebsitePreviewRightPane.defaultProps = {
+DualPanePreviewRight.defaultProps = {
   backgroundColor: '#f3efeb'
 };
 
-export { WebsitePreviewRightPane };
+export { DualPanePreviewRight };

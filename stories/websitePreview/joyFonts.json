@@ -1,0 +1,479 @@
+[
+    {
+        "key": "Great Vibes",
+        "fontFamily": "Great Vibes",
+        "fontWeight": "400",
+        "h1": "76",
+        "h2": "36",
+        "h3": "36",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1",
+        "_comment": "script"
+    },
+    {
+        "key": "Parisienne",
+        "fontFamily": "Parisienne",
+        "fontWeight": "400",
+        "h1": "74",
+        "h2": "32",
+        "h3": "29",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Nicgonne",
+        "fontFamily": "Niconne",
+        "fontWeight": "400",
+        "h1": "75",
+        "h2": "35",
+        "h3": "33",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Dancing Script",
+        "fontFamily": "Dancing Script",
+        "fontWeight": "400",
+        "h1": "70",
+        "h2": "32",
+        "h3": "30",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Satisfy",
+        "fontFamily": "Satisfy",
+        "fontWeight": "400",
+        "h1": "76",
+        "h2": "36",
+        "h3": "36",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Pacifico",
+        "fontFamily": "Pacifico",
+        "fontWeight": "400",
+        "h1": "68",
+        "h2": "28",
+        "h3": "26",
+        "lineHeight": "1.2",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Stalemate",
+        "fontFamily": "Stalemate",
+        "fontWeight": "400",
+        "h1": "92",
+        "h2": "50",
+        "h3": "40",
+        "lineHeight": "0.9",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Sacramento",
+        "fontFamily": "Sacramento",
+        "fontWeight": "400",
+        "h1": "80",
+        "h2": "33",
+        "h3": "33",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Clicker Script",
+        "fontFamily": "Clicker Script",
+        "fontWeight": "400",
+        "h1": "80",
+        "h2": "38",
+        "h3": "33",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Lush Script",
+        "fontFamily": "Allura",
+        "fontWeight": "400",
+        "h1": "82",
+        "h2": "35",
+        "h3": "33",
+        "lineHeight": "0.9",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Penna Connected",
+        "fontFamily": "Pinyon Script",
+        "fontWeight": "400",
+        "h1": "74",
+        "h2": "35",
+        "h3": "30",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Domine",
+        "fontFamily": "Domine",
+        "fontWeight": "700",
+        "h1": "60",
+        "h2": "22",
+        "lineHeight": "1.2",
+        "letterSpacing": "0",
+        "_comment": "serif"
+    },
+    {
+        "key": "Karma",
+        "fontFamily": "Karma",
+        "fontWeight": "400",
+        "h1": "60",
+        "h2": "24",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Abril",
+        "fontFamily": "Cambo",
+        "fontWeight": "400",
+        "h1": "60",
+        "h2": "24",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Taviraj",
+        "fontFamily": "Taviraj",
+        "fontWeight": "400",
+        "h1": "58",
+        "h2": "24",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "AW Conqueror Carved",
+        "fontFamily": "Fredericka the Great",
+        "fontWeight": "400",
+        "h1": "60",
+        "h2": "27",
+        "h3": "25",
+        "lineHeight": "1",
+        "letterSpacing": "-1",
+        "_comment": "display"
+    },
+    {
+        "key": "Kranky",
+        "fontFamily": "Kranky",
+        "fontWeight": "400",
+        "h1": "62",
+        "h2": "27",
+        "h3": "26",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Komu",
+        "fontFamily": "Fjalla One",
+        "fontWeight": "400",
+        "h1": "64",
+        "h2": "26",
+        "textTransform": "uppercase",
+        "letterSpacing": "-2",
+        "lineHeight": "1.2"
+    },
+    {
+        "key": "Alegreya Sans SC",
+        "fontFamily": "Alegreya Sans SC",
+        "fontWeight": "300",
+        "h1": "68",
+        "h2": "26",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Amatic SC",
+        "fontFamily": "Amatic SC",
+        "fontWeight": "700",
+        "h1": "86",
+        "h2": "38",
+        "h3": "36",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Pompiere",
+        "fontFamily": "Pompiere",
+        "fontWeight": "400",
+        "h1": "76",
+        "h2": "35",
+        "h3": "34",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Coming Soon",
+        "fontFamily": "Coming Soon",
+        "fontWeight": "400",
+        "h1": "60",
+        "h2": "25",
+        "h3": "23",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Indie Flower",
+        "fontFamily": "Indie Flower",
+        "fontWeight": "400",
+        "h1": "76",
+        "h2": "32",
+        "h3": "28",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Architects Daughter",
+        "fontFamily": "Architects Daughter",
+        "fontWeight": "400",
+        "h1": "70",
+        "h2": "28",
+        "h3": "26",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Shadows Into Light Two",
+        "fontFamily": "Shadows Into Light Two",
+        "fontWeight": "400",
+        "h1": "74",
+        "h2": "32",
+        "h3": "30",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Happy Monkey",
+        "fontFamily": "Happy Monkey",
+        "fontWeight": "400",
+        "h1": "56",
+        "h2": "24",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Handlee",
+        "fontFamily": "Handlee",
+        "fontWeight": "400",
+        "h1": "65",
+        "h2": "27",
+        "h3": "28",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Averia Serif Libre",
+        "fontFamily": "Averia Serif Libre",
+        "fontWeight": "400",
+        "h1": "60",
+        "h2": "24",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Boogaloo",
+        "fontFamily": "Boogaloo",
+        "fontWeight": "400",
+        "h1": "70",
+        "h2": "32",
+        "h3": "30",
+        "lineHeight": "1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Ambroise Firmin",
+        "fontFamily": "Stint Ultra Condensed",
+        "fontWeight": "400",
+        "h1": "74",
+        "h2": "40",
+        "h3": "36",
+        "lineHeight": "1.0",
+        "letterSpacing": "0",
+        "_comment": "slab serif"
+    },
+    {
+        "key": "Nixie One",
+        "fontFamily": "Nixie One",
+        "fontWeight": "400",
+        "h1": "54",
+        "h2": "25",
+        "lineHeight": "1.2",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Museo Slab",
+        "fontFamily": "Roboto Slab",
+        "fontWeight": "300",
+        "h1": "55",
+        "h2": "23",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Sanchez",
+        "fontFamily": "Sanchez",
+        "fontWeight": "400",
+        "h1": "55",
+        "h2": "23",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Scope One",
+        "fontFamily": "Scope One",
+        "fontWeight": "400",
+        "h1": "52",
+        "h2": "25",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Muli",
+        "fontFamily": "Muli",
+        "fontWeight": "300",
+        "h1": "62",
+        "h2": "23",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1",
+        "_comment": "sans serif"
+    },
+    {
+        "key": "Mukta Vaani",
+        "fontFamily": "Mukta Vaani",
+        "fontWeight": "300",
+        "h1": "62",
+        "h2": "25",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Proxima Nova",
+        "fontFamily": "Roboto",
+        "fontWeight": "100",
+        "h1": "55",
+        "h2": "24",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Rubik",
+        "fontFamily": "Rubik",
+        "fontWeight": "400",
+        "h1": "55",
+        "h2": "24",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Poppins",
+        "fontFamily": "Poppins",
+        "fontWeight": "300",
+        "h1": "55",
+        "h2": "22",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Questrial",
+        "fontFamily": "Questrial",
+        "fontWeight": "400",
+        "h1": "55",
+        "h2": "24",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Effra Regular",
+        "fontFamily": "Raleway",
+        "fontWeight": "300",
+        "h1": "66",
+        "h2": "24",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Molengo",
+        "fontFamily": "Molengo",
+        "fontWeight": "400",
+        "h1": "62",
+        "h2": "26",
+        "lineHeight": "1.0",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Comfortaa",
+        "fontFamily": "Comfortaa",
+        "fontWeight": "400",
+        "h1": "55",
+        "h2": "24",
+        "h3": "23",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Josefin Sans",
+        "fontFamily": "Josefin Sans",
+        "fontWeight": "400",
+        "textTransform": "uppercase",
+        "h1": "55",
+        "h2": "22",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Gudea",
+        "fontFamily": "Gudea",
+        "fontWeight": "400",
+        "textTransform": "uppercase",
+        "h1": "55",
+        "h2": "22",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Capriola",
+        "fontFamily": "Capriola",
+        "fontWeight": "400",
+        "h1": "55",
+        "h2": "22",
+        "lineHeight": "1.2",
+        "letterSpacing": "-1"
+    },
+    {
+        "key": "Sax Mono",
+        "fontFamily": "Space Mono",
+        "fontWeight": "400",
+        "h1": "52",
+        "h2": "21",
+        "h3": "20",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1",
+        "_comment": "mono"
+    },
+    {
+        "key": "Rye",
+        "fontFamily": "Rye",
+        "fontWeight": "400",
+        "h1": "56",
+        "h2": "24",
+        "h3": "22",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1",
+        "_comment": "more display"
+    },
+    {
+        "key": "Emilys Candy",
+        "fontFamily": "Emilys Candy",
+        "fontWeight": "400",
+        "h1": "60",
+        "h2": "28",
+        "h3": "26",
+        "lineHeight": "1.1",
+        "letterSpacing": "-1"
+    }
+]
