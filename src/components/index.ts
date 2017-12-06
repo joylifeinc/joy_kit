@@ -16,6 +16,7 @@ import { TopNav } from './topNav/TopNav';
 import { WeddingName } from './weddingName/WeddingName';
 import { DualPanePreview } from './preview/web/dualPane/DualPanePreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
+import { SpinnerLoader } from './loader/SpinnerLoader';
 
 // Dropdown is not quite ready for primetime yet
 
@@ -38,5 +39,6 @@ export {
   TextBox,
   WeddingName,
   DualPanePreview,
-  CountdownTimer
+  CountdownTimer,
+  SpinnerLoader
 };
