@@ -15,11 +15,10 @@ export interface Props {
   styles?: StyleAttribute | object;
 }
 
-const baseRules = (fontSize: any) =>
-  css({
-    fontSize,
-    fontWeight: 100
-  });
+const baseRules = css({
+  fontWeight: 100,
+  marginSize: 0
+});
 
 const getNameOrder = (
   owner: string,

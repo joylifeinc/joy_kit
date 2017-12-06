@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-import { WeddingName } from '../../';
+import { WeddingName } from '../../../../';
 
 export interface Props {
   ownerName: string;
@@ -54,7 +54,7 @@ const websiteTitleRules = css(containerRules, {
   margin: 0
 });
 
-export const WebsitePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
+export const DualPanePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
   return (
     <div {...containerRules}>
       <WeddingName

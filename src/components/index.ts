@@ -14,7 +14,7 @@ import { PanelOverlay } from './panel/overlay/PanelOverlay';
 import { TextBox } from './textBox/TextBox';
 import { TopNav } from './topNav/TopNav';
 import { WeddingName } from './weddingName/WeddingName';
-import { WebsitePreview } from './websitePreview/WebsitePreview';
+import { DualPanePreview } from './preview/web/dualPane/DualPanePreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 
 // Dropdown is not quite ready for primetime yet
@@ -37,6 +37,6 @@ export {
   ActionHeader,
   TextBox,
   WeddingName,
-  WebsitePreview,
+  DualPanePreview,
   CountdownTimer
 };
