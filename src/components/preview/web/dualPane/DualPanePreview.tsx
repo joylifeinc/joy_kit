@@ -33,7 +33,6 @@ export interface Props {
 }
 
 const previewContainerRules = css({
-  backgroundColor: '#E2E2E4',
   borderRadius: '5px',
   boxShadow: '0 15px 60px 0 rgba(0,0,0,.1), 0 32px 75px 0 rgba(0,0,0,.1)',
   fontFamily: 'proxima-nova,Helvetica Neue,sans-serif',
