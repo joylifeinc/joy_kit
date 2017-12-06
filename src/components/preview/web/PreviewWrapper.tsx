@@ -7,7 +7,7 @@ const SIDE_MARGIN = 20;
 
 export interface Props {
   for: For;
-  previewOptions: {
+  previewOptions?: {
     height?: number;
     width?: number;
   };
@@ -18,7 +18,10 @@ export type For = 'dualPane' | 'simpleLayout';
 const previewWrapperRules = css({
   height: '100%',
   width: '100%',
-  position: 'relative'
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 });
 
 export class PreviewWrapper extends React.Component<Props> {
@@ -60,6 +63,7 @@ export class PreviewWrapper extends React.Component<Props> {
   };
 
   render() {
+    const { previewOptions } = this.props;
     return (
       <div
         id={`${this.props.for}PreviewContainer`}
@@ -69,8 +73,8 @@ export class PreviewWrapper extends React.Component<Props> {
         <VelocityComponent
           animation={{
             translateZ: 0.001,
-            translateX: '-50%',
-            translateY: '-50%',
+            // translateX: '-50%',
+            // translateY: '-50%',
             scale: this.state.scale
           }}
           easing="ease"

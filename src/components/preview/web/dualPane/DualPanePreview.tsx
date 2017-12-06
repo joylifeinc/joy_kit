@@ -47,12 +47,10 @@ const previewRules = (height, width) =>
     fontSize: '15px',
     fontWeight: '300',
     height,
-    left: '50%',
     pointerEvents: 'none',
-    position: 'absolute',
-    top: '50%',
     userSelect: 'none',
-    width
+    width,
+    minWidth: width
   });
 
 const contentRules = css({
@@ -164,7 +162,6 @@ class DualPanePreview extends React.Component<Props> {
       message
     } = this.getVisibleFields();
 
-    console.log(eventDate);
     let {
       leftPaneHeaderRules,
       rightPaneHeaderRules,
