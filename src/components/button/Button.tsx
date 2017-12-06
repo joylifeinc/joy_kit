@@ -31,6 +31,12 @@ export interface Props {
   /** Whether or not to disable the default margins */
   disableMargins?: boolean;
 
+  /** Overrides the background color for custom one off buttons */
+  backgroundColorOverride?: string;
+
+  /** Overrides the color for custom one off buttons */
+  colorOverride?: string;
+
   /** Overrides the styles for custom one off buttons */
   styleOverride?: ButtonCustomOptions;
 
@@ -39,12 +45,13 @@ export interface Props {
 }
 
 export interface ButtonCustomOptions {
-  color: string;
-  backgroundColor: string;
+  color?: string;
+  backgroundColor?: string;
   fontSize?: string;
   fontWeight?: string;
   padding?: string;
-  ':hover': {
+  width?: string;
+  ':hover'?: {
     backgroundColor?: string;
     color?: string;
     transform?: string;
@@ -129,7 +136,6 @@ const buttonRules: { [index in ButtonType]: any } = {
     backgroundColor: 'rgba(0, 0, 0, 0)',
     border: '1px solid #cccccc',
     borderRadius: '3px',
-    width: '100%',
     ':hover': {
       color: '#6DADFF',
       borderColor: '#6DADFF'
@@ -137,12 +143,19 @@ const buttonRules: { [index in ButtonType]: any } = {
   }
 };
 
-const disabledRules = (disabled: boolean) => {
+const disabledRules = (disabled: boolean, type: ButtonType) => {
   return disabled
     ? {
-        backgroundColor: '#D0D0D0',
+        color: 'black',
+        backgroundColor: type !== 'link' ? '#D0D0D0' : 'none',
         ':hover': {
-          backgroundColor: '#D0D0D0'
+          color: 'black',
+          border: 'none',
+          backgroundColor: type !== 'link' ? '#D0D0D0' : 'none',
+          filter: 'none',
+          transform: 'translateY(0px)',
+          transition: 'none',
+          boxShadow: 'none'
         },
         cursor: 'not-allowed'
       }
@@ -183,12 +196,13 @@ const buttonStyleRules = (
   disabled,
   disableMargins,
   icon,
+  backgroundColorOverride,
+  colorOverride,
   noChildren
 ) =>
   css(
     buttonRules[type],
     { textTransform: uppercase ? 'uppercase' : null },
-    disabledRules(disabled),
     iconRules(icon, noChildren),
     {
       cursor: 'pointer',
@@ -206,7 +220,21 @@ const buttonStyleRules = (
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center'
-    }
+    },
+    {
+      backgroundColor: backgroundColorOverride ? backgroundColorOverride : null,
+      ':hover': backgroundColorOverride
+        ? {
+            backgroundColor: backgroundColorOverride,
+            filter: 'brightness(120%)',
+            transform: 'translateY(-2px)',
+            transition: 'all 0.2s ease',
+            boxShadow: '0px 2px 5px #888888'
+          }
+        : null,
+      color: colorOverride ? colorOverride : null
+    },
+    disabledRules(disabled, type)
   );
 
 export const Button = ({
@@ -217,6 +245,8 @@ export const Button = ({
   disabled = false,
   disableMargins = false,
   icon,
+  backgroundColorOverride,
+  colorOverride,
   styleOverride
 }: Props) => (
   <button
@@ -227,10 +257,12 @@ export const Button = ({
       disabled,
       disableMargins,
       icon,
+      backgroundColorOverride,
+      colorOverride,
       !children
     )}
     {...noChildrenRules(!children)}
-    {...styleOverride}
+    {...css(styleOverride)}
     onClick={handleOnClick}
   >
     {icon ? (

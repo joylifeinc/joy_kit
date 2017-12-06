@@ -36,7 +36,9 @@
       "no-unused-expression": false,
       "no-submodule-imports": false,
       "no-implicit-dependencies": false,
-      "no-shadowed-variable": false
+      "no-shadowed-variable": false,
+      "jsx-no-lambda": false,
+      "no-console": false
     }
   }
   

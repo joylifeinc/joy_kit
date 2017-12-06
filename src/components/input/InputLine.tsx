@@ -132,7 +132,7 @@ export const InputLine = ({
   // Sort of a hack to make the placeholder the value when Enter key is pressed
   const placeholderToValue = e => {
     e.charCode === 13 && updateValueToPlaceholder && placeholder
-      ? handleChange({ currentTarget: { value: placeholder } })
+      ? handleChange({ type: 'change', target: { value: placeholder } })
       : null;
   };
 

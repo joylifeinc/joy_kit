@@ -1,8 +1,8 @@
 import { ActionHeader } from './actionHeader/ActionHeader';
-import { Button, ButtonType } from './button/button';
+import { Button, ButtonType } from './button/Button';
 import { CommandBar } from './commandBar/CommandBar';
-import { DropDown } from './dropdown/dropdown';
-import { InputLine } from './input/inputLine';
+import { DropDown } from './dropdown/Dropdown';
+import { InputLine } from './input/InputLine';
 import { Label } from './label/Label';
 import { Modal } from './modal/Modal';
 import { ModalLightBox } from './modal/ModalLightBox';

@@ -71,7 +71,6 @@ const panelRules = (direction: Directions) =>
  */
 
 const PanelOverlay: React.SFC<Props> = props => {
-  console.log(props)
   return (
     <ModalPortal
       type="panel-overlay"
