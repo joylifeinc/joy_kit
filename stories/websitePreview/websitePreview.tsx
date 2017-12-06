@@ -50,7 +50,7 @@ stories.add('Dual Pane', () => {
 
   return (
     <div>
-      <div {...css({ paddingTop: '62%', position: 'relative' })}>
+      <div {...css({ height: 700, position: 'relative' })}>
         <DualPanePreview
           baseBackgroundColor={backgroundColor}
           activeFont={fontMap[font]}

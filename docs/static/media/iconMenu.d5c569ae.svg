@@ -1,8 +1,0 @@
-<svg class="icon-menu" width="30px" height="23px" viewBox="0 0 30 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g ng-style="weddingTheme.baseTextFill" id="Home-Card" sketch:type="MSArtboardGroup" transform="translate(-30.000000, -67.000000)" fill="#FFFFFF">
-            <path d="M30,67 L60,67 L60,70 L30,70 L30,67 Z M30,77 L60,77 L60,80 L30,80 L30,77 Z M30,87 L60,87 L60,90 L30,90 L30,87 Z" id="menu" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>

@@ -19,7 +19,7 @@ const containerRules = color =>
   css({
     backgroundColor: '#000',
     position: 'relative',
-    flexGrow: 1
+    width: '60%'
   });
 
 const overlayRules = css({
@@ -34,10 +34,10 @@ const overlayRules = css({
 
 const menuRules = css({
   fontSize: '12px',
+  height: '20px',
+  left: '25px',
   position: 'absolute',
   top: '30px',
-  left: '25px',
-  height: '20px',
   width: '20px'
 });
 
@@ -48,8 +48,8 @@ const introRules = css({
 });
 
 const imageRules = css({
-  zIndex: '-10',
-  maxHeight: '100%'
+  maxHeight: '100%',
+  zIndex: '-10'
 });
 
 const contentRules = coverPhoto =>
@@ -58,9 +58,9 @@ const contentRules = coverPhoto =>
       boxSizing: 'border-box',
       display: 'flex',
       flexDirection: 'column-reverse',
-      padding: '10% 20% 6% 10%',
       fontSize: '44px',
-      height: '100%'
+      height: '100%',
+      padding: '10% 20% 6% 10%'
     },
     coverPhoto && {
       background: `url(${coverPhoto}) center top /cover`
@@ -88,8 +88,8 @@ const weddingNameRules = fontOverrides =>
   );
 
 export const DualPanePreviewLeft: React.SFC<Props> = ({
-  coverPhoto,
   accentTextColor,
+  coverPhoto,
   fianceeName,
   fontOverrides,
   ownerName,

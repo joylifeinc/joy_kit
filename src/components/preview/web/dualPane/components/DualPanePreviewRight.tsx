@@ -15,13 +15,11 @@ export interface Props {
 
 const rightPaneRules = (color: string, backgroundColor = '#f3efeb') =>
   css({
-    width: '320px',
     height: '464px',
     borderRadius: '0 0 5px',
     fontSize: '15px',
-    backgroundColor,
-    flexBasis: 320,
-    minWidth: 320
+    backgroundColor
+    // flexBasis: 320
   });
 
 const welcomeContainerRules = css({
@@ -87,7 +85,10 @@ const DualPanePreviewRight: React.SFC<Props> = ({
 }) => {
   let formattedDate;
   return (
-    <div className="right-pane joy-wedding-page-preview">
+    <div
+      className="right-pane joy-wedding-page-preview"
+      {...css({ width: '40%' })}
+    >
       <div
         className="joy-wedding-info"
         {...rightPaneRules(color, backgroundColor)}
