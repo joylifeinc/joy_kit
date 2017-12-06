@@ -17,6 +17,7 @@ export interface Props {
 
 const containerRules = color =>
   css({
+    backgroundColor: '#000',
     position: 'relative',
     flexGrow: 1
   });

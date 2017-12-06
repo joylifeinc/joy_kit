@@ -13,7 +13,7 @@ export interface Props {
   activeFont?: object;
 }
 
-const rightPaneRules = (color: string, backgroundColor: string) =>
+const rightPaneRules = (color: string, backgroundColor = '#f3efeb') =>
   css({
     width: '320px',
     height: '464px',
