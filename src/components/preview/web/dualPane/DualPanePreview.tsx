@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 import { margin } from 'glamor/utils';
+import { Observable, Subscription } from 'rxjs';
 
 import { WeddingName, CountdownTimer, Fragments } from '../../../../';
 import { DualPanePreviewTopBar } from './components/DualPanePreviewTopBar';
@@ -8,16 +9,6 @@ import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
 import { DualPanePreviewRight } from './components/DualPanePreviewRight';
 
 export interface Props {
-  theme?: string;
-  baseBackgroundColor?: string;
-  baseTextColor?: string;
-  baseTextFill?: string;
-  coverPhoto?: string;
-  ownerName: string;
-  fianceeName?: string;
-  location: string;
-  eventDate: string;
-  message: string;
   activeFont?: {
     key: string;
     fontFamily?: string;
@@ -30,34 +21,95 @@ export interface Props {
     textTransform: string;
     _comment?: string;
   };
+  baseBackgroundColor?: string;
+  baseTextColor?: string;
+  baseTextFill?: string;
+  coverPhoto?: string;
+  eventDate: string;
+  fianceeName?: string;
+  location: string;
+  message: string;
+  ownerName: string;
+  theme?: string;
+  previewOptions?: {
+    height?: number;
+    width?: number;
+  };
 }
 
 const previewContainerRules = css({
-  borderRadius: '5px',
-  boxShadow: '0 15px 60px 0 rgba(0,0,0,.1), 0 32px 75px 0 rgba(0,0,0,.1)',
-  fontFamily: 'proxima-nova,Helvetica Neue,sans-serif',
-  fontSize: '15px',
-  fontWeight: '300',
-  height: '500px',
-  left: '50%',
-  pointerEvents: 'none',
-  position: 'absolute',
-  top: '50%',
-  transform: 'translate(-50%,-50%)',
-  userSelect: 'none',
-  width: '800px'
+  height: '100%',
+  width: '100%',
+  position: 'relative'
 });
 
+const previewRules = (height, width, scale: number) =>
+  css({
+    borderRadius: '5px',
+    boxShadow: '0 15px 60px 0 rgba(0,0,0,.1), 0 32px 75px 0 rgba(0,0,0,.1)',
+    fontFamily: 'proxima-nova,Helvetica Neue,sans-serif',
+    fontSize: '15px',
+    fontWeight: '300',
+    height,
+    left: '50%',
+    pointerEvents: 'none',
+    position: 'absolute',
+    top: '50%',
+    transform: `translateZ(0) translate(-50%,-50%) scale(${scale})`,
+    userSelect: 'none',
+    width
+  });
+
 const contentRules = css({
-  position: 'relative',
-  display: 'flex'
+  display: 'flex',
+  position: 'relative'
 });
 
 class DualPanePreview extends React.Component<Props> {
+  private windowResizeSub;
+
   static defaultProps = {
+    activeFont: null,
     fianceeName: 'Juliet',
     theme: null,
-    activeFont: null
+    previewOptions: {
+      height: 500,
+      width: 800
+    }
+  };
+
+  state = {
+    scale: 1
+  };
+
+  componentDidMount() {
+    this.setResizeScale();
+  }
+
+  componentWillUnmount() {
+    this.windowResizeSub && this.windowResizeSub.unsubscribe();
+  }
+
+  private setResizeScale = () => {
+    const { width } = this.props.previewOptions;
+    const previewContainer = document.getElementById(
+      'dualPanePreviewContainer'
+    );
+    const SIDE_MARGIN = 20;
+    const windowResize$ = Observable.fromEvent(window, 'resize');
+    this.windowResizeSub = windowResize$.debounceTime(250).subscribe({
+      next: evt => {
+        const containerToPreviewRatio =
+          (previewContainer.offsetWidth - SIDE_MARGIN * 2) / width;
+        if (containerToPreviewRatio < 1) {
+          this.setState({
+            scale: containerToPreviewRatio
+          });
+        } else if (containerToPreviewRatio !== 1) {
+          this.setState({ scale: 1 });
+        }
+      }
+    });
   };
 
   private getFontOverrides = activeFont => {
@@ -128,11 +180,12 @@ class DualPanePreview extends React.Component<Props> {
       baseBackgroundColor,
       baseTextColor,
       coverPhoto,
-      ownerName,
+      eventDate,
       fianceeName,
       location,
-      eventDate,
       message,
+      ownerName,
+      previewOptions,
       theme
     } = this.props;
     console.log(ownerName);
@@ -142,10 +195,22 @@ class DualPanePreview extends React.Component<Props> {
       fontStylesheetLink
     } = this.getFontOverrides(activeFont);
     return (
-      <Fragments>
+      <div
+        id="dualPanePreviewContainer"
+        data-website-preview="dual-pane"
+        {...previewContainerRules}
+      >
         {fontStylesheetLink}
         {this.getStyleOverrides()}
-        <div className="joy-website-preview" {...previewContainerRules}>
+        <div
+          id="dualPanePreview"
+          className="joy-website-preview"
+          {...previewRules(
+            previewOptions.height,
+            previewOptions.width,
+            this.state.scale
+          )}
+        >
           <DualPanePreviewTopBar
             ownerName={ownerName}
             fianceeName={fianceeName}
@@ -168,7 +233,7 @@ class DualPanePreview extends React.Component<Props> {
             />
           </div>
         </div>
-      </Fragments>
+      </div>
     );
   }
 }
