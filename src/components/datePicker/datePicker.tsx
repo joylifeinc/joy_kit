@@ -14,8 +14,19 @@ export interface Props {
 }
 
 const menuRules = css({
-  height: '50px',
-  width: '100%'
+  '& .react-datepicker-wrapper': {
+    width: '100%'
+  },
+  '& .react-datepicker__input-container': {
+    width: '100%'
+  },
+  '& .react-datepicker__input-container input': {
+    border: 'none',
+    borderBottom: '1px solid rgb(117, 117, 117)',
+    height: '26px',
+    padding: '10px',
+    width: '100%'
+  }
 });
 
 export default class DateSelector extends React.Component<Props, {}> {
