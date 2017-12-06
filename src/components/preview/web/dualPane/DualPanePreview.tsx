@@ -23,7 +23,7 @@ export interface Props {
   };
   baseBackgroundColor?: string;
   baseTextColor?: string;
-  baseTextFill?: string;
+  // baseTextFill?: string;
   coverPhoto?: string;
   eventDate?: string;
   fianceeName?: string;
@@ -70,7 +70,6 @@ class DualPanePreview extends React.Component<Props> {
 
   static defaultProps = {
     activeFont: null,
-    fianceeName: 'Juliet',
     theme: null,
     previewOptions: {
       height: 500,
@@ -175,21 +174,38 @@ class DualPanePreview extends React.Component<Props> {
     );
   };
 
+  private getVisibleFields = () => {
+    const { ownerName, fianceeName, eventDate, location, message } = this.props;
+    return {
+      ownerName: ownerName || 'Romeo',
+      fianceeName: fianceeName || 'Juliet',
+      eventDate: eventDate || new Date().toString(),
+      location: location || 'San Francisco, CA',
+      message:
+        message ||
+        'We are so excited to celebrate with you. Help us capture our wedding with Joy.'
+    };
+  };
+
   render() {
     const {
       activeFont,
       baseBackgroundColor,
       baseTextColor,
       coverPhoto,
-      eventDate,
-      fianceeName,
-      location,
-      message,
-      ownerName,
       previewOptions,
       theme
     } = this.props;
-    console.log(ownerName);
+
+    const {
+      ownerName,
+      fianceeName,
+      eventDate,
+      location,
+      message
+    } = this.getVisibleFields();
+
+    console.log(eventDate);
     let {
       leftPaneHeaderRules,
       rightPaneHeaderRules,

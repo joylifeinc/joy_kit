@@ -34,31 +34,56 @@ class CountdownTimer extends React.Component<Props, any> {
   constructor(props) {
     super(props);
 
-    const eventMoment = moment(this.props.eventDate);
-    this.eventMoment = eventMoment;
+    this.eventMoment = moment(this.props.eventDate);
     this.state = {
       displayText: this.getTimeLapseText()
     };
   }
 
   componentWillMount() {
-    this.timeLapseInterval = window.setInterval(() => {
-      this.eventMoment.subtract(1, 'seconds');
-      this.setState({ displayText: this.getTimeLapseText() });
-    }, 1000);
+    this.startCountdown();
   }
+
   componentWillReceiveProps(nextProps) {
     if (this.props.eventDate !== nextProps.eventDate) {
       this.eventMoment = moment(nextProps.eventDate);
+      if (this.isEventMomentValid()) {
+        this.updateDisplayText();
+      } else {
+        this.stopCountdown();
+      }
     }
   }
 
   componentWillUnmount() {
-    window.clearInterval(this.timeLapseInterval);
+    this.stopCountdown();
   }
+
+  private startCountdown = () => {
+    if (this.isEventMomentValid()) {
+      this.timeLapseInterval = window.setInterval(() => {
+        this.todayMoment.add(1, 'seconds');
+        this.updateDisplayText();
+      }, 1000);
+    }
+  };
+
+  private stopCountdown = () => {
+    window.clearInterval(this.timeLapseInterval);
+  };
+
+  private isEventMomentValid = () => {
+    return this.eventMoment && this.eventMoment.isValid();
+  };
 
   private isEventToday = () => {
     return this.eventMoment && this.eventMoment.isSame(this.todayMoment, 'day');
+  };
+
+  private updateDisplayText = () => {
+    this.setState({
+      displayText: this.getTimeLapseText()
+    });
   };
 
   private getDifference = (differenceFormat: DifferenceFormat, difference) => {
@@ -92,7 +117,7 @@ class CountdownTimer extends React.Component<Props, any> {
   };
 
   private getTimeLapseText = () => {
-    if (this.isEventToday()) {
+    if (this.isEventToday() || !this.isEventMomentValid()) {
       return 'Today';
     }
 
