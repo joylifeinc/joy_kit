@@ -12,7 +12,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import { SyntaxHighlight } from '../utils/syntax';
-import { Button, DualPanePreview } from '../../src';
+import { Button, DualPanePreview, SimpleLayoutPreview } from '../../src';
 const JOY_THEMES = require('./joyStyles.json');
 const JOY_FONTS = require('./joyFonts.json');
 
@@ -78,6 +78,14 @@ stories.add('Dual Pane', () => {
       />
       `}
       />
+    </div>
+  );
+});
+
+stories.add('Simple Layout', () => {
+  return (
+    <div>
+      <SimpleLayoutPreview />
     </div>
   );
 });

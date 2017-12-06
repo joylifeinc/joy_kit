@@ -19,7 +19,8 @@ import {
   WeddingName,
   DualPanePreview,
   CountdownTimer,
-  SpinnerLoader
+  SpinnerLoader,
+  SimpleLayoutPreview
 } from './components';
 
 // Styles
@@ -67,6 +68,7 @@ export {
   weddingNameString,
   WeddingName,
   DualPanePreview,
+  SimpleLayoutPreview,
   CountdownTimer,
   Colors,
   SpinnerLoader
