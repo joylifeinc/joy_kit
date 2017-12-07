@@ -4,20 +4,18 @@ import { css } from 'glamor';
 import { WeddingName } from '../../../../';
 
 export interface Props {
-  ownerName: string;
-  fianceeName: string;
+  backgroundColor?: string;
+  title?: string;
 }
 
-const containerRules = css({
-  width: '100%',
-  textAlign: 'center',
-  fontSize: '10px',
-  textTransform: 'uppercase',
-  fontWeight: '600',
-  letterSpacing: '.2px',
-  lineHeight: '36px',
-  minHeight: 36
-});
+const containerRules = backgroundColor =>
+  css({
+    backgroundColor,
+    width: '100%',
+    textAlign: 'center',
+    lineHeight: '36px',
+    minHeight: 36
+  });
 
 const buttonContainerRules = css({
   position: 'absolute',
@@ -47,23 +45,24 @@ const expandButtonRules = css({
   backgroundColor: '#00cd36'
 });
 
-/**
- * Old theme styles
- */
-
-const websiteTitleRules = css(containerRules, {
+const titleRules = css(containerRules, {
+  fontSize: '10px',
+  textTransform: 'uppercase',
+  fontWeight: '600',
+  letterSpacing: '.2px',
   margin: 0
 });
 
-export const DualPanePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
+export const WebPreviewTopBar: React.SFC<Props> = ({
+  backgroundColor,
+  title
+  // ownerName,
+  // fianceeName,
+  // hideWeddingName
+}) => {
   return (
-    <div {...containerRules}>
-      <WeddingName
-        inline
-        owner={ownerName}
-        fiancee={fianceeName}
-        styles={websiteTitleRules}
-      />
+    <div {...containerRules(backgroundColor)}>
+      <div {...titleRules}>{title}</div>
       <div {...buttonContainerRules}>
         <div {...buttonRules} {...closeButtonRules} />
         <div {...buttonRules} {...minimizeButtonRules} />
@@ -71,4 +70,8 @@ export const DualPanePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
       </div>
     </div>
   );
+};
+
+WebPreviewTopBar.defaultProps = {
+  backgroundColor: '#E2E2E4'
 };

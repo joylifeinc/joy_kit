@@ -15,6 +15,7 @@ import { TextBox } from './textBox/TextBox';
 import { TopNav } from './topNav/TopNav';
 import { WeddingName } from './weddingName/WeddingName';
 import { DualPanePreview } from './preview/web/dualPane/DualPanePreview';
+import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 import { SpinnerLoader } from './loader/SpinnerLoader';
 
@@ -39,6 +40,7 @@ export {
   TextBox,
   WeddingName,
   DualPanePreview,
+  SimpleLayoutPreview,
   CountdownTimer,
   SpinnerLoader
 };
