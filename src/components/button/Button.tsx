@@ -28,9 +28,6 @@ export interface Props {
   /** Adds an icon to the beginning of the button content */
   icon?: string;
 
-  /** Whether or not to disable the default margins */
-  disableMargins?: boolean;
-
   /** Overrides the background color for custom one off buttons */
   backgroundColorOverride?: string;
 
@@ -194,7 +191,6 @@ const buttonStyleRules = (
   type: ButtonType,
   uppercase,
   disabled,
-  disableMargins,
   icon,
   backgroundColorOverride,
   colorOverride,
@@ -210,7 +206,6 @@ const buttonStyleRules = (
       fontWeight: '600',
       letterSpacing: '1.5px',
       lineHeight: '40px',
-      margin: !disableMargins && '5px 20px',
       minWidth: '130px',
       padding: '0 25px',
       outline: 'none',
@@ -237,13 +232,12 @@ const buttonStyleRules = (
     disabledRules(disabled, type)
   );
 
-export const Button = ({
+const Button = ({
   children,
   handleOnClick,
   type,
   uppercase = true,
   disabled = false,
-  disableMargins = false,
   icon,
   backgroundColorOverride,
   colorOverride,
@@ -255,7 +249,6 @@ export const Button = ({
       type ? type : 'standard',
       uppercase,
       disabled,
-      disableMargins,
       icon,
       backgroundColorOverride,
       colorOverride,
@@ -271,3 +264,5 @@ export const Button = ({
     {children}
   </button>
 );
+
+export { Button };

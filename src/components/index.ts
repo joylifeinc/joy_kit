@@ -13,6 +13,11 @@ import { PanelNavItem } from './panel/nav/PanelNavItem';
 import { PanelOverlay } from './panel/overlay/PanelOverlay';
 import { TextBox } from './textBox/TextBox';
 import { TopNav } from './topNav/TopNav';
+import { WeddingName } from './weddingName/WeddingName';
+import { DualPanePreview } from './preview/web/dualPane/DualPanePreview';
+import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPreview';
+import { CountdownTimer } from './countdownTimer/CountdownTimer';
+import { SpinnerLoader } from './loader/SpinnerLoader';
 
 // Dropdown is not quite ready for primetime yet
 
@@ -32,5 +37,10 @@ export {
   PanelNavItem,
   Label,
   ActionHeader,
-  TextBox
+  TextBox,
+  WeddingName,
+  DualPanePreview,
+  SimpleLayoutPreview,
+  CountdownTimer,
+  SpinnerLoader
 };

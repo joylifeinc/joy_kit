@@ -4,12 +4,17 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": ".",
-    "lib": ["es6", "es7", "dom"],
+    "lib": ["es6", "es7", "dom", "es2017.object"],
     "noImplicitAny": false,
     "declaration": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "~src/*": ["src/*"] // will enable -> import { ... } from '~src/components'
+    }
   },
   "include": [
       "src/**/*",

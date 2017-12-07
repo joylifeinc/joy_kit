@@ -1,0 +1,1849 @@
+{
+  "antique_lily" : {
+    "css" : {
+      "base" : "/joyStyles3/antique_lily/base.css",
+      "color" : "/joyStyles3/antique_lily/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers...",
+    "name" : "Antique Lily",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/antique_lily/assets/print.png",
+          "templateName" : "antique-lily"
+        }
+      }
+    },
+    "sortKey" : 30,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/antique_lily/assets/tn.png"
+  },
+  "blank" : {
+    "description" : "This is essentially a transparent style",
+    "name" : "Blank",
+    "sortKey" : 0
+  },
+  "bohemian_floral" : {
+    "css" : {
+      "base" : "/joyStyles3/bohemian_floral/base.css",
+      "color" : "/joyStyles3/bohemian_floral/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bohemian Floral",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/bohemian_floral/assets/print.jpg",
+          "templateName" : "bohemian-floral-1"
+        }
+      }
+    },
+    "sortKey" : 31,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/bohemian_floral/assets/tn.jpg"
+  },
+  "branching_out" : {
+    "css" : {
+      "base" : "/joyStyles3/branching_out/base.css",
+      "color" : "/joyStyles3/branching_out/color.css"
+    },
+    "description" : "floral",
+    "name" : "Branching Out",
+    "sortKey" : 93,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/branching_out/assets/tn.jpg"
+  },
+  "bridechilla_confetti" : {
+    "css" : {
+      "base" : "/joyStyles3/bridechilla_confetti/base.css",
+      "color" : "/joyStyles3/bridechilla_confetti/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bridechilla Confetti",
+    "sortKey" : 84,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/bridechilla_confetti/assets/tn.jpg"
+  },
+  "bridechilla_rainbows" : {
+    "css" : {
+      "base" : "/joyStyles3/bridechilla_rainbows/base.css",
+      "color" : "/joyStyles3/bridechilla_rainbows/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bridechilla Rainbows",
+    "sortKey" : 85,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/bridechilla_rainbows/assets/tn.jpg"
+  },
+  "bridechilla_triangles" : {
+    "css" : {
+      "base" : "/joyStyles3/bridechilla_triangles/base.css",
+      "color" : "/joyStyles3/bridechilla_triangles/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bridechilla Angles",
+    "sortKey" : 86,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/bridechilla_triangles/assets/tn.jpg"
+  },
+  "bright_botanical" : {
+    "css" : {
+      "base" : "/joyStyles3/bright_botanical/base.css",
+      "color" : "/joyStyles3/bright_botanical/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bright Botanical",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/bright_botanical/assets/print.png",
+          "templateName" : "bright-botanical"
+        }
+      }
+    },
+    "sortKey" : 32,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/bright_botanical/assets/tn.png"
+  },
+  "bronze_floral_frame" : {
+    "css" : {
+      "base" : "/joyStyles3/bronze_floral_frame/base.css",
+      "color" : "/joyStyles3/bronze_floral_frame/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bronze Floral Frame",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/bronze_floral_frame/assets/print.png",
+          "templateName" : "bronze-floral-frame"
+        }
+      }
+    },
+    "sortKey" : 33,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/bronze_floral_frame/assets/tn.png"
+  },
+  "bronzed_leaves" : {
+    "css" : {
+      "base" : "/joyStyles3/bronzed_leaves/base.css",
+      "color" : "/joyStyles3/bronzed_leaves/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Bronzed Leaves",
+    "sortKey" : 47,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/bronzed_leaves/assets/tn.png"
+  },
+  "bubble_gum" : {
+    "css" : {
+      "base" : "/joyStyles3/bubble_gum/base.css",
+      "color" : "/joyStyles3/bubble_gum/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Leaves, leaves and leaves",
+    "name" : "Bubblegum",
+    "sortKey" : 87,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/bubble_gum/assets/tn.png"
+  },
+  "calligraphic_botanical" : {
+    "css" : {
+      "base" : "/joyStyles3/calligraphic_botanical/base.css",
+      "color" : "/joyStyles3/calligraphic_botanical/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Calligraphic Botanical",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/calligraphic_botanical/assets/print.png",
+          "templateName" : "calligraphic-botanical-2"
+        }
+      }
+    },
+    "sortKey" : 1,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/calligraphic_botanical/assets/tn.png"
+  },
+  "captain_warren_abdul" : {
+    "css" : {
+      "base" : "/joyStyles3/captain_warren_abdul/base.css",
+      "color" : "/joyStyles3/captain_warren_abdul/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Captain Warren Abdul",
+    "sortKey" : 60,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/captain_warren_abdul/assets/tn.png"
+  },
+  "chandelier" : {
+    "css" : {
+      "base" : "/joyStyles3/chandelier/base.css",
+      "color" : "/joyStyles3/chandelier/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Chandelier",
+    "sortKey" : 71,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/chandelier/assets/tn.jpg"
+  },
+  "classic_linen" : {
+    "css" : {
+      "base" : "/joyStyles3/classic_linen/base.css",
+      "color" : "/joyStyles3/classic_linen/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Classic Linen",
+    "sortKey" : 74,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/classic_linen/assets/tn.jpg"
+  },
+  "classico" : {
+    "css" : {
+      "base" : "/joyStyles3/classico/base.css",
+      "color" : "/joyStyles3/classico/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Classico",
+    "sortKey" : 75,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/classico/assets/tn.jpg"
+  },
+  "cosmic_night" : {
+    "css" : {
+      "base" : "/joyStyles3/cosmic_night/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Cosmic Night",
+    "sortKey" : 88,
+    "thumbnail" : "/joyStyles3/cosmic_night/assets/tn.jpg"
+  },
+  "cotton_candy" : {
+    "css" : {
+      "base" : "/joyStyles3/cotton_candy/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Cotton Candy",
+    "sortKey" : 61,
+    "thumbnail" : "/joyStyles3/cotton_candy/assets/tn.jpg"
+  },
+  "crystal_dawn" : {
+    "css" : {
+      "base" : "/joyStyles3/crystal_dawn/base.css",
+      "color" : "/joyStyles3/crystal_dawn/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Crystal Dawn",
+    "sortKey" : 56,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/crystal_dawn/assets/tn.jpg"
+  },
+  "crystal_dusk" : {
+    "css" : {
+      "base" : "/joyStyles3/crystal_dusk/base.css",
+      "color" : "/joyStyles3/crystal_dusk/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Crystal Dusk",
+    "sortKey" : 57,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/crystal_dusk/assets/tn.jpg"
+  },
+  "dark_thorn" : {
+    "css" : {
+      "base" : "/joyStyles3/dark_thorn/base.css",
+      "color" : "/joyStyles3/dark_thorn/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Dark Thorn",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/dark_thorn/assets/print.png",
+          "templateName" : "dark-thorn"
+        }
+      }
+    },
+    "sortKey" : 2,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/dark_thorn/assets/tn.jpg"
+  },
+  "dream_wash" : {
+    "css" : {
+      "base" : "/joyStyles3/dream_wash/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Dream Wash",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/dream_wash/assets/print.png",
+          "templateName" : "dream-wash"
+        }
+      }
+    },
+    "sortKey" : 62,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/dream_wash/assets/tn.jpg"
+  },
+  "earthly_organic" : {
+    "css" : {
+      "base" : "/joyStyles3/earthly_organic/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Earthly Organic",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/earthly_organic/assets/print.jpg",
+          "templateName" : "earthy-organic"
+        }
+      }
+    },
+    "sortKey" : 15,
+    "supports" : {
+      "color" : false,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/earthly_organic/assets/tn.jpg"
+  },
+  "edgy_curtain" : {
+    "css" : {
+      "base" : "/joyStyles3/edgy_curtain/base.css",
+      "color" : "/joyStyles3/edgy_curtain/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Edgy Curtain",
+    "sortKey" : 76,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/edgy_curtain/assets/tn.png"
+  },
+  "elegance" : {
+    "css" : {
+      "base" : "/joyStyles3/elegance/base.css",
+      "color" : "/joyStyles3/elegance/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Elegance",
+    "sortKey" : 77,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/elegance/assets/tn.jpg"
+  },
+  "elegant_industrial" : {
+    "css" : {
+      "base" : "/joyStyles3/elegant_industrial/base.css",
+      "color" : "/joyStyles3/elegant_industrial/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Elegant Industrial",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/elegant_industrial/assets/print.jpg",
+          "templateName" : "elegant-industrial"
+        }
+      }
+    },
+    "sortKey" : 16,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/elegant_industrial/assets/tn.jpg"
+  },
+  "elegant_oasis" : {
+    "css" : {
+      "base" : "/joyStyles3/elegant_oasis/base.css",
+      "color" : "/joyStyles3/elegant_oasis/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Elegant Oasis",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/elegant_oasis/assets/print.png",
+          "templateName" : "elegant-oasis"
+        }
+      }
+    },
+    "sortKey" : 34,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/elegant_oasis/assets/tn.png"
+  },
+  "elegant_paper" : {
+    "css" : {
+      "base" : "/joyStyles3/elegant_paper/base.css",
+      "color" : "/joyStyles3/elegant_paper/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Elegant Paper",
+    "sortKey" : 78,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/elegant_paper/assets/tn.jpg"
+  },
+  "elegant_paradise" : {
+    "css" : {
+      "base" : "/joyStyles3/elegant_paradise/base.css",
+      "color" : "/joyStyles3/elegant_paradise/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Elegant Paradise",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/elegant_paradise/assets/print.png",
+          "templateName" : "elegant-paradise"
+        }
+      }
+    },
+    "sortKey" : 35,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/elegant_paradise/assets/tn.png"
+  },
+  "endless_time" : {
+    "css" : {
+      "base" : "/joyStyles3/endless_time/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Endless Time",
+    "sortKey" : 79,
+    "thumbnail" : "/joyStyles3/endless_time/assets/tn.jpg"
+  },
+  "falling_leaves" : {
+    "css" : {
+      "base" : "/joyStyles3/falling_leaves/base.css",
+      "color" : "/joyStyles3/falling_leaves/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Falling Leaves",
+    "sortKey" : 48,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/falling_leaves/assets/tn.png"
+  },
+  "fancy_curtain" : {
+    "css" : {
+      "base" : "/joyStyles3/fancy_curtain/base.css",
+      "color" : "/joyStyles3/fancy_curtain/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Fancy Curtain",
+    "sortKey" : 80,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/fancy_curtain/assets/tn.png"
+  },
+  "fern_botanical" : {
+    "css" : {
+      "base" : "/joyStyles3/fern_botanical/base.css",
+      "color" : "/joyStyles3/fern_botanical/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Fern Botanical",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/fern_botanical/assets/print.jpg",
+          "templateName" : "fern-botanical"
+        }
+      }
+    },
+    "sortKey" : 3,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/fern_botanical/assets/tn.jpg"
+  },
+  "fionas_flowers" : {
+    "css" : {
+      "base" : "/joyStyles3/fionas_flowers/base.css",
+      "color" : "/joyStyles3/fionas_flowers/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Fiona's Flowers",
+    "sortKey" : 36,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/fionas_flowers/assets/tn.png"
+  },
+  "first_jasmine" : {
+    "css" : {
+      "base" : "/joyStyles3/first_jasmine/base.css",
+      "color" : "/joyStyles3/first_jasmine/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "First Jasmine",
+    "sortKey" : 37,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/first_jasmine/assets/tn.jpg"
+  },
+  "floral_lace" : {
+    "css" : {
+      "base" : "/joyStyles3/floral_lace/base.css",
+      "color" : "/joyStyles3/floral_lace/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Floral Lace",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/floral_lace/assets/print.jpg",
+          "templateName" : "floral-lace"
+        }
+      }
+    },
+    "sortKey" : 26,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/floral_lace/assets/tn.jpg"
+  },
+  "formal_ampersand" : {
+    "css" : {
+      "base" : "/joyStyles3/formal_ampersand/base.css",
+      "color" : "/joyStyles3/formal_ampersand/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Formal Ampersand",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/formal_ampersand/assets/print.png",
+          "templateName" : "formal-ampersand"
+        }
+      }
+    },
+    "sortKey" : 17,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/formal_ampersand/assets/tn.png"
+  },
+  "gold_vines" : {
+    "css" : {
+      "base" : "/joyStyles3/gold_vines/base.css",
+      "color" : "/joyStyles3/gold_vines/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Gold Vines",
+    "sortKey" : 49,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/gold_vines/assets/tn.jpg"
+  },
+  "golden_haze" : {
+    "css" : {
+      "base" : "/joyStyles3/golden_haze/base.css",
+      "color" : "/joyStyles3/golden_haze/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Golden Haze",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/golden_haze/assets/print.png",
+          "templateName" : "golden-haze"
+        }
+      }
+    },
+    "sortKey" : 58,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/golden_haze/assets/tn.jpg"
+  },
+  "graphite" : {
+    "css" : {
+      "base" : "/joyStyles3/graphite/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Graphite",
+    "sortKey" : 63,
+    "thumbnail" : "/joyStyles3/graphite/assets/tn.jpg"
+  },
+  "illustrated_book" : {
+    "css" : {
+      "base" : "/joyStyles3/illustrated_book/base.css",
+      "color" : "/joyStyles3/illustrated_book/color.css"
+    },
+    "description" : "custom",
+    "name" : "Illustrated Book",
+    "sortKey" : 96,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/illustrated_book/assets/tn.jpg"
+  },
+  "lavendar_yard" : {
+    "css" : {
+      "base" : "/joyStyles3/lavendar_yard/base.css",
+      "color" : "/joyStyles3/lavendar_yard/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Lavender Yard",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/lavendar_yard/assets/print.png",
+          "templateName" : "lavender-yard"
+        }
+      }
+    },
+    "sortKey" : 4,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/lavendar_yard/assets/tn.png"
+  },
+  "lemons_and_flowers" : {
+    "css" : {
+      "base" : "/joyStyles3/lemons_and_flowers/base.css",
+      "color" : "/joyStyles3/lemons_and_flowers/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Lemons and Flowers",
+    "sortKey" : 5,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/lemons_and_flowers/assets/tn.png"
+  },
+  "light_snow" : {
+    "css" : {
+      "base" : "/joyStyles3/light_snow/base.css",
+      "color" : "/joyStyles3/light_snow/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Light Snow",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/light_snow/assets/print.png",
+          "templateName" : "light-snow"
+        }
+      }
+    },
+    "sortKey" : 52,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/light_snow/assets/tn.jpg"
+  },
+  "lovebirds" : {
+    "css" : {
+      "base" : "/joyStyles3/lovebirds/base.css",
+      "color" : "/joyStyles3/lovebirds/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Lovebirds",
+    "sortKey" : 64,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/lovebirds/assets/tn.png"
+  },
+  "lush_greenery" : {
+    "css" : {
+      "base" : "/joyStyles3/lush_greenery/base.css",
+      "color" : "/joyStyles3/lush_greenery/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Lush Greenery",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/lush_greenery/assets/print.jpg",
+          "templateName" : "lush-greenery"
+        }
+      }
+    },
+    "sortKey" : 6,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/lush_greenery/assets/tn.jpg"
+  },
+  "metallic_wreath" : {
+    "css" : {
+      "base" : "/joyStyles3/metallic_wreath/base.css",
+      "color" : "/joyStyles3/metallic_wreath/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Metallic Wreath",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/metallic_wreath/assets/print.jpg",
+          "templateName" : "metallic-wreath"
+        }
+      }
+    },
+    "sortKey" : 50,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/metallic_wreath/assets/tn.jpg"
+  },
+  "midnight" : {
+    "css" : {
+      "base" : "/joyStyles3/midnight/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Midnight",
+    "sortKey" : 81,
+    "thumbnail" : "/joyStyles3/midnight/assets/tn.jpg"
+  },
+  "midnight_peony" : {
+    "css" : {
+      "base" : "/joyStyles3/midnight_peony/base.css",
+      "color" : "/joyStyles3/midnight_peony/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Midnight Peony",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/midnight_peony/assets/print.jpg",
+          "templateName" : "midnight-peony"
+        }
+      }
+    },
+    "sortKey" : 38,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/midnight_peony/assets/tn.jpg"
+  },
+  "mod_marble" : {
+    "css" : {
+      "base" : "/joyStyles3/mod_marble/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Mod Marble",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/mod_marble/assets/print.png",
+          "templateName" : "mod-marble"
+        }
+      }
+    },
+    "sortKey" : 18,
+    "supports" : {
+      "color" : false,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/mod_marble/assets/tn.png"
+  },
+  "modern_bohemian" : {
+    "css" : {
+      "base" : "/joyStyles3/modern_bohemian/base.css",
+      "color" : "/joyStyles3/modern_bohemian/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Modern Bohemian",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/modern_bohemian/assets/print.png",
+          "templateName" : "modern-bohemian"
+        }
+      }
+    },
+    "sortKey" : 19,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/modern_bohemian/assets/tn.png"
+  },
+  "modern_branches" : {
+    "css" : {
+      "base" : "/joyStyles3/modern_branches/base.css",
+      "color" : "/joyStyles3/modern_branches/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Modern Branches",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/modern_branches/assets/print.jpg",
+          "templateName" : "modern-branches"
+        }
+      }
+    },
+    "sortKey" : 82,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/modern_branches/assets/tn.jpg"
+  },
+  "modern_brushstrokes" : {
+    "css" : {
+      "base" : "/joyStyles3/modern_brushstrokes/base.css",
+      "color" : "/joyStyles3/modern_brushstrokes/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Modern Brushstrokes",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/modern_brushstrokes/assets/print.jpg",
+          "templateName" : "modern-brushstrokes"
+        }
+      }
+    },
+    "sortKey" : 20,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/modern_brushstrokes/assets/tn.jpg"
+  },
+  "modern_marble" : {
+    "css" : {
+      "base" : "/joyStyles3/modern_marble/base.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Modern Marble",
+    "sortKey" : 21,
+    "supports" : {
+      "color" : false
+    },
+    "thumbnail" : "/joyStyles3/modern_marble/assets/tn.jpg"
+  },
+  "mount_baker" : {
+    "css" : {
+      "base" : "/joyStyles3/mount_baker/base.css",
+      "color" : "/joyStyles3/mount_baker/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Mount Baker",
+    "sortKey" : 44,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/mount_baker/assets/tn.jpg"
+  },
+  "muted_floral" : {
+    "css" : {
+      "base" : "/joyStyles3/muted_floral/base.css",
+      "color" : "/joyStyles3/muted_floral/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Muted Floral",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/muted_floral/assets/print.jpg",
+          "templateName" : "muted-floral"
+        }
+      }
+    },
+    "sortKey" : 7,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/muted_floral/assets/tn.jpg"
+  },
+  "new_york_lights" : {
+    "css" : {
+      "base" : "/joyStyles3/new_york_lights/base.css",
+      "color" : "/joyStyles3/new_york_lights/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "New York Lights",
+    "sortKey" : 89,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/new_york_lights/assets/tn.png"
+  },
+  "northwest" : {
+    "css" : {
+      "base" : "/joyStyles3/northwest/base.css",
+      "color" : "/joyStyles3/northwest/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "The Northwest",
+    "sortKey" : 45,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/northwest/assets/tn.jpg"
+  },
+  "painted_pink" : {
+    "css" : {
+      "base" : "/joyStyles3/painted_pink/base.css",
+      "color" : "/joyStyles3/painted_pink/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Painted Pink",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/painted_pink/assets/print.jpg",
+          "templateName" : "painted-pink"
+        }
+      }
+    },
+    "sortKey" : 22,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/painted_pink/assets/tn.jpg"
+  },
+  "painterly_blooms_one" : {
+    "css" : {
+      "base" : "/joyStyles3/painterly_blooms_one/base.css",
+      "color" : "/joyStyles3/painterly_blooms_one/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Painterly Blooms One",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/painterly_blooms_one/assets/print.png",
+          "templateName" : "painterly-blooms"
+        }
+      }
+    },
+    "sortKey" : 8,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/painterly_blooms_one/assets/tn.png"
+  },
+  "painterly_blooms_two" : {
+    "css" : {
+      "base" : "/joyStyles3/painterly_blooms_two/base.css",
+      "color" : "/joyStyles3/painterly_blooms_two/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Painterly Blooms Two",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/painterly_blooms_two/assets/print.png",
+          "templateName" : "painterly-blooms"
+        }
+      }
+    },
+    "sortKey" : 9,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/painterly_blooms_two/assets/tn.png"
+  },
+  "painterly_bohemian" : {
+    "css" : {
+      "base" : "/joyStyles3/painterly_bohemian/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Painterly Bohemian",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/painterly_bohemian/assets/print.jpg",
+          "templateName" : "painterly-bohemian"
+        }
+      }
+    },
+    "sortKey" : 10,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/painterly_bohemian/assets/tn.jpg"
+  },
+  "painterly_gem" : {
+    "css" : {
+      "base" : "/joyStyles3/painterly_gem/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Painterly Gem",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/painterly_gem/assets/print.jpg",
+          "templateName" : "painterly-gem"
+        }
+      }
+    },
+    "sortKey" : 23,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/painterly_gem/assets/tn.jpg"
+  },
+  "palace" : {
+    "css" : {
+      "base" : "/joyStyles3/palace/base.css",
+      "color" : "/joyStyles3/palace/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Palace",
+    "sortKey" : 72,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/palace/assets/tn.png"
+  },
+  "papel_picado" : {
+    "css" : {
+      "base" : "/joyStyles3/papel_picado/base.css",
+      "color" : "/joyStyles3/papel_picado/color.css"
+    },
+    "description" : "nation",
+    "name" : "Papel Picado",
+    "sortKey" : 95,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/papel_picado/assets/tn.jpg"
+  },
+  "porcelain_breeze" : {
+    "css" : {
+      "base" : "/joyStyles3/porcelain_breeze/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Porcelain Breeze",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/porcelain_breeze/assets/print.png",
+          "templateName" : "porcelain-breeze"
+        }
+      }
+    },
+    "sortKey" : 65,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/porcelain_breeze/assets/tn.jpg"
+  },
+  "queens_palace" : {
+    "css" : {
+      "base" : "/joyStyles3/queens_palace/base.css",
+      "color" : "/joyStyles3/queens_palace/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Queens Palace",
+    "sortKey" : 73,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/queens_palace/assets/tn.jpg"
+  },
+  "raspberry_sherbet" : {
+    "css" : {
+      "base" : "/joyStyles3/raspberry_sherbet/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Raspberry Sherbet",
+    "sortKey" : 66,
+    "thumbnail" : "/joyStyles3/raspberry_sherbet/assets/tn.jpg"
+  },
+  "romantic_garland" : {
+    "css" : {
+      "base" : "/joyStyles3/romantic_garland/base.css",
+      "color" : "/joyStyles3/romantic_garland/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Romantic Garland",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/romantic_garland/assets/print.png",
+          "templateName" : "romantic-garland"
+        }
+      }
+    },
+    "sortKey" : 11,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/romantic_garland/assets/tn.png"
+  },
+  "romantic_succulents" : {
+    "css" : {
+      "base" : "/joyStyles3/romantic_succulents/base.css",
+      "color" : "/joyStyles3/romantic_succulents/color.css"
+    },
+    "description" : "floral",
+    "name" : "Romantic Succulents",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/romantic_succulents/assets/print.jpg",
+          "templateName" : "romantic-succulents"
+        }
+      }
+    },
+    "sortKey" : 12,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/romantic_succulents/assets/tn.jpg"
+  },
+  "rose_sunset" : {
+    "css" : {
+      "base" : "/joyStyles3/rose_sunset/base.css",
+      "color" : "/joyStyles3/rose_sunset/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Rose Sunset",
+    "sortKey" : 67,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/rose_sunset/assets/tn.jpg"
+  },
+  "rustic_elegance" : {
+    "css" : {
+      "base" : "/joyStyles3/rustic_elegance/base.css",
+      "color" : "/joyStyles3/rustic_elegance/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Rustic Elegance",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/rustic_elegance/assets/print.jpg",
+          "templateName" : "rustic-elegance"
+        }
+      }
+    },
+    "sortKey" : 13,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/rustic_elegance/assets/tn.jpg"
+  },
+  "rustic_wreath" : {
+    "css" : {
+      "base" : "/joyStyles3/rustic_wreath/base.css",
+      "color" : "/joyStyles3/rustic_wreath/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Rustic Wreath",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/rustic_wreath/assets/print.png",
+          "templateName" : "rustic-wreath-4"
+        }
+      }
+    },
+    "sortKey" : 13,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/rustic_wreath/assets/tn.png"
+  },
+  "san_francisco" : {
+    "css" : {
+      "base" : "/joyStyles3/san_francisco/base.css",
+      "color" : "/joyStyles3/san_francisco/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "San Francisco",
+    "sortKey" : 90,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/san_francisco/assets/tn.png"
+  },
+  "sea_salt" : {
+    "css" : {
+      "base" : "/joyStyles3/sea_salt/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Sea Salt",
+    "sortKey" : 68,
+    "thumbnail" : "/joyStyles3/sea_salt/assets/tn.jpg"
+  },
+  "silver_haze" : {
+    "css" : {
+      "base" : "/joyStyles3/silver_haze/base.css",
+      "color" : "/joyStyles3/silver_haze/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Silver Haze",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/silver_haze/assets/print.png",
+          "templateName" : "silver-haze"
+        }
+      }
+    },
+    "sortKey" : 59,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/silver_haze/assets/tn.jpg"
+  },
+  "simple_rustic" : {
+    "css" : {
+      "base" : "/joyStyles3/simple_rustic/base.css",
+      "color" : "/joyStyles3/simple_rustic/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Simple Rustic",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/simple_rustic/assets/print.png",
+          "templateName" : "simple-rustic"
+        }
+      }
+    },
+    "sortKey" : 24,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/simple_rustic/assets/tn.png"
+  },
+  "spring_flowers" : {
+    "css" : {
+      "base" : "/joyStyles3/spring_flowers/base.css",
+      "color" : "/joyStyles3/spring_flowers/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Spring Flowers",
+    "sortKey" : 39,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/spring_flowers/assets/tn.png"
+  },
+  "spring_pink" : {
+    "css" : {
+      "base" : "/joyStyles3/spring_pink/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Spring Pink",
+    "sortKey" : 40,
+    "thumbnail" : "/joyStyles3/spring_pink/assets/tn.png"
+  },
+  "star_gazing" : {
+    "css" : {
+      "base" : "/joyStyles3/star_gazing/base.css",
+      "color" : "/joyStyles3/star_gazing/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Star Gazing",
+    "sortKey" : 53,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/star_gazing/assets/tn.jpg"
+  },
+  "strung_in_love" : {
+    "css" : {
+      "base" : "/joyStyles3/strung_in_love/base.css",
+      "color" : "/joyStyles3/strung_in_love/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Strung In Love",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/strung_in_love/assets/print.png",
+          "templateName" : "strung-in-love"
+        }
+      }
+    },
+    "sortKey" : 54,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/strung_in_love/assets/tn.jpg"
+  },
+  "strung_lights" : {
+    "css" : {
+      "base" : "/joyStyles3/strung_lights/base.css",
+      "color" : "/joyStyles3/strung_lights/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Strung Lights",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/strung_lights/assets/print.jpg",
+          "templateName" : "strung-lights"
+        }
+      }
+    },
+    "sortKey" : 55,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/strung_lights/assets/tn.jpg"
+  },
+  "summer_linen" : {
+    "css" : {
+      "base" : "/joyStyles3/summer_linen/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Summer Linen",
+    "sortKey" : 83,
+    "thumbnail" : "/joyStyles3/summer_linen/assets/tn.jpg"
+  },
+  "toran" : {
+    "css" : {
+      "base" : "/joyStyles3/toran/base.css",
+      "color" : "/joyStyles3/toran/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Toran",
+    "sortKey" : 91,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/toran/assets/tn.jpg"
+  },
+  "vintage_flowers" : {
+    "css" : {
+      "base" : "/joyStyles3/vintage_flowers/base.css",
+      "color" : "/joyStyles3/vintage_flowers/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Vintage Flowers",
+    "sortKey" : 41,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/vintage_flowers/assets/tn.png"
+  },
+  "vintage_mountain" : {
+    "css" : {
+      "base" : "/joyStyles3/vintage_mountain/base.css",
+      "color" : "/joyStyles3/vintage_mountain/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Vintage Mountain",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/vintage_mountain/assets/print.png",
+          "templateName" : "vintage-mountain"
+        }
+      }
+    },
+    "sortKey" : 46,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/vintage_mountain/assets/tn.jpg"
+  },
+  "vintage_sunset" : {
+    "css" : {
+      "base" : "/joyStyles3/vintage_sunset/base.css"
+    },
+    "description" : "beach",
+    "name" : "Vintage Sunset",
+    "sortKey" : 93,
+    "thumbnail" : "/joyStyles3/vintage_sunset/assets/tn.jpg"
+  },
+  "watercolor_beach" : {
+    "css" : {
+      "base" : "/joyStyles3/watercolor_beach/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Watercolor Beach",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/watercolor_beach/assets/print.jpg",
+          "templateName" : "watercolor-beach"
+        }
+      }
+    },
+    "sortKey" : 69,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/watercolor_beach/assets/tn.jpg"
+  },
+  "watercolor_beach_two" : {
+    "css" : {
+      "base" : "/joyStyles3/watercolor_beach_two/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Watercolor Beach 2",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/watercolor_beach_two/assets/print.jpg",
+          "templateName" : "watercolor-beach"
+        }
+      }
+    },
+    "sortKey" : 70,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/watercolor_beach_two/assets/tn.jpg"
+  },
+  "watercolor_cactus" : {
+    "css" : {
+      "base" : "/joyStyles3/watercolor_cactus/base.css",
+      "color" : "/joyStyles3/watercolor_cactus/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Watercolor Cactus",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/watercolor_cactus/assets/print.jpg",
+          "templateName" : "watercolor-cactus"
+        }
+      }
+    },
+    "sortKey" : 14,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/watercolor_cactus/assets/tn.jpg"
+  },
+  "we_do" : {
+    "css" : {
+      "base" : "/joyStyles3/we_do/base.css",
+      "color" : "/joyStyles3/we_do/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "We Do",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/we_do/assets/print.png",
+          "templateName" : "we-do"
+        }
+      }
+    },
+    "sortKey" : 25,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/we_do/assets/tn.png"
+  },
+  "wonderferris" : {
+    "css" : {
+      "base" : "/joyStyles3/wonderferris/base.css",
+      "color" : "/joyStyles3/wonderferris/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Wonderferris",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/wonderferris/assets/print.png",
+          "templateName" : "wonderferris"
+        }
+      }
+    },
+    "sortKey" : 42,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/wonderferris/assets/tn.jpg"
+  },
+  "woodgrain_lace" : {
+    "css" : {
+      "base" : "/joyStyles3/woodgrain_lace/base.css",
+      "color" : "/joyStyles3/woodgrain_lace/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Woodgrain Lace",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/woodgrain_lace/assets/print.jpg",
+          "templateName" : "woodgrain-lace"
+        }
+      }
+    },
+    "sortKey" : 27,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/woodgrain_lace/assets/tn.jpg"
+  },
+  "woodgrain_lace_wood" : {
+    "css" : {
+      "base" : "/joyStyles3/woodgrain_lace_wood/base.css"
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Woodgrain Lace 2",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/woodgrain_lace_wood/assets/print.jpg",
+          "templateName" : "woodgrain-lace"
+        }
+      }
+    },
+    "sortKey" : 28,
+    "supports" : {
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/woodgrain_lace_wood/assets/tn.jpg"
+  },
+  "woodsy_wreath" : {
+    "css" : {
+      "base" : "/joyStyles3/woodsy_wreath/base.css",
+      "color" : "/joyStyles3/woodsy_wreath/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Woodsy Wreath",
+    "prints" : {
+      "providers" : {
+        "com_dot_elli" : {
+          "stockPreviewUrl" : "/joyStyles3/woodsy_wreath/assets/print.jpg",
+          "templateName" : "woodsy-wreath"
+        }
+      }
+    },
+    "sortKey" : 29,
+    "supports" : {
+      "color" : true,
+      "prints" : true
+    },
+    "thumbnail" : "/joyStyles3/woodsy_wreath/assets/tn.jpg"
+  },
+  "wreath" : {
+    "css" : {
+      "base" : "/joyStyles3/wreath/base.css",
+      "color" : "/joyStyles3/wreath/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Alpine Wreath",
+    "sortKey" : 51,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/wreath/assets/tn.png"
+  },
+  "zen_flower" : {
+    "css" : {
+      "base" : "/joyStyles3/zen_flower/base.css",
+      "color" : "/joyStyles3/zen_flower/color.css"
+    },
+    "defaults" : {
+      "color" : true
+    },
+    "description" : "Flowers, flowers and flowers",
+    "name" : "Zen Flower",
+    "sortKey" : 43,
+    "supports" : {
+      "color" : true
+    },
+    "thumbnail" : "/joyStyles3/zen_flower/assets/tn.jpg"
+  }
+}
