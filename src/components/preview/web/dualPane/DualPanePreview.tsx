@@ -3,7 +3,12 @@ import { css } from 'glamor';
 import { margin } from 'glamor/utils';
 import { Observable, Subscription } from 'rxjs';
 
-import { WeddingName, CountdownTimer, Fragments } from '../../../../';
+import {
+  WeddingName,
+  CountdownTimer,
+  Fragments,
+  weddingNameString
+} from '../../../../';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
 import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
 import { DualPanePreviewRight } from './components/DualPanePreviewRight';
@@ -34,6 +39,7 @@ export interface Props {
   message?: string;
   ownerName?: string;
   theme?: string;
+  title?: string;
   previewOptions?: {
     height?: number;
     width?: number;
@@ -150,7 +156,8 @@ class DualPanePreview extends React.Component<Props> {
       baseTextColor,
       coverPhoto,
       previewOptions,
-      theme
+      theme,
+      title
     } = this.props;
 
     const {
@@ -175,7 +182,7 @@ class DualPanePreview extends React.Component<Props> {
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
           >
-            <WebPreviewTopBar ownerName={ownerName} fianceeName={fianceeName} />
+            <WebPreviewTopBar title={title} />
             <div {...contentRules}>
               <DualPanePreviewLeft
                 coverPhoto={coverPhoto}

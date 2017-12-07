@@ -12,7 +12,12 @@ import {
 } from '@storybook/addon-knobs';
 
 import { SyntaxHighlight } from '../utils/syntax';
-import { Button, DualPanePreview, SimpleLayoutPreview } from '../../src';
+import {
+  Button,
+  DualPanePreview,
+  SimpleLayoutPreview,
+  weddingNameString
+} from '../../src';
 const JOY_THEMES = require('./joyStyles.json');
 const JOY_FONTS = require('./joyFonts.json');
 
@@ -61,6 +66,7 @@ stories.add('Dual Pane', () => {
           ownerName={ownerName}
           fianceeName={fianceeName}
           theme={theme}
+          title={weddingNameString(ownerName, fianceeName)}
         />
       </div>
       <SyntaxHighlight
@@ -83,10 +89,6 @@ stories.add('Dual Pane', () => {
 });
 
 stories.add('Simple Layout', () => {
-  // const coverPhoto = text(
-  //   'Cover Photo',
-  //   'https://s3-us-west-2.amazonaws.com/joy-public-assets-bucket/ktran-development/hero_jesslynn_daniel.jpg'
-  // );
   return (
     <div>
       <SimpleLayoutPreview />

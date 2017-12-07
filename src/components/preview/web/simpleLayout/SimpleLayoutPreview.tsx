@@ -143,7 +143,7 @@ export const SimpleLayoutPreview: React.SFC<Props> = ({
   return (
     <PreviewWrapper for="simpleLayout" previewOptions={previewOptions}>
       <div {...previewRules(previewOptions.height, previewOptions.width)}>
-        <WebPreviewTopBar hideWeddingName />
+        <WebPreviewTopBar />
         <div {...contentRules}>
           <div>
             <WeddingName owner={ownerName} fiancee={fianceeName} />

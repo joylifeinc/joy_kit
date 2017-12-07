@@ -5,9 +5,7 @@ import { WeddingName } from '../../../../';
 
 export interface Props {
   backgroundColor?: string;
-  ownerName?: string;
-  fianceeName?: string;
-  hideWeddingName?: boolean;
+  title?: string;
 }
 
 const containerRules = backgroundColor =>
@@ -47,11 +45,7 @@ const expandButtonRules = css({
   backgroundColor: '#00cd36'
 });
 
-/**
- * Old theme styles
- */
-
-const websiteTitleRules = css(containerRules, {
+const titleRules = css(containerRules, {
   fontSize: '10px',
   textTransform: 'uppercase',
   fontWeight: '600',
@@ -61,20 +55,14 @@ const websiteTitleRules = css(containerRules, {
 
 export const WebPreviewTopBar: React.SFC<Props> = ({
   backgroundColor,
-  ownerName,
-  fianceeName,
-  hideWeddingName
+  title
+  // ownerName,
+  // fianceeName,
+  // hideWeddingName
 }) => {
   return (
     <div {...containerRules(backgroundColor)}>
-      {!hideWeddingName && (
-        <WeddingName
-          inline
-          owner={ownerName}
-          fiancee={fianceeName}
-          styles={websiteTitleRules}
-        />
-      )}
+      <div {...titleRules}>{title}</div>
       <div {...buttonContainerRules}>
         <div {...buttonRules} {...closeButtonRules} />
         <div {...buttonRules} {...minimizeButtonRules} />
@@ -85,6 +73,5 @@ export const WebPreviewTopBar: React.SFC<Props> = ({
 };
 
 WebPreviewTopBar.defaultProps = {
-  backgroundColor: '#E2E2E4',
-  hideWeddingName: false
+  backgroundColor: '#E2E2E4'
 };
