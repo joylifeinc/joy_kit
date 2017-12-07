@@ -17,7 +17,7 @@ export interface Props {
 
 const baseRules = css({
   fontWeight: 100,
-  marginSize: 0
+  margin: 0
 });
 
 const getNameOrder = (
@@ -53,7 +53,7 @@ const shouldHaveTrailingAmpersand = (
 const WeddingName: React.SFC<Props> = ({
   className,
   id,
-  owner,
+  owner = '',
   fiancee = '',
   inline,
   styles,

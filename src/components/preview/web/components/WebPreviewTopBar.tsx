@@ -4,20 +4,20 @@ import { css } from 'glamor';
 import { WeddingName } from '../../../../';
 
 export interface Props {
-  ownerName: string;
-  fianceeName: string;
+  backgroundColor?: string;
+  ownerName?: string;
+  fianceeName?: string;
+  hideWeddingName?: boolean;
 }
 
-const containerRules = css({
-  width: '100%',
-  textAlign: 'center',
-  fontSize: '10px',
-  textTransform: 'uppercase',
-  fontWeight: '600',
-  letterSpacing: '.2px',
-  lineHeight: '36px',
-  minHeight: 36
-});
+const containerRules = backgroundColor =>
+  css({
+    backgroundColor,
+    width: '100%',
+    textAlign: 'center',
+    lineHeight: '36px',
+    minHeight: 36
+  });
 
 const buttonContainerRules = css({
   position: 'absolute',
@@ -52,18 +52,29 @@ const expandButtonRules = css({
  */
 
 const websiteTitleRules = css(containerRules, {
+  fontSize: '10px',
+  textTransform: 'uppercase',
+  fontWeight: '600',
+  letterSpacing: '.2px',
   margin: 0
 });
 
-export const DualPanePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
+export const WebPreviewTopBar: React.SFC<Props> = ({
+  backgroundColor,
+  ownerName,
+  fianceeName,
+  hideWeddingName
+}) => {
   return (
-    <div {...containerRules}>
-      <WeddingName
-        inline
-        owner={ownerName}
-        fiancee={fianceeName}
-        styles={websiteTitleRules}
-      />
+    <div {...containerRules(backgroundColor)}>
+      {!hideWeddingName && (
+        <WeddingName
+          inline
+          owner={ownerName}
+          fiancee={fianceeName}
+          styles={websiteTitleRules}
+        />
+      )}
       <div {...buttonContainerRules}>
         <div {...buttonRules} {...closeButtonRules} />
         <div {...buttonRules} {...minimizeButtonRules} />
@@ -71,4 +82,9 @@ export const DualPanePreviewTopBar = ({ ownerName, fianceeName }: Props) => {
       </div>
     </div>
   );
+};
+
+WebPreviewTopBar.defaultProps = {
+  backgroundColor: '#E2E2E4',
+  hideWeddingName: false
 };

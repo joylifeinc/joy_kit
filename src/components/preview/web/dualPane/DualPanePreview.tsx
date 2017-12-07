@@ -4,11 +4,12 @@ import { margin } from 'glamor/utils';
 import { Observable, Subscription } from 'rxjs';
 
 import { WeddingName, CountdownTimer, Fragments } from '../../../../';
-import { DualPanePreviewTopBar } from './components/DualPanePreviewTopBar';
+import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
 import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
 import { DualPanePreviewRight } from './components/DualPanePreviewRight';
 
 import { PreviewWrapper } from '../PreviewWrapper';
+import { getDefaultEventFields } from '../util';
 
 export interface Props {
   activeFont?: {
@@ -133,15 +134,13 @@ class DualPanePreview extends React.Component<Props> {
 
   private getVisibleFields = () => {
     const { ownerName, fianceeName, eventDate, location, message } = this.props;
-    return {
-      ownerName: ownerName || 'Romeo',
-      fianceeName: fianceeName || 'Juliet',
-      eventDate: eventDate || new Date().toString(),
-      location: location || 'San Francisco, CA',
-      message:
-        message ||
-        'We are so excited to celebrate with you. Help us capture our wedding with Joy.'
-    };
+    return getDefaultEventFields(
+      ownerName,
+      fianceeName,
+      eventDate,
+      location,
+      message
+    );
   };
 
   render() {
@@ -176,10 +175,7 @@ class DualPanePreview extends React.Component<Props> {
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
           >
-            <DualPanePreviewTopBar
-              ownerName={ownerName}
-              fianceeName={fianceeName}
-            />
+            <WebPreviewTopBar ownerName={ownerName} fianceeName={fianceeName} />
             <div {...contentRules}>
               <DualPanePreviewLeft
                 coverPhoto={coverPhoto}

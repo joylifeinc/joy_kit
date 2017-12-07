@@ -83,6 +83,10 @@ stories.add('Dual Pane', () => {
 });
 
 stories.add('Simple Layout', () => {
+  // const coverPhoto = text(
+  //   'Cover Photo',
+  //   'https://s3-us-west-2.amazonaws.com/joy-public-assets-bucket/ktran-development/hero_jesslynn_daniel.jpg'
+  // );
   return (
     <div>
       <SimpleLayoutPreview />
