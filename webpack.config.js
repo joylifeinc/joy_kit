@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const minimist = require('minimist');
 const options = minimist(process.argv.slice(2));
+const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
 // Paths
 const ROOT = path.resolve('.');
@@ -144,7 +145,10 @@ module.exports = env => {
     output,
     resolve: {
       extensions: ['.ts', '.js', '.tsx', '.jsx'],
-      alias: { '~src': _source }
+      alias: { '~src': _source },
+      plugins: [
+        new TsConfigPathsPlugin({ configFileName: ROOT + '/tsconfig.json' })
+      ]
     },
     plugins,
     module: { rules: [tsLoader, cssLoader, sassLoader, assetLoader] },

@@ -10,6 +10,8 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "jsx": "react",
+    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "~src/*": ["src/*"] // will enable -> import { ... } from '~src/components'
     }
