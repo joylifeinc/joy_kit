@@ -53,6 +53,7 @@
     "@types/jest": "^21.1.8",
     "@types/react-portal": "^3.0.3",
     "@types/storybook__react": "^3.0.5",
+    "awesome-typescript-loader": "^3.4.1",
     "clean-webpack-plugin": "^0.1.17",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.28.7",

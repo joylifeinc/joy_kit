@@ -3,12 +3,7 @@ import { css } from 'glamor';
 import { margin } from 'glamor/utils';
 import { Observable, Subscription } from 'rxjs';
 
-import {
-  WeddingName,
-  CountdownTimer,
-  Fragments,
-  weddingNameString
-} from '../../../../';
+import { WeddingName, CountdownTimer, Fragments } from '~src/index';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
 import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
 import { DualPanePreviewRight } from './components/DualPanePreviewRight';
