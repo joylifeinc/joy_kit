@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { css } from 'glamor';
 import { VelocityTransitionGroup } from 'velocity-react';
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
 
 export interface Props {
   /** Items to be displayed in the dropdown */
@@ -129,8 +131,8 @@ export class DropDown extends React.Component<Props, { open: boolean }> {
       <div {...dropdownWrapperRules} onClick={this.openDropdown}>
         <span>{this.props.selected}</span>
         <VelocityTransitionGroup
-          enter={{ animation: 'slideDown' }}
-          leave={{ animation: 'slideUp' }}
+          enter={{ animation: 'transition.slideDown' }}
+          leave={{ animation: 'transition.slideUp' }}
         >
           {this.state.open ? (
             <ul {...dropdownRules(this.state.open)}>
