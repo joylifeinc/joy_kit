@@ -87,7 +87,7 @@ const weddingNameRules = fontOverrides =>
     fontOverrides
   );
 
-export const DualPanePreviewLeft: React.SFC<Props> = ({
+export const TwoPanePreviewLeft: React.SFC<Props> = ({
   accentTextColor,
   coverPhoto,
   fianceeName,

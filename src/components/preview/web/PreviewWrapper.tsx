@@ -13,7 +13,7 @@ export interface Props {
   };
 }
 
-export type For = 'dualPane' | 'simpleLayout';
+export type For = 'twoPane' | 'simpleLayout';
 
 const previewWrapperRules = css({
   height: '100%',
