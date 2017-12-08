@@ -3,10 +3,10 @@ import { css } from 'glamor';
 import { margin } from 'glamor/utils';
 import { Observable, Subscription } from 'rxjs';
 
-import { WeddingName, CountdownTimer, Fragments } from '~src/index';
+import { WeddingName, CountdownTimer, Fragments } from '../../../../';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
-import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
-import { DualPanePreviewRight } from './components/DualPanePreviewRight';
+import { TwoPanePreviewLeft } from './components/TwoPanePreviewLeft';
+import { TwoPanePreviewRight } from './components/TwoPanePreviewRight';
 
 import { PreviewWrapper } from '../PreviewWrapper';
 import { getDefaultEventFields } from '../util';
@@ -60,7 +60,7 @@ const contentRules = css({
   position: 'relative'
 });
 
-class DualPanePreview extends React.Component<Props> {
+class TwoPanePreview extends React.Component<Props> {
   static defaultProps = {
     activeFont: null,
     theme: null,
@@ -172,21 +172,21 @@ class DualPanePreview extends React.Component<Props> {
       <Fragments>
         {fontStylesheetLink}
         {this.getStyleOverrides()}
-        <PreviewWrapper for="dualPane" previewOptions={previewOptions}>
+        <PreviewWrapper for="twoPane" previewOptions={previewOptions}>
           <div
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
           >
             <WebPreviewTopBar title={title} />
             <div {...contentRules}>
-              <DualPanePreviewLeft
+              <TwoPanePreviewLeft
                 coverPhoto={coverPhoto}
                 fontOverrides={leftPaneHeaderRules}
                 fianceeName={fianceeName}
                 ownerName={ownerName}
                 message={message}
               />
-              <DualPanePreviewRight
+              <TwoPanePreviewRight
                 activeFont={activeFont}
                 backgroundColor={baseBackgroundColor}
                 color={baseTextColor}
@@ -202,4 +202,4 @@ class DualPanePreview extends React.Component<Props> {
   }
 }
 
-export { DualPanePreview };
+export { TwoPanePreview };

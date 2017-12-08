@@ -14,7 +14,7 @@ import { PanelOverlay } from './panel/overlay/PanelOverlay';
 import { TextBox } from './textBox/TextBox';
 import { TopNav } from './topNav/TopNav';
 import { WeddingName } from './weddingName/WeddingName';
-import { DualPanePreview } from './preview/web/dualPane/DualPanePreview';
+import { TwoPanePreview } from './preview/web/twoPane/TwoPanePreview';
 import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 import { SpinnerLoader } from './loader/SpinnerLoader';
@@ -39,7 +39,7 @@ export {
   ActionHeader,
   TextBox,
   WeddingName,
-  DualPanePreview,
+  TwoPanePreview,
   SimpleLayoutPreview,
   CountdownTimer,
   SpinnerLoader

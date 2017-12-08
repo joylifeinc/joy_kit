@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": ".",
@@ -11,10 +11,7 @@
     "sourceMap": true,
     "jsx": "react",
     "baseUrl": ".",
-    "rootDir": ".",
-    "paths": {
-      "~src/*": ["src/*"] // will enable -> import { ... } from '~src/components'
-    }
+    "rootDir": "."
   },
   "include": [
       "src/**/*",

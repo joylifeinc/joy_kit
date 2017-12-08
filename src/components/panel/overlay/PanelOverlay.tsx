@@ -39,20 +39,6 @@ const animations = direction => isOpen => {
   };
 };
 
-// CSS
-
-/* Panel */
-
-// @TODO: NOT USED CURRENTLY
-// const panelWrapperRules = css({
-//   overflow: 'auto',
-//   position: 'fixed',
-//   top: 0,
-//   left: 0,
-//   right: 0,
-//   bottom: 0
-// });
-
 const panelRules = (direction: Directions) =>
   css({
     maxWidth: '100%',

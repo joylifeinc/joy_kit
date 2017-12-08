@@ -1,3 +1,5 @@
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
 import { PanelTopNav, Props as PanelTopNavProps } from './PanelTopNav';
 import { PanelMain } from './main/PanelMain';
 import {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css, keyframes, StyleAttribute } from 'glamor';
-import * as Portal from 'react-portal';
+import { Portal } from 'react-portal';
 import { Fragments, createDebugger } from '../../util';
 import { VelocityComponent } from 'velocity-react';
 
@@ -97,7 +97,7 @@ export type Type = 'modal' | 'panel-overlay';
 // Styling
 //======================
 
-const wrapperRules = (hideLightbox: boolean) =>
+const wrapperRules = (isActive: boolean, hideLightbox: boolean) =>
   css({
     overflow: 'auto',
     position: 'fixed',
@@ -105,7 +105,7 @@ const wrapperRules = (hideLightbox: boolean) =>
     left: 0,
     right: 0,
     bottom: 0,
-    pointerEvents: hideLightbox && 'none'
+    pointerEvents: !isActive && hideLightbox && 'none'
   });
 
 /**
@@ -164,42 +164,28 @@ export class ModalPortal extends React.Component<Props, State> {
     }
   }
 
-  private closePortal = () => {
+  protected closePortal = () => {
     debug('closePortal()');
     this.setState({ isClosing: true });
   };
 
-  private inlineRender() {
-    const passedProps = { closePortal: this.closePortal };
-    return this.props.render(passedProps);
-  }
-
-  render() {
+  private buildModalContent = () => {
     const { isClosing } = this.state;
     const {
       animations,
-      children,
-      closeOnBackgroundClick,
-      closeOnEscape,
       delay,
-      onClose,
-      hideLightboxOnInactive,
-      hideLightbox,
-      ignoreCloseEvents,
       isActive,
-      isOpen,
-      render,
       runOnMount,
       styleRules,
-      type
+      type,
+      render
     } = this.props;
-
     let animation = null;
     if (animations) {
       animation = animations(!isClosing && isActive);
       debug(animation);
     }
-    const modalContent = (
+    return (
       <VelocityComponent
         animation={animation}
         duration={300}
@@ -212,9 +198,31 @@ export class ModalPortal extends React.Component<Props, State> {
         </div>
       </VelocityComponent>
     );
+  };
 
-    return (
-      <Portal isOpened={isOpen}>
+  private inlineRender() {
+    const passedProps = { closePortal: this.closePortal };
+    return this.props.render(passedProps);
+  }
+
+  render() {
+    const { isClosing } = this.state;
+    const {
+      children,
+      closeOnBackgroundClick,
+      closeOnEscape,
+      onClose,
+      hideLightboxOnInactive,
+      hideLightbox,
+      ignoreCloseEvents,
+      isActive,
+      isOpen,
+      type
+    } = this.props;
+
+    const modalContent = this.buildModalContent();
+    const portal = (
+      <Portal>
         <Fragments>
           <ModalLightBox
             closeOnBackgroundClick={closeOnBackgroundClick}
@@ -223,14 +231,19 @@ export class ModalPortal extends React.Component<Props, State> {
             hide={hideLightbox}
             ignoreCloseEvents={ignoreCloseEvents}
             isActive={isActive || (!isActive && !hideLightboxOnInactive)}
-            isOpen={!isClosing}
+            isOpen={isOpen && !isClosing}
           />
-          <div className={`${type}-wrapper`} {...wrapperRules(hideLightbox)}>
+          <div
+            className={`${type}-wrapper`}
+            {...wrapperRules(isActive, hideLightbox)}
+          >
             {type === 'modal' && modalContent}
           </div>
           {type === 'panel-overlay' && modalContent}
         </Fragments>
       </Portal>
     );
+
+    return isOpen ? portal : null;
   }
 }
