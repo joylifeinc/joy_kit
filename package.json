@@ -1,6 +1,6 @@
 {
   "name": "@withjoy/joykit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JoyKit UI Components",
   "main": "./dist/index.js",
   "module": "./src/index.ts",
