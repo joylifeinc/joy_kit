@@ -214,7 +214,6 @@ export class ModalPortal extends React.Component<Props, State> {
     );
 
     return (
-      <Portal isOpened={isOpen}>
         <Fragments>
           <ModalLightBox
             closeOnBackgroundClick={closeOnBackgroundClick}
@@ -225,12 +224,11 @@ export class ModalPortal extends React.Component<Props, State> {
             isActive={isActive || (!isActive && !hideLightboxOnInactive)}
             isOpen={!isClosing}
           />
-          <div className={`${type}-wrapper`} {...wrapperRules(hideLightbox)}>
+          <div className={`${type}-wrapper`} {...wrapperRules(hideLightbox) }>
             {type === 'modal' && modalContent}
           </div>
           {type === 'panel-overlay' && modalContent}
         </Fragments>
-      </Portal>
     );
   }
 }

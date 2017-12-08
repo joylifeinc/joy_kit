@@ -3,7 +3,7 @@ import { css } from 'glamor';
 import { margin } from 'glamor/utils';
 import { Observable, Subscription } from 'rxjs';
 
-import { WeddingName, CountdownTimer, Fragments } from '~src/index';
+import { WeddingName, CountdownTimer, Fragments } from '../../../../index';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
 import { DualPanePreviewLeft } from './components/DualPanePreviewLeft';
 import { DualPanePreviewRight } from './components/DualPanePreviewRight';
@@ -118,14 +118,14 @@ class DualPanePreview extends React.Component<Props> {
                 type="text/css"
                 href={`http://withjoy.com/assets/public/joyStyles3/${
                   theme
-                }/base.css`}
+                  }/base.css`}
               />
               <link
                 rel="stylesheet"
                 type="text/css"
                 href={`http://withjoy.com/assets/public/joyStyles3/${
                   theme
-                }/color.css`}
+                  }/color.css`}
               />
             </Fragments>
           )}
@@ -175,7 +175,7 @@ class DualPanePreview extends React.Component<Props> {
         <PreviewWrapper for="dualPane" previewOptions={previewOptions}>
           <div
             className="joy-website-preview"
-            {...previewRules(previewOptions.height, previewOptions.width)}
+            {...previewRules(previewOptions.height, previewOptions.width) }
           >
             <WebPreviewTopBar title={title} />
             <div {...contentRules}>
