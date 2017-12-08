@@ -14,7 +14,7 @@ import {
 import { SyntaxHighlight } from '../utils/syntax';
 import {
   Button,
-  DualPanePreview,
+  TwoPanePreview,
   SimpleLayoutPreview,
   weddingNameString
 } from '../../src';
@@ -24,7 +24,7 @@ const JOY_FONTS = require('./joyFonts.json');
 const stories = storiesOf('Website Preview', module);
 stories.addDecorator(withKnobs);
 
-stories.add('Dual Pane', () => {
+stories.add('Two Pane', () => {
   let themeOptions = {};
   for (const [key, value] of Object.entries(JOY_THEMES)) {
     themeOptions[key] = value.name;
@@ -56,7 +56,7 @@ stories.add('Dual Pane', () => {
   return (
     <div>
       <div {...css({ height: 700, position: 'relative' })}>
-        <DualPanePreview
+        <TwoPanePreview
           baseBackgroundColor={backgroundColor}
           activeFont={fontMap[font]}
           coverPhoto={coverPhoto}
@@ -71,7 +71,7 @@ stories.add('Dual Pane', () => {
       </div>
       <SyntaxHighlight
         syntax={'jsx'}
-        codeblock={` <DualPanePreview
+        codeblock={` <TwoPanePreview
         activeFont={${JSON.stringify(fontMap[font])}}
         backgroundColor={"${backgroundColor}"}
         coverPhoto={"${coverPhoto}"}

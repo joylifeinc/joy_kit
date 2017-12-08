@@ -17,7 +17,7 @@ import {
   TextBox,
   TopNav,
   WeddingName,
-  DualPanePreview,
+  TwoPanePreview,
   CountdownTimer,
   SpinnerLoader,
   SimpleLayoutPreview
@@ -67,7 +67,7 @@ export {
   Styles,
   weddingNameString,
   WeddingName,
-  DualPanePreview,
+  TwoPanePreview,
   SimpleLayoutPreview,
   CountdownTimer,
   Colors,

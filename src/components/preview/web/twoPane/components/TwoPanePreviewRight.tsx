@@ -75,7 +75,7 @@ const ctaButtonRules = css({
   textAlign: 'center'
 });
 
-const DualPanePreviewRight: React.SFC<Props> = ({
+const TwoPanePreviewRight: React.SFC<Props> = ({
   activeFont,
   backgroundColor,
   color,
@@ -122,8 +122,8 @@ const DualPanePreviewRight: React.SFC<Props> = ({
   );
 };
 
-DualPanePreviewRight.defaultProps = {
+TwoPanePreviewRight.defaultProps = {
   backgroundColor: '#f3efeb'
 };
 
-export { DualPanePreviewRight };
+export { TwoPanePreviewRight };
