@@ -24,8 +24,19 @@ export interface Props {
     textTransform: string;
     _comment?: string;
   };
-  baseBackgroundColor?: string;
-  baseTextColor?: string;
+  baseColor?: {
+    r: number;
+    g: number;
+    b: number;
+    a: number;
+  };
+  baseTextColor?: {
+    r: number;
+    g: number;
+    b: number;
+    a: number;
+  };
+  useThemeColors?: boolean;
   // baseTextFill?: string;
   coverPhoto?: string;
   eventDate?: string;
@@ -45,6 +56,8 @@ const previewRules = (height, width) =>
   css({
     borderRadius: '5px',
     boxShadow: '0 15px 60px 0 rgba(0,0,0,.1), 0 32px 75px 0 rgba(0,0,0,.1)',
+    display: 'flex',
+    flexDirection: 'column',
     fontFamily: 'proxima-nova,Helvetica Neue,sans-serif',
     fontSize: '15px',
     fontWeight: '300',
@@ -57,7 +70,9 @@ const previewRules = (height, width) =>
 
 const contentRules = css({
   display: 'flex',
-  position: 'relative'
+  position: 'relative',
+  flexGrow: '1',
+  maxHeight: 'calc(100% - 36px)'
 });
 
 class TwoPanePreview extends React.Component<Props> {
@@ -67,7 +82,8 @@ class TwoPanePreview extends React.Component<Props> {
     previewOptions: {
       height: 500,
       width: 800
-    }
+    },
+    useThemeColors: true
   };
 
   private getFontOverrides = activeFont => {
@@ -103,11 +119,15 @@ class TwoPanePreview extends React.Component<Props> {
         )
       };
     }
-    return null;
+    return {
+      leftPaneHeaderRules: {},
+      rightPaneHeaderRules: {},
+      fontStylesheetLink: null
+    };
   };
 
   private getStyleOverrides = () => {
-    const { theme, activeFont } = this.props;
+    const { theme, activeFont, useThemeColors } = this.props;
     return (
       <div data-style-overrides="">
         {theme &&
@@ -120,13 +140,15 @@ class TwoPanePreview extends React.Component<Props> {
                   theme
                 }/base.css`}
               />
-              <link
-                rel="stylesheet"
-                type="text/css"
-                href={`http://withjoy.com/assets/public/joyStyles3/${
-                  theme
-                }/color.css`}
-              />
+              {useThemeColors && (
+                <link
+                  rel="stylesheet"
+                  type="text/css"
+                  href={`http://withjoy.com/assets/public/joyStyles3/${
+                    theme
+                  }/color.css`}
+                />
+              )}
             </Fragments>
           )}
       </div>
@@ -134,7 +156,13 @@ class TwoPanePreview extends React.Component<Props> {
   };
 
   private getVisibleFields = () => {
-    const { ownerName, fianceeName, eventDate, location, message } = this.props;
+    const {
+      ownerName,
+      fianceeName,
+      eventDate = Date.now(),
+      location,
+      message
+    } = this.props;
     return getDefaultEventFields(
       ownerName,
       fianceeName,
@@ -147,7 +175,7 @@ class TwoPanePreview extends React.Component<Props> {
   render() {
     const {
       activeFont,
-      baseBackgroundColor,
+      baseColor,
       baseTextColor,
       coverPhoto,
       previewOptions,
@@ -188,8 +216,8 @@ class TwoPanePreview extends React.Component<Props> {
               />
               <TwoPanePreviewRight
                 activeFont={activeFont}
-                backgroundColor={baseBackgroundColor}
-                color={baseTextColor}
+                baseColor={baseColor}
+                textColor={baseTextColor}
                 eventDate={eventDate}
                 fontOverrides={rightPaneHeaderRules}
                 location={location}
