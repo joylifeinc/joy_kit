@@ -16,7 +16,8 @@ import {
   Button,
   TwoPanePreview,
   SimpleLayoutPreview,
-  weddingNameString
+  weddingNameString,
+  Colors
 } from '../../src';
 const JOY_THEMES = require('./joyStyles.json');
 const JOY_FONTS = require('./joyFonts.json');
@@ -49,15 +50,32 @@ stories.add('Two Pane', () => {
     'Cover Photo',
     'https://s3-us-west-2.amazonaws.com/joy-public-assets-bucket/ktran-development/hero_jesslynn_daniel.jpg'
   );
-  const backgroundColor = color('Background Color', 'rgb(253, 181, 161)');
+  const baseColorSelector = color('Background Color', 'rgba(253, 181, 161, 1)');
+  const baseTextColor = select(
+    'Base Text Color',
+    {
+      light: 'light',
+      dark: 'dark'
+    },
+    'dark'
+  );
   const theme = select('Theme', themeOptions, 'blank');
   const font = select('Font', fontOptions, 'Roboto');
+  const useThemeColors = boolean('Use Theme Colors', true);
 
+  const textColor =
+    baseTextColor === 'light'
+      ? { r: 1, g: 1, b: 1, a: 1 }
+      : { r: 58 / 255, g: 60 / 255, b: 62 / 255, a: 1 };
+
+  const [r, g, b, a = 100] = Colors.findRgb(baseColorSelector);
+  const baseColor = { r: r / 255, g: g / 255, b: b / 255, a: a / 100 };
   return (
     <div>
       <div {...css({ height: 700, position: 'relative' })}>
         <TwoPanePreview
-          baseBackgroundColor={backgroundColor}
+          baseColor={baseColor}
+          baseTextColor={textColor}
           activeFont={fontMap[font]}
           coverPhoto={coverPhoto}
           location={location}
@@ -67,13 +85,15 @@ stories.add('Two Pane', () => {
           fianceeName={fianceeName}
           theme={theme}
           title={weddingNameString(ownerName, fianceeName)}
+          useThemeColors={useThemeColors}
         />
       </div>
       <SyntaxHighlight
         syntax={'jsx'}
         codeblock={` <TwoPanePreview
         activeFont={${JSON.stringify(fontMap[font])}}
-        backgroundColor={"${backgroundColor}"}
+        baseColor={${JSON.stringify(baseColor)}}
+        baseTextColor={${JSON.stringify(textColor)}}
         coverPhoto={"${coverPhoto}"}
         location={"${location}"}
         eventDate={"${eventDate}"}
@@ -81,6 +101,7 @@ stories.add('Two Pane', () => {
         ownerName={"${ownerName}"}
         fianceeName={"${fianceeName}"}
         theme={"${theme}"}
+        useThemeColors={"${useThemeColors}"}
       />
       `}
       />

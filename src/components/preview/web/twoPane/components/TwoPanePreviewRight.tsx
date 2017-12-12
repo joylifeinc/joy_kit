@@ -8,29 +8,44 @@ export interface Props {
   fontOverrides?: any;
   eventDate: string;
   location: string;
-  backgroundColor?: string;
-  color?: string;
+  textColor?: Color;
+  baseColor?: Color;
   activeFont?: object;
 }
 
-const rightPaneRules = (color: string, backgroundColor = '#f3efeb') =>
+export interface Color {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+}
+
+const rightPaneRules = (backgroundColor = '#fff') =>
   css({
-    height: '464px',
-    borderRadius: '0 0 5px',
-    fontSize: '15px',
-    backgroundColor
-    // flexBasis: 320
+    backgroundColor,
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'relative',
+    zIndex: 2,
+    width: '40%'
   });
 
-const welcomeContainerRules = css({
-  textAlign: 'center',
-  display: 'flex',
-  height: '100%',
-  alignItems: 'center',
-  flexDirection: 'column',
-
-  justifyContent: 'center'
+const weddingInfoContainerRules = css({
+  borderRadius: '0 0 5px',
+  fontSize: '15px',
+  height: '464px'
 });
+
+const welcomeContainerRules = (color = 'rgba(0, 0, 0, 1)') =>
+  css({
+    color,
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    height: '100%',
+    justifyContent: 'center'
+  });
 
 const infoPreviewRules = css({
   transform: 'scale(.7)'
@@ -75,28 +90,35 @@ const ctaButtonRules = css({
   textAlign: 'center'
 });
 
+const rgbaObjectToString = (color?: Color) => {
+  return (
+    color &&
+    `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${color.a})`
+  );
+};
+
 const TwoPanePreviewRight: React.SFC<Props> = ({
   activeFont,
-  backgroundColor,
-  color,
+  baseColor,
+  textColor,
   eventDate,
   fontOverrides,
   location
 }) => {
   let eventDateMoment = moment(eventDate);
+  const fontColor = rgbaObjectToString(textColor);
+  const backgroundColor = rgbaObjectToString(baseColor);
+
   return (
     <div
       className="right-pane joy-wedding-page-preview"
-      {...css({ width: '40%' })}
+      {...rightPaneRules(backgroundColor)}
     >
-      <div
-        className="joy-wedding-info"
-        {...rightPaneRules(color, backgroundColor)}
-      >
+      <div className="joy-wedding-info" {...weddingInfoContainerRules}>
         <div
           id="welcome"
           className="joy-content-card joy-content-intro"
-          {...welcomeContainerRules}
+          {...welcomeContainerRules(fontColor)}
         >
           <div className="info-preview" {...infoPreviewRules}>
             <h2 {...locationRules} {...fontOverrides}>
@@ -123,7 +145,7 @@ const TwoPanePreviewRight: React.SFC<Props> = ({
 };
 
 TwoPanePreviewRight.defaultProps = {
-  backgroundColor: '#f3efeb'
+  fontOverrides: {}
 };
 
 export { TwoPanePreviewRight };

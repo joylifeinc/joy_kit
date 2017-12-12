@@ -139,7 +139,7 @@ class CountdownTimer extends React.Component<Props, any> {
     if (!this.props.eventDate || !this.eventMoment.isValid()) {
       return null;
     }
-    return <h4 {...countdownRules(this.props)}>{this.state.displayText}</h4>;
+    return <h1 {...countdownRules(this.props)}>{this.state.displayText}</h1>;
   }
 }
 
