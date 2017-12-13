@@ -35,7 +35,11 @@ export default {
     commonjs(),
     url({
       limit: 100 * 1024,
-      include: ["**/*.svg"]
+      include: [
+        "**/*.svg",
+        "**/*.png",
+        "**/*.jpg"
+      ]
     }),
     Visualizer({
       filename: './stats/statistics.html'
