@@ -3,6 +3,7 @@ dist
 .vscode/
 test_reports
 .rpt2_cache
+lib
 
 
 # Logs
