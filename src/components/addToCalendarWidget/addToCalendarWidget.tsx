@@ -12,24 +12,32 @@ const iconYahoo = require('../../assets/icon-yahoo.svg');
 
 export interface Props {
 
-  event?: any;
+  // title of the event
+  name?: string; // 'Sample Event';
 
+  // description of the event
+  // 'This is the sample event provided as an example only';
+  details?: string;
+
+  // location of the event
+  // 'Portland, OR';
+  location?: string;
+
+  // Name of who this event belongs to
+  // 'Bob & Alice'    
   coupleNameString?: string;
 
-  // // title of the event
-  // title?: string; // 'Sample Event';
+  // Dress code for this event
+  dressCode?: string;
 
-  // // description of the event
-  // description?: string; // 'This is the sample event provided as an example only';
+  // when does the event start ?
+  // unix timestamp
+  dtstart?: number;
 
-  // // location of the event
-  // location?: string; //'Portland, OR';
+  // when does the event end ?
+  // unix timestamp
+  dtend?: number;
 
-  // // when does the event start ?
-  // startTime?: string; //'2016-09-16T20:15:00-04:00';
-
-  // //when does the event end ?
-  // endTime?: string; // '2016-09-16T21:45:00-04:00;
 }
 
 const icons: any = {
@@ -93,16 +101,16 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
     super(props);
   }
 
-  calendarFormat(event) {
-    var endTime = event.dtend;
+  calendarFormat() {
+    var endTime = this.props.dtend;
     if (endTime === undefined) {
-      endTime = event.dtstart + 14400000; //4 hours in ms
+      endTime = this.props.dtstart + 14400000; //4 hours in ms
     }
     return {
-      title: event.name,
-      description: event.details + (event.dressCode ? ' Dress Code: ' + event.dressCode : ''),
-      location: (event.location ? event.location : this.props.coupleNameString + "'s Wedding"),
-      startTime: event.dtstart,
+      title: this.props.name,
+      description: this.props.details + (this.props.dressCode ? ' Dress Code: ' + this.props.dressCode : ''),
+      location: (this.props.location ? this.props.location : this.props.coupleNameString + "'s Wedding"),
+      startTime: this.props.dtstart,
       endTime: endTime
     }
   }
@@ -112,7 +120,7 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
     return (
       <div>
         <div {...calendarButtonRules}>
-          <AddToCalendar event={event} optionsOpen={true} ></AddToCalendar>
+          <AddToCalendar event={this.calendarFormat()} optionsOpen={true} ></AddToCalendar>
         </div>
       </div>
     );
