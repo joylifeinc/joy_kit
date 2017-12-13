@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from 'glamor';
-import * as moment from 'moment';
+const moment = require('moment');
 
 import { PreviewWrapper } from '../PreviewWrapper';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';

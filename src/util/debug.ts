@@ -1,4 +1,4 @@
-import _debug from 'debug';
+// import * as _debug from 'debug';
 import isBrowser from './isBrowser';
 
 if (isBrowser && process.env.NODE_ENV !== 'production') {
@@ -6,9 +6,9 @@ if (isBrowser && process.env.NODE_ENV !== 'production') {
   // If you have a specifc module that you want to debug, adjust the following variable to that namespace.
   // IE to test ONLY the `Home` component, we want to enable: `JoyReact:Home`
   const enabledNamespace = '*';
-  _debug.enable(`JoyReact:${enabledNamespace}`);
+  // _debug.enable(`JoyReact:${enabledNamespace}`);
 } else {
-  _debug.enable('-*');
+  // _debug.enable('-*');
 }
 
 /**
@@ -21,8 +21,8 @@ if (isBrowser && process.env.NODE_ENV !== 'production') {
  * debug('Some message')
  * @returns {Function}
  */
-export const createDebugger = namespace => _debug(`JoyReact:${namespace}`);
-
+// export const createDebugger = namespace => _debug(`JoyReact:${namespace}`);
+export const createDebugger = namespace => console.log(namespace);
 /**
  * Default debugger, simple log.
  * @example
