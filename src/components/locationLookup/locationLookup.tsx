@@ -43,7 +43,7 @@ const errorBarRules = css({
   background: 'red'
 });
 
-const errorText = css({
+const errorTextRules = css({
   color: 'red',
   margin: '4px 0 0 5px',
   fontSize: '14px'
@@ -98,7 +98,7 @@ export class LocationLookup extends React.Component<Props, {}> {
           styles={myStyles}
           options={options}
         />
-        <span {...errorText}>{error}</span>
+        <span {...errorTextRules}>{error}</span>
       </div>
     );
   }

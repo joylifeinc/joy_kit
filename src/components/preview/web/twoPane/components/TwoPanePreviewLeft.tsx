@@ -1,13 +1,19 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-const loveImage = require('../../../../../assets/images/cw-default-photo.jpg');
-const menuIcon = require('../../../../../assets/iconMenu.svg');
+import loveImage from '../../../../../assets/images/cw-default-photo.jpg';
+import menuIcon from '../../../../../assets/iconMenu.svg';
 
 import { WeddingName } from '../../../../';
 
 export interface Props {
   accentTextColor?: string;
+  baseColor?: {
+    r: number;
+    g: number;
+    b: number;
+    a: number;
+  };
   coverPhoto?: string;
   fianceeName: string;
   fontOverrides?: any;
@@ -18,6 +24,7 @@ export interface Props {
 const containerRules = color =>
   css({
     backgroundColor: '#000',
+    display: 'flex',
     position: 'relative',
     width: '60%'
   });
@@ -59,8 +66,9 @@ const contentRules = coverPhoto =>
       display: 'flex',
       flexDirection: 'column-reverse',
       fontSize: '44px',
-      height: '100%',
-      padding: '10% 20% 6% 10%'
+      // height: 'calc(100% - 36px)',
+      padding: '20px 40px',
+      width: '100%'
     },
     coverPhoto && {
       background: `url(${coverPhoto}) center top /cover`
@@ -80,14 +88,14 @@ const weddingNameRules = fontOverrides =>
   css(
     {
       margin: 0,
-      fontSize: '5.625rem',
+      fontSize: '76px',
       transform: 'scale(.7)',
       transformOrigin: 'bottom left'
     },
     fontOverrides
   );
 
-export const DualPanePreviewLeft: React.SFC<Props> = ({
+export const TwoPanePreviewLeft: React.SFC<Props> = ({
   accentTextColor,
   coverPhoto,
   fianceeName,
@@ -116,4 +124,8 @@ export const DualPanePreviewLeft: React.SFC<Props> = ({
       </div>
     </div>
   );
+};
+
+TwoPanePreviewLeft.defaultProps = {
+  fontOverrides: {}
 };

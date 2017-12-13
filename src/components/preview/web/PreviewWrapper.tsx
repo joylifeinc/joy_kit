@@ -13,7 +13,7 @@ export interface Props {
   };
 }
 
-export type For = 'dualPane' | 'simpleLayout';
+export type For = 'twoPane' | 'simpleLayout';
 
 const previewWrapperRules = css({
   height: '100%',
@@ -73,13 +73,10 @@ export class PreviewWrapper extends React.Component<Props> {
         <VelocityComponent
           animation={{
             translateZ: 0.001,
-            // translateX: '-50%',
-            // translateY: '-50%',
             scale: this.state.scale
           }}
           easing="ease"
         >
-          {/* transform: `translateZ(0) translate(-50%,-50%) scale(${scale})`, */}
           {this.props.children}
         </VelocityComponent>
       </div>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from 'glamor';
 
 import { COLORS } from '../../../styles/variables';
-const iconForwardArrow = require('../../../assets/iconForwardArrowBlk.svg');
+import iconForwardArrow from '../../../assets/iconForwardArrowBlk.svg';
 
 export interface Props {
   content: React.ReactNode;
