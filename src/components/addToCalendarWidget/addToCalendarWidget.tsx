@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from 'glamor';
 import { error } from 'util';
 import AddToCalendar from 'react-add-to-calendar';
+// Calendar plugin that we're wrapping includes a button and an automatic visibility toggle. We've hobbled it so it doesn't toggle.
 AddToCalendar.prototype.toggleCalendarDropdown = function (e) { return; };
 
 const iconApple = require('../../assets/icon-apple.svg');
