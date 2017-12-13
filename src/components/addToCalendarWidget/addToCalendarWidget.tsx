@@ -39,6 +39,8 @@ export interface Props {
   // unix timestamp
   dtend?: number;
 
+  height?: string;
+
 }
 
 const icons: any = {
@@ -49,21 +51,39 @@ const icons: any = {
   '& .fa-yahoo': iconYahoo,
 }
 
-const makeIconCSS = (key, icon) => ({
-  [key]: { 'content': `url(${icon})` },
-});
+const makeIconCSS = (key, icon) => {
+  var contentSelector = { 'content': `url(${icon})` };//{ [key]: { 'content': `url(${icon})` } };
+  var retval = {
+    [key]: {
+      //'content': `url(${icon})`,
+      ':after': {
+        backgroundImage: `url(${icon})`,
+        backgroundRepeat: 'no-repeat',
+      },
+    },
+  };
+  console.log(retval);
+  return retval;
+};
 
 const iconsCSS = Object.keys(icons).reduce((acc, element) => {
   let css = makeIconCSS(element, icons[element]);
   return { ...acc, ...css };
 }, {});
 
+
 const calendarButtonRules = css({
+  height: '100%',
+  '& .react-add-to-calendar': {
+    height: '100%',
+  },
   '& .react-add-to-calendar__button': {
     display: 'none',
   },
   '& .react-add-to-calendar__dropdown': {
+    height: '100%',
     '& ul': {
+      height: '100%',
       listStyleType: 'none',
       margin: 0,
       padding: 0,
@@ -91,6 +111,16 @@ const calendarButtonRules = css({
         marginRight: '15px',
         width: '20px',
         height: 'auto',
+        ':after': {
+          display: 'inline-block',
+          width: '20px',
+          height: '25px',
+          content: ' ',
+          backgroundSize: '20px',
+          backgroundPosition: '0',
+          position: 'relative',
+          top: '7px',
+        }
       },
     },
     ...iconsCSS,
@@ -117,9 +147,12 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
   }
 
   render() {
+    console.log("rendering with props", this.props);
+
+    const outerContainer = css({ height: (this.props.height || '100%') });
 
     return (
-      <div>
+      <div { ...outerContainer }>
         <div {...calendarButtonRules}>
           <AddToCalendar event={this.calendarFormat()} optionsOpen={true} ></AddToCalendar>
         </div>
