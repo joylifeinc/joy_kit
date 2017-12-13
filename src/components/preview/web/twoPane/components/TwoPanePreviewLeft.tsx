@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-const loveImage = require('../../../../../assets/images/cw-default-photo.jpg');
-const menuIcon = require('../../../../../assets/iconMenu.svg');
+import loveImage from '../../../../../assets/images/cw-default-photo.jpg';
+import menuIcon from '../../../../../assets/iconMenu.svg';
 
 import { WeddingName } from '../../../../';
 

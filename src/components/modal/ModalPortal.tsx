@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { css, keyframes, StyleAttribute } from 'glamor';
 import { Portal } from 'react-portal';
-import { Fragments, createDebugger } from '../../util';
+import { Fragments } from '../../util';
 import { VelocityComponent } from 'velocity-react';
 
 import { ModalLightBox, Props as ModalLightBoxProps } from './ModalLightBox';
 import { ModalHeader } from './ModalHeader';
 import { ModalContent } from './ModalContent';
 import { ModalActions } from './ModalActions';
-
-const debug = createDebugger('JoyKit:Modal');
 
 //======================
 // Interfaces
@@ -126,8 +124,6 @@ export class ModalPortal extends React.Component<Props, State> {
   state: State = { isClosing: false };
 
   componentDidMount() {
-    debug('Mount()');
-
     if (this.props.isOpen) {
       // Set overflow hidden so that the background doesn't scroll
       document.body.style.overflow = 'hidden';
@@ -141,14 +137,12 @@ export class ModalPortal extends React.Component<Props, State> {
     }
   }
   componentWillUnmount() {
-    debug('Unmount()');
     const { onUnmount } = this.props;
     onUnmount && onUnmount(this.props);
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.isClosing && !Boolean(this.closingTimeoutId)) {
-      debug('Is closing', this.state);
       this.closingTimeoutId = window.setTimeout(() => {
         // Set overflow hidden so that the background doesn't scroll
         document.body.style.overflow = 'auto';
@@ -165,7 +159,6 @@ export class ModalPortal extends React.Component<Props, State> {
   }
 
   protected closePortal = () => {
-    debug('closePortal()');
     this.setState({ isClosing: true });
   };
 
@@ -183,7 +176,6 @@ export class ModalPortal extends React.Component<Props, State> {
     let animation = null;
     if (animations) {
       animation = animations(!isClosing && isActive);
-      debug(animation);
     }
     return (
       <VelocityComponent

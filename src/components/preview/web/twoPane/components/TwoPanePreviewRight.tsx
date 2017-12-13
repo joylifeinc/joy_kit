@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from 'glamor';
 
 import { CountdownTimer } from '../../../../';
-import * as moment from 'moment';
+const moment = require('moment');
 
 export interface Props {
   fontOverrides?: any;

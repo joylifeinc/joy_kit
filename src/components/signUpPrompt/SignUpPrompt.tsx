@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from 'glamor';
 import { Button } from '../../components';
-const closeIcon = require('../../assets/iconClose.svg');
-const logo = require('../../assets/images/logo.png');
+import closeIcon from '../../assets/iconClose.svg';
+import logo from '../../assets/images/logo.png';
 
 export interface Props {
   close: (e) => void;
