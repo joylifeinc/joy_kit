@@ -233,7 +233,8 @@ export class ModalPortal extends React.Component<Props, State> {
           </div>
           {type === 'panel-overlay' && modalContent}
         </Fragments>
-        );
+      </Portal>
+    );
 
     return isOpen ? portal : null;
   }
