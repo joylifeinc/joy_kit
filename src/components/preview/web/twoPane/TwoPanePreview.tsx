@@ -136,17 +136,13 @@ class TwoPanePreview extends React.Component<Props> {
               <link
                 rel="stylesheet"
                 type="text/css"
-                href={`http://withjoy.com/assets/public/joyStyles3/${
-                  theme
-                }/base.css`}
+                href={`http://withjoy.com/assets/public/joyStyles3/${theme}/base.css`}
               />
               {useThemeColors && (
                 <link
                   rel="stylesheet"
                   type="text/css"
-                  href={`http://withjoy.com/assets/public/joyStyles3/${
-                    theme
-                  }/color.css`}
+                  href={`http://withjoy.com/assets/public/joyStyles3/${theme}/color.css`}
                 />
               )}
             </Fragments>
