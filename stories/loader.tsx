@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
-import { withKnobs, text, color, number } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  text,
+  boolean,
+  color,
+  number
+} from '@storybook/addon-knobs';
 
 import { SyntaxHighlight } from './utils/syntax';
 import { SpinnerLoader, Fragments } from '../src';
@@ -13,10 +19,12 @@ stories.add('Spinner', () => {
   const width = text('Width', '50px');
   const borderColor = color('Color', 'black');
   const thickness = text('Thickness', '2px');
+  const fullscreen = boolean('Full Screen', false);
 
   return (
     <div>
       <SpinnerLoader
+        fullScreen={fullscreen}
         height={height}
         width={width}
         color={borderColor}
