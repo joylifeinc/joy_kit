@@ -62,7 +62,6 @@ const makeIconCSS = (key, icon) => {
       },
     },
   };
-  console.log(retval);
   return retval;
 };
 
@@ -147,7 +146,6 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
   }
 
   render() {
-    console.log("rendering with props", this.props);
 
     const outerContainer = css({ height: (this.props.height || '100%') });
 
