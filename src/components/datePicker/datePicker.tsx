@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DatePicker from 'react-datepicker';
-import * as moment from 'moment';
+const moment = require('moment');
 import { css } from 'glamor';
 
 //NOTE: will need a polyfill for IE 10

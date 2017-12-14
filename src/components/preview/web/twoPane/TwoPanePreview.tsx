@@ -136,17 +136,13 @@ class TwoPanePreview extends React.Component<Props> {
               <link
                 rel="stylesheet"
                 type="text/css"
-                href={`http://withjoy.com/assets/public/joyStyles3/${
-                  theme
-                }/base.css`}
+                href={`http://withjoy.com/assets/public/joyStyles3/${theme}/base.css`}
               />
               {useThemeColors && (
                 <link
                   rel="stylesheet"
                   type="text/css"
-                  href={`http://withjoy.com/assets/public/joyStyles3/${
-                    theme
-                  }/color.css`}
+                  href={`http://withjoy.com/assets/public/joyStyles3/${theme}/color.css`}
                 />
               )}
             </Fragments>
@@ -203,7 +199,7 @@ class TwoPanePreview extends React.Component<Props> {
         <PreviewWrapper for="twoPane" previewOptions={previewOptions}>
           <div
             className="joy-website-preview"
-            {...previewRules(previewOptions.height, previewOptions.width)}
+            {...previewRules(previewOptions.height, previewOptions.width) }
           >
             <WebPreviewTopBar title={title} />
             <div {...contentRules}>

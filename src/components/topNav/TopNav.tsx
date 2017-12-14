@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from 'glamor';
 import { Link } from 'react-router-dom';
 
-const iconBackArrow = require('../../assets/iconBackArrowBlk.svg');
+import iconBackArrow from '../../assets/iconBackArrowBlk.svg';
 import { TEXT } from '../../styles/variables';
 
 export interface Props {

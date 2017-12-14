@@ -19,7 +19,8 @@ import {
   TwoPanePreview,
   CountdownTimer,
   SpinnerLoader,
-  SimpleLayoutPreview
+  SimpleLayoutPreview,
+  AddToCalendarWidget
 } from './components';
 
 // Styles
@@ -69,5 +70,6 @@ export {
   SimpleLayoutPreview,
   CountdownTimer,
   Colors,
-  SpinnerLoader
+  SpinnerLoader,
+  AddToCalendarWidget
 };
