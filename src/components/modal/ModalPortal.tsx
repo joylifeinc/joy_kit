@@ -227,7 +227,7 @@ export class ModalPortal extends React.Component<Props, State> {
           />
           <div
             className={`${type}-wrapper`}
-            {...wrapperRules(isActive, hideLightbox)}
+            {...wrapperRules(isActive, hideLightbox) }
           >
             {type === 'modal' && modalContent}
           </div>

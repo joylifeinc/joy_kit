@@ -199,7 +199,7 @@ class TwoPanePreview extends React.Component<Props> {
         <PreviewWrapper for="twoPane" previewOptions={previewOptions}>
           <div
             className="joy-website-preview"
-            {...previewRules(previewOptions.height, previewOptions.width)}
+            {...previewRules(previewOptions.height, previewOptions.width) }
           >
             <WebPreviewTopBar title={title} />
             <div {...contentRules}>

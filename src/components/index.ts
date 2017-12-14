@@ -18,6 +18,7 @@ import { TwoPanePreview } from './preview/web/twoPane/TwoPanePreview';
 import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 import { SpinnerLoader } from './loader/SpinnerLoader';
+import { AddToCalendarWidget } from './addToCalendarWidget/AddToCalendarWidget';
 
 // Dropdown is not quite ready for primetime yet
 
@@ -42,5 +43,6 @@ export {
   TwoPanePreview,
   SimpleLayoutPreview,
   CountdownTimer,
-  SpinnerLoader
+  SpinnerLoader,
+  AddToCalendarWidget
 };
