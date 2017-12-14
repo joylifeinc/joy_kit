@@ -23,7 +23,7 @@ const menuRules = css({
   '& .react-datepicker__input-container input': {
     border: 'none',
     borderBottom: '1px solid rgb(117, 117, 117)',
-    height: '26px',
+    height: '40px',
     padding: '10px',
     width: '100%'
   }
