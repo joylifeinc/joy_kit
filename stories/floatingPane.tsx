@@ -33,9 +33,6 @@ const innerBackgroundColor = css({
 
 stories.add('overrides', () => {
 
-  const height = text('Height', '480px');
-  const items = [1, 2, 3, 4, 5];
-
   return (
     <div>
       <div {...rules}>
