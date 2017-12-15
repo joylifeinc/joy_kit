@@ -19,6 +19,8 @@ import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPrev
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 import { SpinnerLoader } from './loader/SpinnerLoader';
 import { AddToCalendarWidget } from './addToCalendarWidget/AddToCalendarWidget';
+import { FloatingPane } from './floatingPane/FloatingPane';
+import { DropDownButton } from './dropDownButton/DropDownButton';
 
 // Dropdown is not quite ready for primetime yet
 
@@ -44,5 +46,7 @@ export {
   SimpleLayoutPreview,
   CountdownTimer,
   SpinnerLoader,
-  AddToCalendarWidget
+  AddToCalendarWidget,
+  FloatingPane,
+  DropDownButton
 };

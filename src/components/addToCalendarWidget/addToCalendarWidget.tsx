@@ -10,12 +10,11 @@ import iconMicrosoft from '../../assets/icon-microsoft.svg';
 import iconYahoo from '../../assets/icon-yahoo.svg';
 
 // Calendar plugin that we're wrapping includes a button and an automatic visibility toggle. We've hobbled it so it doesn't toggle.
-AddToCalendar.prototype.toggleCalendarDropdown = function (e) { return; };
-
-
+AddToCalendar.prototype.toggleCalendarDropdown = function (e) {
+  return;
+};
 
 export interface Props {
-
   // title of the event
   name?: string; // 'Sample Event';
 
@@ -28,7 +27,7 @@ export interface Props {
   location?: string;
 
   // Name of who this event belongs to
-  // 'Bob & Alice'    
+  // 'Bob & Alice'
   coupleNameString?: string;
 
   // Dress code for this event
@@ -43,7 +42,7 @@ export interface Props {
   dtend?: number;
 
   height?: string;
-
+  backgroundColor?: string;
 }
 
 const icons: any = {
@@ -51,19 +50,19 @@ const icons: any = {
   '& .fa-google': iconGmail,
   '& .outlook-link .fa-windows': iconMicrosoft,
   '& .outlookcom-link .fa-windows': iconOutlook,
-  '& .fa-yahoo': iconYahoo,
-}
+  '& .fa-yahoo': iconYahoo
+};
 
 const makeIconCSS = (key, icon) => {
-  var contentSelector = { 'content': `url(${icon})` };//{ [key]: { 'content': `url(${icon})` } };
+  var contentSelector = { content: `url(${icon})` }; //{ [key]: { 'content': `url(${icon})` } };
   var retval = {
     [key]: {
       //'content': `url(${icon})`,
       ':after': {
         backgroundImage: `url(${icon})`,
-        backgroundRepeat: 'no-repeat',
-      },
-    },
+        backgroundRepeat: 'no-repeat'
+      }
+    }
   };
   return retval;
 };
@@ -73,14 +72,13 @@ const iconsCSS = Object.keys(icons).reduce((acc, element) => {
   return { ...acc, ...css };
 }, {});
 
-
 const calendarButtonRules = css({
   height: '100%',
   '& .react-add-to-calendar': {
-    height: '100%',
+    height: '100%'
   },
   '& .react-add-to-calendar__button': {
-    display: 'none',
+    display: 'none'
   },
   '& .react-add-to-calendar__dropdown': {
     height: '100%',
@@ -99,13 +97,13 @@ const calendarButtonRules = css({
         height: '20%',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'center'
       },
       '& a': {
         color: '#100f0d',
         textDecoration: 'none',
         '&:hover': {
-          color: '#b9b9b9',
+          color: '#b9b9b9'
         }
       },
       '& .fa': {
@@ -121,11 +119,11 @@ const calendarButtonRules = css({
           backgroundSize: '20px',
           backgroundPosition: '0',
           position: 'relative',
-          top: '7px',
+          top: '7px'
         }
-      },
+      }
     },
-    ...iconsCSS,
+    ...iconsCSS
   }
 });
 
@@ -141,24 +139,29 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
     }
     return {
       title: this.props.name,
-      description: this.props.details + (this.props.dressCode ? ' Dress Code: ' + this.props.dressCode : ''),
-      location: (this.props.location ? this.props.location : this.props.coupleNameString + "'s Wedding"),
+      description:
+        this.props.details +
+        (this.props.dressCode ? ' Dress Code: ' + this.props.dressCode : ''),
+      location: this.props.location
+        ? this.props.location
+        : this.props.coupleNameString + "'s Wedding",
       startTime: this.props.dtstart,
       endTime: endTime
-    }
+    };
   }
 
   render() {
-
-    const outerContainer = css({ height: (this.props.height || '100%') });
+    const outerContainer = css({
+      height: this.props.height || '100%',
+      backgroundColor: this.props.backgroundColor
+    });
 
     return (
-      <div { ...outerContainer }>
+      <div {...outerContainer}>
         <div {...calendarButtonRules}>
-          <AddToCalendar event={this.calendarFormat()} optionsOpen={true} ></AddToCalendar>
+          <AddToCalendar event={this.calendarFormat()} optionsOpen={true} />
         </div>
       </div>
     );
-
   }
 }

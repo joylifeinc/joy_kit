@@ -20,7 +20,9 @@ import {
   CountdownTimer,
   SpinnerLoader,
   SimpleLayoutPreview,
-  AddToCalendarWidget
+  AddToCalendarWidget,
+  FloatingPane,
+  DropDownButton
 } from './components';
 
 // Styles
@@ -71,5 +73,7 @@ export {
   CountdownTimer,
   Colors,
   SpinnerLoader,
-  AddToCalendarWidget
+  AddToCalendarWidget,
+  FloatingPane,
+  DropDownButton
 };
