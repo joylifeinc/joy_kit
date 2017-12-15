@@ -259,9 +259,11 @@ const Button = ({
       onClick={handleOnClick}
     >
       {icon ? (
-        typeof icon === 'string' ?
-          <img {...iconRules} {...iconOnlyRules(!children) } src={icon} /> :
-          icon
+        typeof icon === 'string' ? (
+          <img {...iconRules} {...iconOnlyRules(!children) } src={icon} />
+        ) : (
+            icon
+          )
       ) : null}
       {children}
     </button>
