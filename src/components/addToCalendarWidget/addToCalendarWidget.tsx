@@ -2,14 +2,17 @@ import * as React from 'react';
 import { css } from 'glamor';
 import { error } from 'util';
 import AddToCalendar from 'react-add-to-calendar';
+
+import iconApple from '../../assets/icon-apple.svg';
+import iconGmail from '../../assets/icon-gmail.svg';
+import iconOutlook from '../../assets/icon-outlook.svg';
+import iconMicrosoft from '../../assets/icon-microsoft.svg';
+import iconYahoo from '../../assets/icon-yahoo.svg';
+
 // Calendar plugin that we're wrapping includes a button and an automatic visibility toggle. We've hobbled it so it doesn't toggle.
 AddToCalendar.prototype.toggleCalendarDropdown = function (e) { return; };
 
-const iconApple = require('../../assets/icon-apple.svg');
-const iconGmail = require('../../assets/icon-gmail.svg');
-const iconOutlook = require('../../assets/icon-outlook.svg');
-const iconMicrosoft = require('../../assets/icon-microsoft.svg');
-const iconYahoo = require('../../assets/icon-yahoo.svg');
+
 
 export interface Props {
 
