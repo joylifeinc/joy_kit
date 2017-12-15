@@ -43,7 +43,6 @@ const barOptions = (side: string) =>
 const barRules = css({
   position: 'relative',
   display: 'block',
-  width: '300px',
   '::before': barOptions('left'),
   '::after': barOptions('right')
 });
