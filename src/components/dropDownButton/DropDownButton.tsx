@@ -36,7 +36,6 @@ export class DropDownButton extends React.Component<Props, {}> {
   }
 
   render() {
-    console.log("rendering...");
 
     let clickHandler = { handleOnClick: this.clickedButton.bind(this) }
 
