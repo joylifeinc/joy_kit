@@ -55,10 +55,10 @@ const icons: any = {
 };
 
 const makeIconCSS = (key, icon) => {
-  var contentSelector = { content: `url(${icon})` }; //{ [key]: { 'content': `url(${icon})` } };
-  var retval = {
+  const contentSelector = { content: `url(${icon})` }; // { [key]: { 'content': `url(${icon})` } };
+  const retval = {
     [key]: {
-      //'content': `url(${icon})`,
+      // 'content': `url(${icon})`,
       ':after': {
         backgroundImage: `url(${icon})`,
         backgroundRepeat: 'no-repeat'
@@ -69,7 +69,7 @@ const makeIconCSS = (key, icon) => {
 };
 
 const iconsCSS = Object.keys(icons).reduce((acc, element) => {
-  let css = makeIconCSS(element, icons[element]);
+  const css = makeIconCSS(element, icons[element]);
   return { ...acc, ...css };
 }, {});
 
@@ -134,9 +134,9 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
   }
 
   calendarFormat() {
-    var endTime = this.props.dtend;
+    let endTime = this.props.dtend;
     if (endTime === undefined) {
-      endTime = this.props.dtstart + 14400000; //4 hours in ms
+      endTime = this.props.dtstart + 14400000; // 4 hours in ms
     }
     return {
       title: this.props.name,
