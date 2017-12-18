@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DatePicker from 'react-datepicker';
-import * as moment from 'moment';
+const moment = require('moment');
 import { css } from 'glamor';
 
 //NOTE: will need a polyfill for IE 10
@@ -35,7 +35,7 @@ export default class DateSelector extends React.Component<Props, {}> {
   }
 
   render() {
-    let date = this.props.date || new Date();
+    const date = this.props.date || new Date();
     return (
       <div {...menuRules}>
         <DatePicker selected={moment(date)} onChange={this.props.updateDate} />
