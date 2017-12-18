@@ -68,6 +68,11 @@ const makeIconCSS = (key, icon) => {
   return retval;
 };
 
+const outerContainer = css({
+  height: this.props.height || '100%',
+  backgroundColor: this.props.backgroundColor
+});
+
 const iconsCSS = Object.keys(icons).reduce((acc, element) => {
   const css = makeIconCSS(element, icons[element]);
 return { ...acc, ...css };
@@ -145,23 +150,19 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
         (this.props.dressCode ? ' Dress Code: ' + this.props.dressCode : ''),
       location: this.props.location
         ? this.props.location
-        : this.props.coupleNameString + "'s Event",
+        : this.props.coupleNameString + "'s Event", 
       startTime: this.props.dtstart,
       endTime: endTime
     };
   }
-
+         
   render() {
-    const outerContainer = css({
-      height: this.props.height || '100%',
-      backgroundColor: this.props.backgroundColor
-    });
-
+    
     return (
       <div {...outerContainer}>
         <div {...calendarButtonRules}>
           <AddToCalendar event={this.calendarFormat()} optionsOpen={true} />
-        </div>
+        </di v>
       </div>
     );
   }
