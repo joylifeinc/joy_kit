@@ -4,8 +4,7 @@ import { error } from 'util';
 import { Button } from '../button/Button';
 import { DropDown } from '../dropdown/Dropdown';
 import { FloatingPane } from '../floatingPane/FloatingPane'
-import { VelocityTransitionGroup } from 'velocity-react';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 export interface Props {
   button?: React.ReactElement<any>;
