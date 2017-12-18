@@ -10,7 +10,8 @@ import iconMicrosoft from '../../assets/icon-microsoft.svg';
 import iconYahoo from '../../assets/icon-yahoo.svg';
 
 // Calendar plugin that we're wrapping includes a button and an automatic visibility toggle. We've hobbled it so it doesn't toggle.
-AddToCalendar.prototype.toggleCalendarDropdown = function(e) {
+
+AddToCalendar.prototype.toggleCalendarDropdown = function (e) {
   return;
 };
 
@@ -42,6 +43,7 @@ export interface Props {
   dtend?: number;
 
   height?: string;
+  backgroundColor?: string;
 }
 
 const icons: any = {
@@ -65,6 +67,12 @@ const makeIconCSS = (key, icon) => {
   };
   return retval;
 };
+
+
+const outerContainer = (height, backgroundColor) => (css({
+  height: height || '100%',
+  backgroundColor: backgroundColor
+}));
 
 const iconsCSS = Object.keys(icons).reduce((acc, element) => {
   const css = makeIconCSS(element, icons[element]);
@@ -150,10 +158,9 @@ export class AddToCalendarWidget extends React.Component<Props, {}> {
   }
 
   render() {
-    const outerContainer = css({ height: this.props.height || '100%' });
 
     return (
-      <div {...outerContainer}>
+      <div {...outerContainer(this.props.height, this.props.backgroundColor) }>
         <div {...calendarButtonRules}>
           <AddToCalendar event={this.calendarFormat()} optionsOpen={true} />
         </div>
