@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-const menuIcon = require('../../../../../assets/iconMenu.svg');
+import menuIcon from '../../../../../assets/iconMenu.svg'
 
 import { WeddingName } from '../../../../';
 
@@ -105,9 +105,9 @@ export const TwoPanePreviewLeft: React.SFC<Props> = ({
   return (
     <div
       className="desktop-preview-screen joy-wedding-page"
-      {...containerRules(accentTextColor)}
+      {...containerRules(accentTextColor) }
     >
-      <div className="left-pane" {...contentRules(coverPhoto)}>
+      <div className="left-pane" {...contentRules(coverPhoto) }>
         {coverPhoto && <div {...overlayRules} />}
         <img {...menuRules} className="menu" src={menuIcon} />
         <div className="joy-wedding-intro" {...introRules}>
