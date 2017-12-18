@@ -35,12 +35,10 @@ export default class DateSelector extends React.Component<Props, {}> {
   }
 
   render() {
+    const date = this.props.date || new Date();
     return (
       <div {...menuRules}>
-        <DatePicker
-          selected={moment(this.props.date)}
-          onChange={this.props.updateDate}
-        />
+        <DatePicker selected={moment(date)} onChange={this.props.updateDate} />
       </div>
     );
   }
