@@ -50,6 +50,7 @@ export interface Props {
     height?: number;
     width?: number;
   };
+  previewContainerId?: string;
 }
 
 const previewRules = (height, width) =>
@@ -136,13 +137,17 @@ class TwoPanePreview extends React.Component<Props> {
               <link
                 rel="stylesheet"
                 type="text/css"
-                href={`http://withjoy.com/assets/public/joyStyles3/${theme}/base.css`}
+                href={`http://withjoy.com/assets/public/joyStyles3/${
+                  theme
+                }/base.css`}
               />
               {useThemeColors && (
                 <link
                   rel="stylesheet"
                   type="text/css"
-                  href={`http://withjoy.com/assets/public/joyStyles3/${theme}/color.css`}
+                  href={`http://withjoy.com/assets/public/joyStyles3/${
+                    theme
+                  }/color.css`}
                 />
               )}
             </Fragments>
@@ -175,6 +180,7 @@ class TwoPanePreview extends React.Component<Props> {
       baseTextColor,
       coverPhoto,
       previewOptions,
+      previewContainerId,
       theme,
       title
     } = this.props;
@@ -196,7 +202,11 @@ class TwoPanePreview extends React.Component<Props> {
       <Fragments>
         {fontStylesheetLink}
         {this.getStyleOverrides()}
-        <PreviewWrapper for="twoPane" previewOptions={previewOptions}>
+        <PreviewWrapper
+          for="twoPane"
+          previewContainerId={previewContainerId}
+          previewOptions={previewOptions}
+        >
           <div
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
