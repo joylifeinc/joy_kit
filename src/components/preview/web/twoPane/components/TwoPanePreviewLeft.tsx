@@ -102,7 +102,6 @@ export const TwoPanePreviewLeft: React.SFC<Props> = ({
   ownerName,
   message
 }) => {
-  console.log(menuIcon);
   return (
     <div
       className="desktop-preview-screen joy-wedding-page"
