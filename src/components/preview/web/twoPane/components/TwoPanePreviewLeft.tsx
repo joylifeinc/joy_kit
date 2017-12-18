@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-const menuIcon = require('../../../../../assets/iconMenu.svg');
+import menuIcon from '../../../../../assets/iconMenu.svg';
 
 import { WeddingName } from '../../../../';
 
@@ -102,6 +102,7 @@ export const TwoPanePreviewLeft: React.SFC<Props> = ({
   ownerName,
   message
 }) => {
+  console.log(menuIcon);
   return (
     <div
       className="desktop-preview-screen joy-wedding-page"
