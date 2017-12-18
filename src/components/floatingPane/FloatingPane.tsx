@@ -21,6 +21,7 @@ export class FloatingPane extends React.Component<Props, {}> {
 
     const floating = css({
       position: 'absolute',
+      zIndex: '2'
     })
 
     return (
