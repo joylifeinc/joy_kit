@@ -11,6 +11,7 @@ export interface Props {
     height?: number;
     width?: number;
   };
+  previewContainerId?: string;
 }
 
 export type For = 'twoPane' | 'simpleLayout';
@@ -32,7 +33,9 @@ export class PreviewWrapper extends React.Component<Props> {
 
   componentDidMount() {
     this.previewContainer = document.getElementById(
-      `${this.props.for}PreviewContainer`
+      this.props.previewContainerId
+        ? this.props.previewContainerId
+        : `${this.props.for}PreviewContainer`
     );
     this.setWindowResizeSubscription();
     this.updatePreviewScale();

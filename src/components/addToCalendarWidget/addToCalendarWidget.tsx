@@ -10,6 +10,7 @@ import iconMicrosoft from '../../assets/icon-microsoft.svg';
 import iconYahoo from '../../assets/icon-yahoo.svg';
 
 // Calendar plugin that we're wrapping includes a button and an automatic visibility toggle. We've hobbled it so it doesn't toggle.
+
 AddToCalendar.prototype.toggleCalendarDropdown = function (e) {
   return;
 };
