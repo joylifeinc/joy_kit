@@ -36,7 +36,7 @@ const makeButton = () => {
 };
 
 const makeContent = () => {
-  return (<div> ANYTHING CAN GO HERE </div>);
+  return (<AddToCalendarWidget />);
 }
 
 stories.add('overrides', () => {
