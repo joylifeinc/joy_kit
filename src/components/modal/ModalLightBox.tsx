@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css, keyframes, StyleAttribute } from 'glamor';
 import { VelocityComponent } from 'velocity-react';
 
-
 const ESCAPE_KEY_CODE = 27;
 
 export interface Props {
