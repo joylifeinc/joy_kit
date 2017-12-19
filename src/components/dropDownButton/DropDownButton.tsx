@@ -42,7 +42,7 @@ export class DropDownButton extends React.Component<Props, {}> {
     };
   }
 
-  activate() {
+  activate = () => {
     if (!this.state.active) {
       this.setState({
         active: true,
@@ -50,7 +50,7 @@ export class DropDownButton extends React.Component<Props, {}> {
     }
   }
 
-  deactivate() {
+  deactivate = () => {
     if (this.state.active) {
       this.setState({
         active: false,
@@ -58,7 +58,7 @@ export class DropDownButton extends React.Component<Props, {}> {
     }
   }
 
-  toggle() {
+  toggle = () => {
     this.setState({
       active: !this.state.active,
     })
