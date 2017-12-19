@@ -84,11 +84,11 @@ export class DropDownButton extends React.Component<Props, {}> {
     }
   }
 
-  bindButtonRef(wrapper) {
+  bindButtonRef = (wrapper) => {
     this.buttonRef = wrapper;
   }
 
-  bindMenuRef(wrapper) {
+  bindMenuRef = (wrapper) => {
     this.menuRef = wrapper;
   }
 
@@ -96,14 +96,14 @@ export class DropDownButton extends React.Component<Props, {}> {
 
     return (
       <div>
-        <div ref={this.bindButtonRef.bind(this)} {...buttonWrapperRules}>
+        <div ref={this.bindButtonRef} {...buttonWrapperRules}>
           {this.props.button}
         </div>
         <VelocityTransitionGroup
           enter={{ animation: 'transition.slideUpIn' }}
           leave={{ animation: 'transition.slideDownOut' }}
         >
-          {this.state.active && (<div ref={this.bindMenuRef.bind(this)} {...floatingPaneWrapperRules} > <FloatingPane element={this.props.menu} /></div>)}
+          {this.state.active && (<div ref={this.bindMenuRef} {...floatingPaneWrapperRules} > <FloatingPane element={this.props.menu} /></div>)}
         </VelocityTransitionGroup>
       </div >
     );
