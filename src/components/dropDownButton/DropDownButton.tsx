@@ -8,6 +8,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
 
+import { VelocityTransitionGroup } from 'velocity-react';
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
+
 export interface Props {
   button?: React.ReactElement<any>;
   menu?: React.ReactElement<any>;
@@ -90,7 +94,12 @@ export class DropDownButton extends React.Component<Props, {}> {
         <div ref={this.bindButtonRef.bind(this)} {...buttonWrapperRules}>
           {this.props.button}
         </div>
-        {this.state.active && (<div ref={this.bindMenuRef.bind(this)} > <FloatingPane element={this.props.menu} /></div>)}
+        <VelocityTransitionGroup
+          enter={{ animation: 'transition.slideUpIn' }}
+          leave={{ animation: 'transition.slideDownOut' }}
+        >
+          {this.state.active && (<div ref={this.bindMenuRef.bind(this)} > <FloatingPane element={this.props.menu} /></div>)}
+        </VelocityTransitionGroup>
       </div >
     );
   }
