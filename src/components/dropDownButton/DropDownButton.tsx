@@ -5,6 +5,8 @@ import { Button } from '../button/Button';
 import { DropDown } from '../dropdown/Dropdown';
 import { FloatingPane } from '../floatingPane/FloatingPane'
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/debounceTime';
 
 export interface Props {
   button?: React.ReactElement<any>;
@@ -68,7 +70,9 @@ export class DropDownButton extends React.Component<Props, {}> {
   }
 
   componentWillUnmount() {
-    this.clickSub.unsubscribe();
+    if (this.clickSub) {
+      this.clickSub.unsubscribe();
+    }
   }
 
   bindButtonRef(wrapper) {
