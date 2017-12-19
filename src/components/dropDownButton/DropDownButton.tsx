@@ -8,6 +8,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
 
+import { VelocityTransitionGroup } from 'velocity-react';
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
+
 export interface Props {
   button?: React.ReactElement<any>;
   menu?: React.ReactElement<any>;
@@ -15,6 +19,11 @@ export interface Props {
 
 const buttonWrapperRules = css({
   display: 'inline-block'
+})
+
+const floatingPaneWrapperRules = css({
+  position: 'relative',
+  zIndex: '5',
 })
 
 export class DropDownButton extends React.Component<Props, {}> {
@@ -33,7 +42,7 @@ export class DropDownButton extends React.Component<Props, {}> {
     };
   }
 
-  activate() {
+  activate = () => {
     if (!this.state.active) {
       this.setState({
         active: true,
@@ -41,7 +50,7 @@ export class DropDownButton extends React.Component<Props, {}> {
     }
   }
 
-  deactivate() {
+  deactivate = () => {
     if (this.state.active) {
       this.setState({
         active: false,
@@ -49,14 +58,14 @@ export class DropDownButton extends React.Component<Props, {}> {
     }
   }
 
-  toggle() {
+  toggle = () => {
     this.setState({
       active: !this.state.active,
     })
   }
 
   componentDidMount() {
-    this.clickSub = Observable.fromEvent(document.body, 'click').debounceTime(50).subscribe((e: any) => {
+    this.clickSub = Observable.fromEvent(document.body, 'click').debounceTime(250).subscribe((e: any) => {
       if (e.path.includes(this.buttonRef)) {
         // button clicked
         this.toggle();
@@ -75,11 +84,11 @@ export class DropDownButton extends React.Component<Props, {}> {
     }
   }
 
-  bindButtonRef(wrapper) {
+  bindButtonRef = (wrapper) => {
     this.buttonRef = wrapper;
   }
 
-  bindMenuRef(wrapper) {
+  bindMenuRef = (wrapper) => {
     this.menuRef = wrapper;
   }
 
@@ -87,10 +96,15 @@ export class DropDownButton extends React.Component<Props, {}> {
 
     return (
       <div>
-        <div ref={this.bindButtonRef.bind(this)} {...buttonWrapperRules}>
+        <div ref={this.bindButtonRef} {...buttonWrapperRules}>
           {this.props.button}
         </div>
-        {this.state.active && (<div ref={this.bindMenuRef.bind(this)} > <FloatingPane element={this.props.menu} /></div>)}
+        <VelocityTransitionGroup
+          enter={{ animation: 'transition.slideUpIn' }}
+          leave={{ animation: 'transition.slideDownOut' }}
+        >
+          {this.state.active && (<div ref={this.bindMenuRef} {...floatingPaneWrapperRules} > <FloatingPane element={this.props.menu} /></div>)}
+        </VelocityTransitionGroup>
       </div >
     );
   }
