@@ -9,7 +9,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.config.js --env=example",
     "build-watch": "webpack --debug --watch --config ./webpack.config.js --env=build",
     "build": "npm run clean && npm run rollup",
-    "rollup": "rollup -w -c",
+    "rollup": "rollup -c",
     "compile": "tsc --rootDir ./src --outDir ./dist",
     "clean": "npm run clean-dist && npm run clean-lib",
     "clean-dist": "shx rm -rf ./dist",

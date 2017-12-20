@@ -75,7 +75,7 @@ const contentRules = coverPhoto =>
   );
 
 const greetingRules = css({
-  fontSize: '15px',
+  fontSize: '14px',
   marginBottom: 30,
   marginTop: '5.5%'
 });

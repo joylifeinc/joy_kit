@@ -20,6 +20,8 @@ export interface Props {
   /** Error message displayed under the input. (For validation purposes) */
   error?: string;
 
+  hideError?: boolean;
+
   /** Sets the value of the input */
   value: string;
 
@@ -27,7 +29,7 @@ export interface Props {
   updateValueToPlaceholder?: boolean;
 }
 
-const barOptions = (side: string) =>
+const barOptions = (side: string, backgroundColor: string) =>
   css(
     {
       content: '""',
@@ -35,18 +37,21 @@ const barOptions = (side: string) =>
       width: 0,
       bottom: 0,
       position: 'absolute',
-      background: COLORS.BLACK_SECONDARY,
+      backgroundColor,
       transition: '0.2s ease all'
     },
     side === 'left' ? { left: '50%' } : { right: '50%' }
   );
 
-const barRules = css({
-  position: 'relative',
-  display: 'block',
-  '::before': barOptions('left'),
-  '::after': barOptions('right')
-});
+const barRules = (hasErrors: boolean) => {
+  const barColor = hasErrors ? COLORS.RED_PRIMARY : COLORS.BLACK_SECONDARY;
+  return css({
+    position: 'relative',
+    display: 'block',
+    '::before': barOptions('left', barColor),
+    '::after': barOptions('right', barColor)
+  });
+};
 
 const errorBarRules = css({
   position: 'relative',
@@ -64,28 +69,32 @@ const errorText = css({
   fontSize: 12
 });
 
+const labelValueTransform =
+  'translateZ(0) translateX(-1px) translateY(-22px) scale(.75)';
+
 const labelRules = (value: string, error: string) =>
   css(
     {
       color: COLORS.GRAY_TERTIARY,
       fontSize: '15px',
-      fontWeight: 'normal',
+      fontWeight: 400,
       position: 'absolute',
       pointerEvents: 'none',
-      opacity: '0.5',
-      left: '1px',
-      top: '27px',
+      opacity: '0.7',
+      left: '2px',
+      top: '25px',
       transition: 'transform cubic-bezier(.25, .8, .25, 1) .25s',
       transform: 'translateZ(0) translateY(0) scale(1)',
-      transformOrigin: 'left top'
+      transformOrigin: 'left top',
+      whiteSpace: 'nowrap'
     },
     value
       ? {
-          transform:
-            'translateZ(0) translateX(-1px) translateY(-22px) scale(.8)',
+          transform: labelValueTransform,
           fontWeight: 600
         }
-      : null
+      : null,
+    error && { color: COLORS.RED_PRIMARY }
   );
 
 const inputGroupRules = (value: string, error: string) =>
@@ -104,6 +113,8 @@ const inputGroupRules = (value: string, error: string) =>
       width: '100%',
       border: 'none',
       borderBottom: '1px solid #757575',
+      borderColor: 'rgba(0,0,0,.12)',
+      borderWidth: '0 0 1px',
       '::placeholder': {
         visibility: 'hidden'
       },
@@ -119,23 +130,23 @@ const inputGroupRules = (value: string, error: string) =>
         },
         outline: 'none',
         ' ~ label': {
-          transform:
-            'translateZ(0) translateX(-1px) translateY(-20px) scale(.8)'
+          transform: labelValueTransform
         }
       }
     }
   });
 
-export const InputLine = ({
+export const InputLine: React.SFC<Props> = ({
   handleChange,
   handleBlur,
   value,
   label,
   error,
+  hideError,
   placeholder,
   required = false,
   updateValueToPlaceholder = true
-}: Props) => {
+}) => {
   // Sort of a hack to make the placeholder the value when Enter key is pressed
   const placeholderToValue = e => {
     e.charCode === 13 && updateValueToPlaceholder && placeholder
@@ -156,13 +167,17 @@ export const InputLine = ({
       />
 
       {!error ? (
-        <span className="bar" {...barRules} />
+        <span className="bar" {...barRules(Boolean(error))} />
       ) : (
         <span className="error-bar" {...errorBarRules} />
       )}
 
-      <span {...errorText}>{error}</span>
+      {!hideError && <span {...errorText}>{error}</span>}
       {label ? <label>{label}</label> : null}
     </div>
   );
 };
+
+InputLine.defaultProps = {
+  hideError: false
+}
