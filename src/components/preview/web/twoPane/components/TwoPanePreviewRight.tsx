@@ -36,7 +36,7 @@ const weddingInfoContainerRules = css({
   height: '464px'
 });
 
-const welcomeContainerRules = (color = 'rgba(0, 0, 0, 1)') =>
+const welcomeContainerRules = (color = 'rgb(58, 60, 62)') =>
   css({
     color,
     textAlign: 'center',
@@ -60,8 +60,9 @@ const locationRules = css({
 
 const dateRules = css({
   fontSize: '17px',
+  letterSpacing: '1px',
   lineHeight: '17px',
-  fontWeight: 400,
+  fontWeight: 300,
   margin: '0 0 20px'
 });
 
@@ -72,20 +73,21 @@ const ctaButtonContainer = css({
 });
 
 const guestNameRules = css({
-  fontSize: '10px',
+  fontSize: 9,
   lineHeight: '42px',
-  letterSpacing: '1.25px',
-  fontWeight: '600',
+  letterSpacing: '2px',
+  fontWeight: 600,
   textTransform: 'uppercase'
 });
 
 const ctaButtonRules = css({
-  fontWeight: '400',
-  lineHeight: '28px',
-  border: '1.4px solid',
+  fontWeight: 300,
+  lineHeight: '42px',
+  backgroundColor: 'transparent',
+  border: '2px solid #3A3C3E',
   borderRadius: '5px',
-  minWidth: '150px',
-  fontSize: '11px',
+  minWidth: '240px',
+  fontSize: 15,
   padding: '0 20px',
   textAlign: 'center'
 });

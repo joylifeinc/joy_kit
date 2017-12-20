@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-
 import menuIcon from '../../../../../assets/iconMenu.svg';
 
 import { WeddingName } from '../../../../';
@@ -67,7 +66,7 @@ const contentRules = coverPhoto =>
       flexDirection: 'column-reverse',
       fontSize: '44px',
       // height: 'calc(100% - 36px)',
-      padding: '20px 40px',
+      padding: '10% 20% 6% 10%',
       width: '100%'
     },
     coverPhoto && {
@@ -77,6 +76,7 @@ const contentRules = coverPhoto =>
 
 const greetingRules = css({
   fontSize: '15px',
+  marginBottom: 30,
   marginTop: '5.5%'
 });
 
@@ -106,9 +106,9 @@ export const TwoPanePreviewLeft: React.SFC<Props> = ({
   return (
     <div
       className="desktop-preview-screen joy-wedding-page"
-      {...containerRules(accentTextColor) }
+      {...containerRules(accentTextColor)}
     >
-      <div className="left-pane" {...contentRules(coverPhoto) }>
+      <div className="left-pane" {...contentRules(coverPhoto)}>
         {coverPhoto && <div {...overlayRules} />}
         <img {...menuRules} className="menu" src={menuIcon} />
         <div className="joy-wedding-intro" {...introRules}>

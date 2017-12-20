@@ -3,7 +3,7 @@ import { css } from 'glamor';
 import { Observable } from 'rxjs';
 import { VelocityComponent } from 'velocity-react';
 
-const SIDE_MARGIN = 20;
+const SIDE_MARGIN = 30;
 
 export interface Props {
   for: For;
@@ -47,7 +47,7 @@ export class PreviewWrapper extends React.Component<Props> {
 
   private setWindowResizeSubscription = () => {
     const windowResize$ = Observable.fromEvent(window, 'resize');
-    this.windowResizeSub = windowResize$.debounceTime(250).subscribe({
+    this.windowResizeSub = windowResize$.subscribe({
       next: evt => {
         this.updatePreviewScale();
       }
