@@ -180,4 +180,4 @@ export const InputLine: React.SFC<Props> = ({
 
 InputLine.defaultProps = {
   hideError: false
-}
+};
