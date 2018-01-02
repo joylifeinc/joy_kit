@@ -21,6 +21,7 @@ const mainContentRules = css({
 // Example Pages
 import { ButtonExamples } from './examples/Buttons';
 import { PanelExamples } from './examples/PanelExample';
+import { TimeExamples } from './examples/TimeExample';
 
 export class JoyKitExamples extends React.Component<{}, {}> {
   constructor(props) {
@@ -39,12 +40,14 @@ export class JoyKitExamples extends React.Component<{}, {}> {
                 <span>
                   <Link to={'/buttons'}>Buttons</Link>
                   <Link to={'/panels'}>Panel</Link>
+                  <Link to={'/time'}>Time</Link>
                 </span>
               }
             />
             <div {...mainContentRules}>
               <Route exact={true} path="/buttons" component={ButtonExamples} />
               <Route path="/panels" component={PanelExamples} />
+              <Route path="/time" component={TimeExamples} />
             </div>
           </div>
         </Router>

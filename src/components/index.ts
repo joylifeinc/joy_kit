@@ -21,6 +21,7 @@ import { SpinnerLoader } from './loader/SpinnerLoader';
 import { AddToCalendarWidget } from './addToCalendarWidget/AddToCalendarWidget';
 import { FloatingPane } from './floatingPane/FloatingPane';
 import { DropDownButton } from './dropDownButton/DropDownButton';
+import { Clockface } from './clockface/Clockface';
 
 // Dropdown is not quite ready for primetime yet
 
@@ -48,5 +49,6 @@ export {
   SpinnerLoader,
   AddToCalendarWidget,
   FloatingPane,
-  DropDownButton
+  DropDownButton,
+  Clockface
 };
