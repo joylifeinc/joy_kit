@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
+import { COLORS } from '../../';
 export interface Props {
   /** Function to call when input is updated */
   handleChange: (e) => void;
@@ -19,6 +20,8 @@ export interface Props {
   /** Error message displayed under the input. (For validation purposes) */
   error?: string;
 
+  hideError?: boolean;
+
   /** Sets the value of the input */
   value: string;
 
@@ -26,75 +29,92 @@ export interface Props {
   updateValueToPlaceholder?: boolean;
 }
 
-const barOptions = (side: string) =>
+const barOptions = (side: string, backgroundColor: string) =>
   css(
     {
       content: '""',
-      height: '2px',
-      width: '0',
-      bottom: '1px',
+      height: 2,
+      width: 0,
+      bottom: 0,
       position: 'absolute',
-      background: '#4A90E2',
+      backgroundColor,
       transition: '0.2s ease all'
     },
     side === 'left' ? { left: '50%' } : { right: '50%' }
   );
 
-const barRules = css({
-  position: 'relative',
-  display: 'block',
-  '::before': barOptions('left'),
-  '::after': barOptions('right')
-});
+const barRules = (hasErrors: boolean) => {
+  const barColor = hasErrors ? COLORS.RED_PRIMARY : COLORS.BLACK_SECONDARY;
+  return css({
+    position: 'relative',
+    display: 'block',
+    '::before': barOptions('left', barColor),
+    '::after': barOptions('right', barColor)
+  });
+};
 
 const errorBarRules = css({
   position: 'relative',
   display: 'block',
   content: '""',
-  height: '2px',
-  bottom: '1px',
-  background: 'red'
+  height: 2,
+  bottom: 1,
+  background: COLORS.RED_PRIMARY
 });
 
 const errorText = css({
-  color: 'red',
-  margin: '4px 0 0 5px',
-  fontSize: '14px'
+  color: COLORS.RED_PRIMARY,
+  display: 'inline-block',
+  margin: '4px 0 0 1px',
+  fontSize: 12
 });
+
+const labelValueTransform =
+  'translateZ(0) translateX(-1px) translateY(-22px) scale(.75)';
 
 const labelRules = (value: string, error: string) =>
   css(
     {
-      color: !error ? '#333' : 'red',
-      fontSize: '18px',
-      fontWeight: 'normal',
+      color: COLORS.GRAY_TERTIARY,
+      fontSize: '15px',
+      fontWeight: 400,
       position: 'absolute',
       pointerEvents: 'none',
-      opacity: '0.5',
-      left: '5px',
-      top: '10px',
-      transition: '0.2s ease all'
+      opacity: '0.7',
+      left: '2px',
+      top: '25px',
+      transition: 'transform cubic-bezier(.25, .8, .25, 1) .25s',
+      transform: 'translateZ(0) translateY(0) scale(1)',
+      transformOrigin: 'left top',
+      whiteSpace: 'nowrap'
     },
     value
       ? {
-          top: '-10px',
-          fontSize: '14px'
+          transform: labelValueTransform,
+          fontWeight: 600
         }
-      : null
+      : null,
+    error && { color: COLORS.RED_PRIMARY }
   );
 
 const inputGroupRules = (value: string, error: string) =>
   css({
     position: 'relative',
-    margin: '14px 0 45px 0',
+    paddingTop: 16,
+    height: 66,
     '& > label': labelRules(value, error),
     '& > input': {
+      color: 'rgba(0, 0, 0, .87)',
       fontSize: '15px',
-      padding: '10px 6px 6px 6px',
+      height: 32,
+      lineHeight: '24px',
+      padding: '2px 0 1px',
       display: 'block',
       width: '100%',
       border: 'none',
       borderBottom: '1px solid #757575',
+      borderColor: 'rgba(0,0,0,.12)',
+      borderWidth: '0 0 1px',
       '::placeholder': {
         visibility: 'hidden'
       },
@@ -110,24 +130,23 @@ const inputGroupRules = (value: string, error: string) =>
         },
         outline: 'none',
         ' ~ label': {
-          top: '-10px',
-          fontSize: '14px',
-          color: !error ? '#333' : 'red'
+          transform: labelValueTransform
         }
       }
     }
   });
 
-export const InputLine = ({
+export const InputLine: React.SFC<Props> = ({
   handleChange,
   handleBlur,
   value,
   label,
   error,
+  hideError,
   placeholder,
   required = false,
   updateValueToPlaceholder = true
-}: Props) => {
+}) => {
   // Sort of a hack to make the placeholder the value when Enter key is pressed
   const placeholderToValue = e => {
     e.charCode === 13 && updateValueToPlaceholder && placeholder
@@ -148,13 +167,17 @@ export const InputLine = ({
       />
 
       {!error ? (
-        <span className="bar" {...barRules} />
+        <span className="bar" {...barRules(Boolean(error))} />
       ) : (
         <span className="error-bar" {...errorBarRules} />
       )}
 
-      <span {...errorText}>{error}</span>
+      {!hideError && <span {...errorText}>{error}</span>}
       {label ? <label>{label}</label> : null}
     </div>
   );
+};
+
+InputLine.defaultProps = {
+  hideError: false
 };

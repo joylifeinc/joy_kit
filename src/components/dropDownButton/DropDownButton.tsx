@@ -3,7 +3,7 @@ import { css } from 'glamor';
 import { error } from 'util';
 import { Button } from '../button/Button';
 import { DropDown } from '../dropdown/Dropdown';
-import { FloatingPane } from '../floatingPane/FloatingPane'
+import { FloatingPane } from '../floatingPane/FloatingPane';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
@@ -15,10 +15,9 @@ export interface Props {
 
 const buttonWrapperRules = css({
   display: 'inline-block'
-})
+});
 
 export class DropDownButton extends React.Component<Props, {}> {
-
   state = { active: false };
 
   private buttonRef;
@@ -36,7 +35,7 @@ export class DropDownButton extends React.Component<Props, {}> {
   activate() {
     if (!this.state.active) {
       this.setState({
-        active: true,
+        active: true
       });
     }
   }
@@ -44,29 +43,31 @@ export class DropDownButton extends React.Component<Props, {}> {
   deactivate() {
     if (this.state.active) {
       this.setState({
-        active: false,
+        active: false
       });
     }
   }
 
   toggle() {
     this.setState({
-      active: !this.state.active,
-    })
+      active: !this.state.active
+    });
   }
 
   componentDidMount() {
-    this.clickSub = Observable.fromEvent(document.body, 'click').debounceTime(50).subscribe((e: any) => {
-      if (e.path.includes(this.buttonRef)) {
-        // button clicked
-        this.toggle();
-      } else if (e.path.includes(this.menuRef)) {
-        // menu clicked
-      } else {
-        // somewhere else clicked
-        this.deactivate();
-      }
-    })
+    this.clickSub = Observable.fromEvent(document.body, 'click')
+      .debounceTime(50)
+      .subscribe((e: any) => {
+        if (e.path.includes(this.buttonRef)) {
+          // button clicked
+          this.toggle();
+        } else if (e.path.includes(this.menuRef)) {
+          // menu clicked
+        } else {
+          // somewhere else clicked
+          this.deactivate();
+        }
+      });
   }
 
   componentWillUnmount() {
@@ -84,14 +85,18 @@ export class DropDownButton extends React.Component<Props, {}> {
   }
 
   render() {
-
     return (
       <div>
         <div ref={this.bindButtonRef.bind(this)} {...buttonWrapperRules}>
           {this.props.button}
         </div>
-        {this.state.active && (<div ref={this.bindMenuRef.bind(this)} > <FloatingPane element={this.props.menu} /></div>)}
-      </div >
+        {this.state.active && (
+          <div ref={this.bindMenuRef.bind(this)}>
+            {' '}
+            <FloatingPane element={this.props.menu} />
+          </div>
+        )}
+      </div>
     );
   }
 }

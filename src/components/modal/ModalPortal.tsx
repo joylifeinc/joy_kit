@@ -78,6 +78,7 @@ export interface BaseProps {
 export interface Props extends BaseProps {
   type: Type;
   styleRules: StyleAttribute;
+  wrapperOverrideRules?: StyleAttribute | {};
   delay?: number;
   animations: (isOpen: boolean) => any;
 }
@@ -95,16 +96,23 @@ export type Type = 'modal' | 'panel-overlay';
 // Styling
 //======================
 
-const wrapperRules = (isActive: boolean, hideLightbox: boolean) =>
-  css({
-    overflow: 'auto',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    pointerEvents: !isActive && hideLightbox && 'none'
-  });
+const wrapperRules = (
+  isActive: boolean,
+  hideLightbox: boolean,
+  wrapperOverrides
+) =>
+  css(
+    {
+      overflow: 'auto',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      pointerEvents: !isActive && hideLightbox && 'none'
+    },
+    wrapperOverrides
+  );
 
 /**
  * A modal displays content that temporarily blocks interactions with the main view
@@ -209,7 +217,8 @@ export class ModalPortal extends React.Component<Props, State> {
       ignoreCloseEvents,
       isActive,
       isOpen,
-      type
+      type,
+      wrapperOverrideRules
     } = this.props;
 
     const modalContent = this.buildModalContent();
@@ -227,7 +236,7 @@ export class ModalPortal extends React.Component<Props, State> {
           />
           <div
             className={`${type}-wrapper`}
-            {...wrapperRules(isActive, hideLightbox)}
+            {...wrapperRules(isActive, hideLightbox, wrapperOverrideRules)}
           >
             {type === 'modal' && modalContent}
           </div>

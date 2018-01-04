@@ -47,7 +47,7 @@ const shouldHaveTrailingAmpersand = (
 ) => {
   return trailingAmpersand
     ? true
-    : primary.length - secondary.length > 2 ? true : false;
+    : primary.length > secondary.length ? true : false;
 };
 
 const WeddingName: React.SFC<Props> = ({

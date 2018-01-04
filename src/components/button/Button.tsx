@@ -44,8 +44,10 @@ export interface Props {
 export interface ButtonCustomOptions {
   color?: string;
   backgroundColor?: string;
+  fontFamily?: string;
   fontSize?: string;
   fontWeight?: string;
+  letterSpacing?: string;
   padding?: string;
   width?: string;
   ':hover'?: {
@@ -205,7 +207,8 @@ const buttonStyleRules = (
       fontSize: '10px',
       fontWeight: '600',
       letterSpacing: '1.5px',
-      lineHeight: '40px',
+      lineHeight: '45px',
+      maxWidth: 250,
       minWidth: '130px',
       padding: '0 25px',
       outline: 'none',
