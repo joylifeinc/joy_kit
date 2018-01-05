@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-import { COLORS } from '../../';
+import { COLORS } from '../../styles/variables';
 export interface Props {
   /** Function to call when input is updated */
   handleChange: (e) => void;
@@ -21,6 +21,8 @@ export interface Props {
   error?: string;
 
   hideError?: boolean;
+
+  autocompleteName?: string;
 
   /** Sets the value of the input */
   value: string;
@@ -143,6 +145,7 @@ export const InputLine: React.SFC<Props> = ({
   label,
   error,
   hideError,
+  autocompleteName,
   placeholder,
   required = false,
   updateValueToPlaceholder = true
@@ -161,6 +164,7 @@ export const InputLine: React.SFC<Props> = ({
         placeholder={placeholder ? placeholder : null}
         value={value}
         onKeyPress={placeholderToValue}
+        name={autocompleteName}
         onChange={handleChange}
         onBlur={handleBlur}
         required={required}
