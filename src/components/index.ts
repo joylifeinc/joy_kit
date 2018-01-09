@@ -45,6 +45,4 @@ export {
   CountdownTimer,
   SpinnerLoader,
   AddToCalendarWidget,
-  FloatingPane,
-  DropDownButton
 };
