@@ -164,6 +164,8 @@ export const InputLine: React.SFC<Props> = ({
         onChange={handleChange}
         onBlur={handleBlur}
         required={required}
+        aria-label={label}
+        aria-required={required}
       />
 
       {!error ? (
