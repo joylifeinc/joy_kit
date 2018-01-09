@@ -28,11 +28,11 @@ const subTitleRules = css({
 });
 
 export const ActionHeader = ({ title, titleOption, subtitle }: Props) => (
-  <div {...titleWrapperRules}>
+  <header {...titleWrapperRules} tabIndex={0}>
     <div>
       <span {...titleRules}>{title}</span>
       <span {...subTitleRules}>{titleOption}</span>
     </div>
     <div>{subtitle}</div>
-  </div>
+  </header>
 );

@@ -118,7 +118,7 @@ export const Label = ({
     uppercase
   );
   return (
-    <div onClick={handleClick} {...rules}>
+    <div onClick={handleClick} {...rules} tabIndex={0}>
       {content}
     </div>
   );
