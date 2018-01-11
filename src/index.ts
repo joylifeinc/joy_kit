@@ -21,8 +21,6 @@ import {
   SpinnerLoader,
   SimpleLayoutPreview,
   AddToCalendarWidget,
-  FloatingPane,
-  DropDownButton
 } from './components';
 
 // Styles
@@ -74,6 +72,4 @@ export {
   Colors,
   SpinnerLoader,
   AddToCalendarWidget,
-  FloatingPane,
-  DropDownButton
 };
