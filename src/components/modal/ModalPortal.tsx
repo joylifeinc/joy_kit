@@ -105,8 +105,9 @@ const wrapperRules = (
   hideLightbox: boolean,
   clickThroughWrapper: boolean,
   wrapperOverrides
-) =>{ 
-  const disablePointerEvents = (!isActive && hideLightbox) || clickThroughWrapper;
+) => {
+  const disablePointerEvents =
+    (!isActive && hideLightbox) || clickThroughWrapper;
   return css(
     {
       overflow: 'auto',
@@ -118,7 +119,8 @@ const wrapperRules = (
       pointerEvents: disablePointerEvents && 'none'
     },
     wrapperOverrides
-  );}
+  );
+};
 
 /**
  * A modal displays content that temporarily blocks interactions with the main view
@@ -243,12 +245,19 @@ export class ModalPortal extends React.Component<Props, State> {
             isActive={isActive || (!isActive && !hideLightboxOnInactive)}
             isOpen={isOpen && !isClosing}
           />
-          <div
-            className={`${type}-wrapper`}
-            {...wrapperRules(isActive, hideLightbox, clickThroughWrapper, wrapperOverrideRules)}
-          >
-            {type === 'modal' && modalContent}
-          </div>
+          {type === 'modal' && (
+            <div
+              className={`${type}-wrapper`}
+              {...wrapperRules(
+                isActive,
+                hideLightbox,
+                clickThroughWrapper,
+                wrapperOverrideRules
+              )}
+            >
+              {modalContent}
+            </div>
+          )}
           {type === 'panel-overlay' && modalContent}
         </Fragments>
       </Portal>
