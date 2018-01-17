@@ -47,9 +47,6 @@ export const containerRules = (height: string, disablePadding: boolean) =>
     width: '100%',
     ' h2': {
       fontWeight: 'bold'
-    },
-    '> *:not(:last-child)': {
-      marginBottom: 40
     }
   });
 
@@ -66,6 +63,8 @@ const descriptionRules = css({
 
 const navItemRules = css({
   flexGrow: 1,
+  margin: '40px 0',
+  overflow: 'scroll',
   '> div:last-child': {
     borderBottom: `1px solid ${COLORS.GRAY_SECONDARY}`
   }
@@ -74,6 +73,7 @@ const navItemRules = css({
 const actionRules = css({
   display: 'flex',
   justifyContent: 'center',
+  flexShrink: 0,
   '& > *:not(:last-child)': {
     marginRight: 20
   }
@@ -81,14 +81,18 @@ const actionRules = css({
 
 const renderNavItems = navItems => {
   if (navItems instanceof Array) {
-    return navItems.map(({ content, icon, key, handleOnClick }) => (
-      <PanelNavItem
-        key={key}
-        content={content}
-        icon={icon}
-        handleOnClick={handleOnClick}
-      />
-    ));
+    return navItems.map(navItem => {
+      if (!navItem) return null;
+      const { content, icon, key, handleOnClick } = navItem;
+      return (
+        <PanelNavItem
+          key={key}
+          content={content}
+          icon={icon}
+          handleOnClick={handleOnClick}
+        />
+      );
+    });
   }
   return navItems;
 };
@@ -114,7 +118,9 @@ export const PanelNavigator: React.SFC<Props> = ({
         </div>
       )}
       {children ? (
-        <div {...css({ flexGrow: 1 })}>{children}</div>
+        <div {...css({ flexGrow: 1, overflow: 'scroll', margin: '40px 0' })}>
+          {children}
+        </div>
       ) : (
         <div {...navItemRules}>{renderNavItems(navItems)}</div>
       )}

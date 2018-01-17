@@ -163,7 +163,7 @@ export class ModalPortal extends React.Component<Props, State> {
       this.closingTimeoutId = window.setTimeout(() => {
         // Set overflow hidden so that the background doesn't scroll
         document.body.style.overflow = 'auto';
-        this.props.onClose();
+        this.props.onClose && this.props.onClose();
 
         window.clearTimeout(this.closingTimeoutId);
         this.closingTimeoutId = null;
