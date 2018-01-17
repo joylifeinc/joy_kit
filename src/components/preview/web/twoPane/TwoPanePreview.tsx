@@ -9,49 +9,11 @@ import { TwoPanePreviewLeft } from './components/TwoPanePreviewLeft';
 import { TwoPanePreviewRight } from './components/TwoPanePreviewRight';
 
 import { PreviewWrapper } from '../PreviewWrapper';
-import { getDefaultEventFields } from '../util';
-
-export interface Props {
-  activeFont?: {
-    key: string;
-    fontFamily?: string;
-    fontWeight?: string;
-    h1?: string;
-    h2?: string;
-    h3?: string;
-    letterSpacing?: string;
-    lineHeight?: string;
-    textTransform: string;
-    _comment?: string;
-  };
-  baseColor?: {
-    r: number;
-    g: number;
-    b: number;
-    a: number;
-  };
-  baseTextColor?: {
-    r: number;
-    g: number;
-    b: number;
-    a: number;
-  };
-  useThemeColors?: boolean;
-  // baseTextFill?: string;
-  coverPhoto?: string;
-  eventDate?: string;
-  fianceeName?: string;
-  location?: string;
-  message?: string;
-  ownerName?: string;
-  theme?: string;
-  title?: string;
-  previewOptions?: {
-    height?: number;
-    width?: number;
-  };
-  previewContainerId?: string;
-}
+import {
+  PreviewProps,
+  getDefaultEventFields,
+  getCoverPhotoForPage
+} from '../util';
 
 const previewRules = (height, width) =>
   css({
@@ -76,7 +38,7 @@ const contentRules = css({
   maxHeight: 'calc(100% - 36px)'
 });
 
-class TwoPanePreview extends React.Component<Props> {
+class TwoPanePreview extends React.Component<PreviewProps> {
   static defaultProps = {
     activeFont: null,
     theme: null,
@@ -156,29 +118,13 @@ class TwoPanePreview extends React.Component<Props> {
     );
   };
 
-  private getVisibleFields = () => {
-    const {
-      ownerName,
-      fianceeName,
-      eventDate = Date.now(),
-      location,
-      message
-    } = this.props;
-    return getDefaultEventFields(
-      ownerName,
-      fianceeName,
-      eventDate,
-      location,
-      message
-    );
-  };
-
   render() {
     const {
       activeFont,
       baseColor,
-      baseTextColor,
-      coverPhoto,
+      baseText,
+      coverPhotos,
+      eventInfo,
       previewOptions,
       previewContainerId,
       theme,
@@ -191,7 +137,9 @@ class TwoPanePreview extends React.Component<Props> {
       eventDate,
       location,
       message
-    } = this.getVisibleFields();
+    } = getDefaultEventFields(eventInfo);
+
+    const coverPhoto = getCoverPhotoForPage('welcome', coverPhotos);
 
     let {
       leftPaneHeaderRules,
@@ -214,7 +162,7 @@ class TwoPanePreview extends React.Component<Props> {
             <WebPreviewTopBar title={title} />
             <div {...contentRules}>
               <TwoPanePreviewLeft
-                coverPhoto={coverPhoto}
+                coverPhoto={coverPhoto.url}
                 fontOverrides={leftPaneHeaderRules}
                 fianceeName={fianceeName}
                 ownerName={ownerName}
@@ -223,7 +171,7 @@ class TwoPanePreview extends React.Component<Props> {
               <TwoPanePreviewRight
                 activeFont={activeFont}
                 baseColor={baseColor}
-                textColor={baseTextColor}
+                textColor={baseText}
                 eventDate={eventDate}
                 fontOverrides={rightPaneHeaderRules}
                 location={location}
