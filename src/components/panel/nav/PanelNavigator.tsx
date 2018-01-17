@@ -79,7 +79,9 @@ const actionRules = css({
   }
 });
 
-const renderNavItems = navItems => {
+const renderNavItems = (
+  navItems: Array<NavItemArrayProps> | React.ReactElement<any>
+) => {
   if (navItems instanceof Array) {
     return navItems.map(navItem => {
       if (!navItem) return null;
