@@ -13,6 +13,9 @@ import { ModalPortal, BaseProps } from './ModalPortal';
 export interface Props extends BaseProps {
   /** A modal can vary in size. */
   size?: Size;
+
+  /** Alternatively, specify the width */
+  width?: string;
 }
 
 export interface State {
@@ -44,7 +47,7 @@ const animations = isOpen => {
 
 /* CSS */
 
-const sizeOptions: { [index in Size]: any } = {
+const sizeOptions: {[index in Size]: any } = {
   mini: { width: 360 },
   small: { width: 480 },
   normal: { width: 600 },
@@ -52,16 +55,17 @@ const sizeOptions: { [index in Size]: any } = {
   fullscreen: { width: '100%', height: '100%' }
 };
 
-const modalRules = (size: Size) => {
+const modalRules = (size: Size, width: string) => {
+  let sizeOpt = width ? { width } : sizeOptions[size];
   return css(
-    sizeOptions[size],
+    sizeOpt,
     {
       background: 'rgba(255,255,255, 1)',
       borderRadius: '2',
       boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
       margin: '5em auto',
       opacity: 0,
-      padding: '0 1.5rem',
+      padding: (width ? '' : '0 1.5rem'),
       top: '1em'
     },
     size !== 'fullscreen' && {
@@ -94,7 +98,7 @@ export class Modal extends React.Component<Props> {
         type="modal"
         {...this.props}
         animations={animations}
-        styleRules={modalRules(this.props.size)}
+        styleRules={modalRules(this.props.size, this.props.width)}
       />
     );
   }
