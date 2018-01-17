@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
 
-import { COLORS } from '../../';
+import { COLORS } from '../../styles/variables';
 export interface Props {
   /** Function to call when input is updated */
   handleChange: (e) => void;
