@@ -140,8 +140,10 @@ export class ModalPortal extends React.Component<Props, State> {
 
   componentWillReceiveProps(nextProps) {
     const bodyOverflow = document.body.style.overflow;
-    if (this.props.isOpen && bodyOverflow !== 'hidden') {
+    if (nextProps.isOpen && bodyOverflow !== 'hidden') {
       document.body.style.overflow = 'hidden';
+    } else if (!nextProps.isOpen) {
+      document.body.style.overflow = 'auto';
     }
   }
   componentWillUnmount() {
@@ -236,7 +238,7 @@ export class ModalPortal extends React.Component<Props, State> {
           />
           <div
             className={`${type}-wrapper`}
-            {...wrapperRules(isActive, hideLightbox, wrapperOverrideRules)}
+            {...wrapperRules(isActive, hideLightbox, wrapperOverrideRules) }
           >
             {type === 'modal' && modalContent}
           </div>
