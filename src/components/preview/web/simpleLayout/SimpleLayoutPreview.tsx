@@ -4,24 +4,14 @@ const moment = require('moment');
 
 import { PreviewWrapper } from '../PreviewWrapper';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
-import { Activefont, getDefaultEventFields } from '../util';
+import {
+  Activefont,
+  getDefaultEventFields,
+  PreviewProps,
+  getCoverPhotoForPage
+} from '../util';
 
 import { WeddingName, CountdownTimer } from '../../../../';
-
-export interface Props {
-  activeFont?: Activefont;
-  coverPhoto?: string;
-  eventDate?: string;
-  fianceeName?: string;
-  location?: string;
-  message?: string;
-  ownerName?: string;
-  theme?: string;
-  previewOptions?: {
-    height?: number;
-    width?: number;
-  };
-}
 
 const previewRules = (height, width) =>
   css({
@@ -65,7 +55,6 @@ const tabSectionRules = css({
 
 const coverPhotoRules = image =>
   css({
-    // background: `url(${image}) center / contain no-repeat`,
     height: 300,
     backgroundColor: '#e9e9e9',
     width: '100%'
@@ -113,22 +102,15 @@ const ctaButtonRules = css({
 });
 
 const getVisibleFields = weddingInfo => {
-  return getDefaultEventFields(
-    weddingInfo.ownerName,
-    weddingInfo.fianceeName,
-    weddingInfo.eventDate,
-    weddingInfo.location,
-    weddingInfo.message
-  );
+  return getDefaultEventFields(weddingInfo);
 };
 
-export const SimpleLayoutPreview: React.SFC<Props> = ({
+export const SimpleLayoutPreview: React.SFC<PreviewProps> = ({
   children,
-  activeFont,
-  coverPhoto,
+  coverPhotos,
   previewOptions,
   theme,
-  ...weddingInfo
+  eventInfo
 }) => {
   const {
     ownerName,
@@ -136,9 +118,11 @@ export const SimpleLayoutPreview: React.SFC<Props> = ({
     eventDate,
     location,
     message
-  } = getVisibleFields(weddingInfo);
+  } = getDefaultEventFields(eventInfo);
 
   const eventDateMoment = moment(eventDate);
+
+  const coverPhoto = getCoverPhotoForPage('welcome', coverPhotos);
 
   return (
     <PreviewWrapper for="simpleLayout" previewOptions={previewOptions}>
@@ -158,7 +142,7 @@ export const SimpleLayoutPreview: React.SFC<Props> = ({
             <li />
             <li />
           </ul>
-          <div {...coverPhotoRules(coverPhoto)} />
+          <div {...coverPhotoRules(coverPhoto && coverPhoto.url)} />
           <div data-section="body" {...bodySectionRules}>
             <div>TWIRLYBIT</div>
             <div data-section="greeting">{message}</div>

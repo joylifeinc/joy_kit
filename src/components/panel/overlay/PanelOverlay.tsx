@@ -48,6 +48,7 @@ const panelRules = (direction: Directions) =>
     width: '600',
     [direction]: '0',
     top: '0',
+    bottom: 0,
     transform: `translateX(${direction === 'left' ? '-' : ''}100%)`,
     background: 'white'
   });

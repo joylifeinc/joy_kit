@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { css } from 'glamor';
+import { css, keyframes } from 'glamor';
 
 import { COLORS } from '../../../styles/variables';
 import iconForwardArrow from '../../../assets/iconForwardArrowBlk.svg';
 
 export interface Props {
+  icon?: string;
   content: React.ReactNode;
   handleOnClick?: () => any;
 }
@@ -21,14 +22,22 @@ const navItemRules = css({
   }
 });
 
-const iconRules = css({
-  border: '1px solid palevioletred',
-  height: 58,
-  lineHeight: '58px',
-  width: 58,
-  marginRight: 10,
-  textAlign: 'center'
-});
+const iconRules = (icon: string) =>
+  css(
+    {
+      height: 58,
+      lineHeight: '58px',
+      width: 58,
+      marginRight: 10,
+      textAlign: 'center'
+    },
+    icon && {
+      backgroundImage: `url('${icon}')`,
+      backgroundSize: 'auto',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }
+  );
 
 const textRules = css({
   color: COLORS.BLACK_SECONDARY,
@@ -37,16 +46,24 @@ const textRules = css({
   letterSpacing: 0.2
 });
 
-export const PanelNavItem: React.SFC<Props> = ({ handleOnClick, content }) => {
+const svgRules = css({
+  marginRight: 20
+});
+
+export const PanelNavItem: React.SFC<Props> = ({
+  content,
+  handleOnClick,
+  icon
+}) => {
   return (
     <div
       className="panel-navigator__nav-item"
       {...navItemRules}
       onClick={handleOnClick}
     >
-      <div {...iconRules}>Icon</div>
+      <div {...iconRules(icon)} />
       <div {...textRules}>{content}</div>
-      <img src={iconForwardArrow} />
+      <img src={iconForwardArrow} {...svgRules} />
     </div>
   );
 };

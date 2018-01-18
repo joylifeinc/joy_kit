@@ -75,14 +75,16 @@ stories.add('Two Pane', () => {
       <div {...css({ height: 700, position: 'relative' })}>
         <TwoPanePreview
           baseColor={baseColor}
-          baseTextColor={textColor}
+          baseText={textColor}
           activeFont={fontMap[font]}
-          coverPhoto={coverPhoto}
-          location={location}
-          eventDate={eventDate}
-          message={message}
-          ownerName={ownerName}
-          fianceeName={fianceeName}
+          coverPhotos={{ welcome: { page: 'welcome', url: coverPhoto } }}
+          eventInfo={{
+            location,
+            date: eventDate,
+            message,
+            ownerName,
+            fianceeName
+          }}
           theme={theme}
           title={weddingNameString(ownerName, fianceeName)}
           useThemeColors={useThemeColors}
@@ -94,14 +96,21 @@ stories.add('Two Pane', () => {
         activeFont={${JSON.stringify(fontMap[font])}}
         baseColor={${JSON.stringify(baseColor)}}
         baseTextColor={${JSON.stringify(textColor)}}
-        coverPhoto={"${coverPhoto}"}
-        location={"${location}"}
-        eventDate={"${eventDate}"}
-        message={"${message}"}
-        ownerName={"${ownerName}"}
-        fianceeName={"${fianceeName}"}
-        theme={"${theme}"}
-        useThemeColors={"${useThemeColors}"}
+        coverPhotos={{
+          welcome: {
+            page: 'welcome',
+            url: '${coverPhoto}'
+          }
+        }}
+        eventInfo={{
+          location: '${location}',
+          eventDate: '${eventDate}',
+          message: '${message}',
+          ownerName: '${ownerName}',
+          fianceeName: '${fianceeName}'
+        }}
+        theme="${theme}"
+        useThemeColors={${useThemeColors}}
       />
       `}
       />
@@ -110,9 +119,15 @@ stories.add('Two Pane', () => {
 });
 
 stories.add('Simple Layout', () => {
+  const pages = [
+    { name: 'welcome', url: 'welcome' },
+    { name: 'wedding party', url: 'vip' },
+    { name: 'story', url: 'story' },
+    { name: 'schedule', url: 'schedule' }
+  ];
   return (
     <div>
-      <SimpleLayoutPreview />
+      <SimpleLayoutPreview eventInfo={{}} pages={pages} />
     </div>
   );
 });

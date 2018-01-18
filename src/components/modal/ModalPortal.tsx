@@ -59,6 +59,10 @@ export interface BaseProps {
    */
   onUnmount?: (data) => any;
 
+  node?: any;
+
+  clickThroughWrapper?: boolean;
+
   /**
    * Allows for inline rendering and wrapping without having to create a new component.
    * The props parameter receives a `closePortal` prop that should be invoked at the end of
@@ -99,9 +103,12 @@ export type Type = 'modal' | 'panel-overlay';
 const wrapperRules = (
   isActive: boolean,
   hideLightbox: boolean,
+  clickThroughWrapper: boolean,
   wrapperOverrides
-) =>
-  css(
+) => {
+  const disablePointerEvents =
+    (!isActive && hideLightbox) || clickThroughWrapper;
+  return css(
     {
       overflow: 'auto',
       position: 'fixed',
@@ -109,10 +116,11 @@ const wrapperRules = (
       left: 0,
       right: 0,
       bottom: 0,
-      pointerEvents: !isActive && hideLightbox && 'none'
+      pointerEvents: disablePointerEvents && 'none'
     },
     wrapperOverrides
   );
+};
 
 /**
  * A modal displays content that temporarily blocks interactions with the main view
@@ -123,6 +131,7 @@ export class ModalPortal extends React.Component<Props, State> {
   static defaultProps = {
     closeOnEscape: true,
     closeOnBackgroundClick: true,
+    clickThroughWrapper: false,
     hideLightboxOnInactive: true,
     hideLightbox: false,
     resetAfterClosing: false,
@@ -154,7 +163,7 @@ export class ModalPortal extends React.Component<Props, State> {
       this.closingTimeoutId = window.setTimeout(() => {
         // Set overflow hidden so that the background doesn't scroll
         document.body.style.overflow = 'auto';
-        this.props.onClose();
+        this.props.onClose && this.props.onClose();
 
         window.clearTimeout(this.closingTimeoutId);
         this.closingTimeoutId = null;
@@ -209,9 +218,11 @@ export class ModalPortal extends React.Component<Props, State> {
     const { isClosing } = this.state;
     const {
       children,
+      clickThroughWrapper,
       closeOnBackgroundClick,
       closeOnEscape,
       onClose,
+      node,
       hideLightboxOnInactive,
       hideLightbox,
       ignoreCloseEvents,
@@ -223,7 +234,7 @@ export class ModalPortal extends React.Component<Props, State> {
 
     const modalContent = this.buildModalContent();
     const portal = (
-      <Portal>
+      <Portal node={node}>
         <Fragments>
           <ModalLightBox
             closeOnBackgroundClick={closeOnBackgroundClick}
@@ -234,12 +245,19 @@ export class ModalPortal extends React.Component<Props, State> {
             isActive={isActive || (!isActive && !hideLightboxOnInactive)}
             isOpen={isOpen && !isClosing}
           />
-          <div
-            className={`${type}-wrapper`}
-            {...wrapperRules(isActive, hideLightbox, wrapperOverrideRules)}
-          >
-            {type === 'modal' && modalContent}
-          </div>
+          {type === 'modal' && (
+            <div
+              className={`${type}-wrapper`}
+              {...wrapperRules(
+                isActive,
+                hideLightbox,
+                clickThroughWrapper,
+                wrapperOverrideRules
+              )}
+            >
+              {modalContent}
+            </div>
+          )}
           {type === 'panel-overlay' && modalContent}
         </Fragments>
       </Portal>
