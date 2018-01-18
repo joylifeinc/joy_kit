@@ -38,7 +38,7 @@ const subTitleStyles = css({
   textTransform: 'uppercase'
 });
 
-const backButton = css({
+const backButtonRules = css({
   height: 20,
   marginRight: 20,
   width: 'auto'
@@ -82,7 +82,7 @@ export const TopNav = ({
   <div {...navBarStyles(hideBottomBorder)}>
     {!click ? (
       <Link to={`${link}`} {...leftContent}>
-        {backButton ? <img {...backButton} src={iconBackArrow} /> : null}
+        {backButton ? <img {...backButtonRules} src={iconBackArrow} /> : null}
         <div {...titleStyles}>{title}</div>
         <div {...subTitleStyles}>{subtitle}</div>
       </Link>
