@@ -22,6 +22,8 @@ export interface Props {
 
   hideError?: boolean;
 
+  autocompleteName?: string;
+
   /** Sets the value of the input */
   value: string;
 
@@ -143,6 +145,7 @@ export const InputLine: React.SFC<Props> = ({
   label,
   error,
   hideError,
+  autocompleteName,
   placeholder,
   required = false,
   updateValueToPlaceholder = true
@@ -161,6 +164,7 @@ export const InputLine: React.SFC<Props> = ({
         placeholder={placeholder ? placeholder : null}
         value={value}
         onKeyPress={placeholderToValue}
+        name={autocompleteName}
         onChange={handleChange}
         onBlur={handleBlur}
         required={required}
