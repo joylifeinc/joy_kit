@@ -19,7 +19,6 @@ import {
   AlohaPreview,
   CountdownTimer,
   SpinnerLoader,
-  SimpleLayoutPreview,
   AddToCalendarWidget,
   PreviewWrapper
 } from './components';
@@ -68,7 +67,6 @@ export {
   weddingNameString,
   WeddingName,
   AlohaPreview,
-  SimpleLayoutPreview,
   CountdownTimer,
   Colors,
   SpinnerLoader,

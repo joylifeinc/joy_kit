@@ -12,13 +12,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import { SyntaxHighlight } from '../utils/syntax';
-import {
-  Button,
-  AlohaPreview,
-  SimpleLayoutPreview,
-  weddingNameString,
-  Colors
-} from '../../src';
+import { Button, AlohaPreview, weddingNameString, Colors } from '../../src';
 const JOY_THEMES = require('./joyStyles.json');
 const JOY_FONTS = require('./joyFonts.json');
 

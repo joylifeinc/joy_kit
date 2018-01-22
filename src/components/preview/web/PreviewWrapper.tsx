@@ -63,7 +63,6 @@ export class PreviewWrapper extends React.Component<Props> {
 
   private updatePreviewScale = () => {
     const sideMargin = this.props.sideMargin || SIDE_MARGIN;
-    console.log(sideMargin);
     const { height, width } = this.props.previewOptions;
     const widthPreviewRatio =
       (this.previewContainer.offsetWidth - sideMargin * 2) / width;
@@ -74,9 +73,11 @@ export class PreviewWrapper extends React.Component<Props> {
         ? heightPreviewRatio
         : widthPreviewRatio;
 
-    if (containerToPreviewRatio < 1) {
+    if (containerToPreviewRatio < 0) {
+      this.setState({ scale: 0.8 });
+    } else if (containerToPreviewRatio <= 1) {
       this.setState({ scale: containerToPreviewRatio });
-    } else if (containerToPreviewRatio !== 1) {
+    } else if (containerToPreviewRatio > 1) {
       this.setState({ scale: 1 });
     }
   };
