@@ -16,11 +16,12 @@ import {
   TextBox,
   TopNav,
   WeddingName,
-  TwoPanePreview,
+  AlohaPreview,
   CountdownTimer,
   SpinnerLoader,
   SimpleLayoutPreview,
   AddToCalendarWidget,
+  PreviewWrapper
 } from './components';
 
 // Styles
@@ -66,10 +67,11 @@ export {
   Styles,
   weddingNameString,
   WeddingName,
-  TwoPanePreview,
+  AlohaPreview,
   SimpleLayoutPreview,
   CountdownTimer,
   Colors,
   SpinnerLoader,
   AddToCalendarWidget,
+  PreviewWrapper
 };

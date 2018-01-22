@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from 'glamor';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
 import { VelocityComponent } from 'velocity-react';
 
 const SIDE_MARGIN = 30;
@@ -10,20 +11,26 @@ export interface Props {
   previewOptions?: {
     height?: number;
     width?: number;
+    maxContainerHeight?: number;
+    maxContainerWidth?: number;
   };
+  sideMargin?: number;
   previewContainerId?: string;
 }
 
 export type For = 'twoPane' | 'simpleLayout';
 
-const previewWrapperRules = css({
-  height: '100%',
-  width: '100%',
-  position: 'relative',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-});
+const previewWrapperRules = (maxHeight: number, maxWidth: number) =>
+  css({
+    height: '100%',
+    width: '100%',
+    maxHeight,
+    maxWidth,
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  });
 
 export class PreviewWrapper extends React.Component<Props> {
   private windowResizeSub;
@@ -55,9 +62,18 @@ export class PreviewWrapper extends React.Component<Props> {
   };
 
   private updatePreviewScale = () => {
-    const { width } = this.props.previewOptions;
+    const sideMargin = this.props.sideMargin || SIDE_MARGIN;
+    console.log(sideMargin);
+    const { height, width } = this.props.previewOptions;
+    const widthPreviewRatio =
+      (this.previewContainer.offsetWidth - sideMargin * 2) / width;
+    const heightPreviewRatio =
+      (this.previewContainer.offsetHeight - sideMargin * 2) / height;
     const containerToPreviewRatio =
-      (this.previewContainer.offsetWidth - SIDE_MARGIN * 2) / width;
+      heightPreviewRatio < widthPreviewRatio
+        ? heightPreviewRatio
+        : widthPreviewRatio;
+
     if (containerToPreviewRatio < 1) {
       this.setState({ scale: containerToPreviewRatio });
     } else if (containerToPreviewRatio !== 1) {
@@ -71,13 +87,13 @@ export class PreviewWrapper extends React.Component<Props> {
       <div
         id={`${this.props.for}PreviewContainer`}
         data-website-preview={this.props.for}
-        {...previewWrapperRules}
+        {...previewWrapperRules(
+          previewOptions.maxContainerHeight,
+          previewOptions.maxContainerWidth
+        )}
       >
         <VelocityComponent
-          animation={{
-            translateZ: 0.001,
-            scale: this.state.scale
-          }}
+          animation={{ translateZ: 0.001, scale: this.state.scale }}
           easing="ease"
         >
           {this.props.children}

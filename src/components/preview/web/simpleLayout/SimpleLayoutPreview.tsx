@@ -23,7 +23,8 @@ const previewRules = (height, width) =>
     minWidth: width,
     margin: '20px 0',
     position: 'relative',
-    width
+    width,
+    background: 'white'
   });
 
 const contentRules = css({

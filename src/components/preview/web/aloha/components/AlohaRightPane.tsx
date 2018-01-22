@@ -99,7 +99,7 @@ const rgbaObjectToString = (color?: Color) => {
   );
 };
 
-const TwoPanePreviewRight: React.SFC<Props> = ({
+const AlohaRightPane: React.SFC<Props> = ({
   activeFont,
   baseColor,
   textColor,
@@ -146,8 +146,8 @@ const TwoPanePreviewRight: React.SFC<Props> = ({
   );
 };
 
-TwoPanePreviewRight.defaultProps = {
+AlohaRightPane.defaultProps = {
   fontOverrides: {}
 };
 
-export { TwoPanePreviewRight };
+export { AlohaRightPane };

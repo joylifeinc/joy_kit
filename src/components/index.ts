@@ -11,10 +11,11 @@ import { PanelDashboard } from './panel/dashboard/PanelDashboard';
 import { PanelNavigator } from './panel/nav/PanelNavigator';
 import { PanelNavItem } from './panel/nav/PanelNavItem';
 import { PanelOverlay } from './panel/overlay/PanelOverlay';
+import { PreviewWrapper } from './preview/web/PreviewWrapper';
 import { TextBox } from './textBox/TextBox';
 import { TopNav } from './topNav/TopNav';
 import { WeddingName } from './weddingName/WeddingName';
-import { TwoPanePreview } from './preview/web/twoPane/TwoPanePreview';
+import { AlohaPreview } from './preview/web/aloha/AlohaPreview';
 import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 import { SpinnerLoader } from './loader/SpinnerLoader';
@@ -40,9 +41,10 @@ export {
   ActionHeader,
   TextBox,
   WeddingName,
-  TwoPanePreview,
+  AlohaPreview,
   SimpleLayoutPreview,
   CountdownTimer,
   SpinnerLoader,
   AddToCalendarWidget,
+  PreviewWrapper
 };

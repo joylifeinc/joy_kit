@@ -14,7 +14,7 @@ import {
 import { SyntaxHighlight } from '../utils/syntax';
 import {
   Button,
-  TwoPanePreview,
+  AlohaPreview,
   SimpleLayoutPreview,
   weddingNameString,
   Colors
@@ -25,7 +25,7 @@ const JOY_FONTS = require('./joyFonts.json');
 const stories = storiesOf('Website Preview', module);
 stories.addDecorator(withKnobs);
 
-stories.add('Two Pane', () => {
+stories.add('Aloha', () => {
   let themeOptions = {};
   for (const [key, value] of Object.entries(JOY_THEMES)) {
     themeOptions[key] = value.name;
@@ -73,7 +73,7 @@ stories.add('Two Pane', () => {
   return (
     <div>
       <div {...css({ height: 700, position: 'relative' })}>
-        <TwoPanePreview
+        <AlohaPreview
           baseColor={baseColor}
           baseText={textColor}
           activeFont={fontMap[font]}
@@ -86,13 +86,12 @@ stories.add('Two Pane', () => {
             fianceeName
           }}
           theme={theme}
-          title={weddingNameString(ownerName, fianceeName)}
           useThemeColors={useThemeColors}
         />
       </div>
       <SyntaxHighlight
         syntax={'jsx'}
-        codeblock={` <TwoPanePreview
+        codeblock={` <AlohaPreview
         activeFont={${JSON.stringify(fontMap[font])}}
         baseColor={${JSON.stringify(baseColor)}}
         baseTextColor={${JSON.stringify(textColor)}}
@@ -114,20 +113,6 @@ stories.add('Two Pane', () => {
       />
       `}
       />
-    </div>
-  );
-});
-
-stories.add('Simple Layout', () => {
-  const pages = [
-    { name: 'welcome', url: 'welcome' },
-    { name: 'wedding party', url: 'vip' },
-    { name: 'story', url: 'story' },
-    { name: 'schedule', url: 'schedule' }
-  ];
-  return (
-    <div>
-      <SimpleLayoutPreview eventInfo={{}} pages={pages} />
     </div>
   );
 });
