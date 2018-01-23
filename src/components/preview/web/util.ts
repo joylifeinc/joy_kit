@@ -1,7 +1,6 @@
 export interface PreviewProps {
   activeFont?: Activefont;
   theme?: string;
-  title?: any;
   coverPhotos?: {
     [page: string]: CoverPhoto;
   };
@@ -9,6 +8,8 @@ export interface PreviewProps {
   previewOptions?: {
     height?: number;
     width?: number;
+    maxContainerHeight?: number;
+    maxContainerWidth?: number;
   };
   baseColor?: {
     r: number;
@@ -25,7 +26,20 @@ export interface PreviewProps {
   pages?: Array<Page>;
   useThemeColors?: boolean;
   previewContainerId?: string;
+  graphicAccent?: string;
+  layout?: Layout;
+
+  // Hack for the mock aloha preview
+  coverPhotoSectionPreview?: string;
 }
+
+export interface Layout {
+  template: Template;
+  backgroundType: BackgroundType;
+}
+
+export type Template = 'brannan' | 'aloha';
+export type BackgroundType = 'neat' | 'open' | 'transparent' | 'modern';
 
 export interface Page {
   name?: string;

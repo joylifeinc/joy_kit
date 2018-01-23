@@ -95,7 +95,7 @@ const weddingNameRules = fontOverrides =>
     fontOverrides
   );
 
-export const TwoPanePreviewLeft: React.SFC<Props> = ({
+export const AlohaLeftPane: React.SFC<Props> = ({
   accentTextColor,
   coverPhoto,
   fianceeName,
@@ -126,6 +126,6 @@ export const TwoPanePreviewLeft: React.SFC<Props> = ({
   );
 };
 
-TwoPanePreviewLeft.defaultProps = {
+AlohaLeftPane.defaultProps = {
   fontOverrides: {}
 };

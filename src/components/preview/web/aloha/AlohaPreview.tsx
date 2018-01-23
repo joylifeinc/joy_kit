@@ -3,10 +3,15 @@ import { css } from 'glamor';
 import { margin } from 'glamor/utils';
 import { Observable, Subscription } from 'rxjs';
 
-import { WeddingName, CountdownTimer, Fragments } from '../../../../';
+import {
+  WeddingName,
+  CountdownTimer,
+  Fragments,
+  weddingNameString
+} from '../../../../';
 import { WebPreviewTopBar } from '../components/WebPreviewTopBar';
-import { TwoPanePreviewLeft } from './components/TwoPanePreviewLeft';
-import { TwoPanePreviewRight } from './components/TwoPanePreviewRight';
+import { AlohaLeftPane } from './components/AlohaLeftPane';
+import { AlohaRightPane } from './components/AlohaRightPane';
 
 import { PreviewWrapper } from '../PreviewWrapper';
 import {
@@ -38,7 +43,7 @@ const contentRules = css({
   maxHeight: 'calc(100% - 36px)'
 });
 
-class TwoPanePreview extends React.Component<PreviewProps> {
+class AlohaPreview extends React.Component<PreviewProps> {
   static defaultProps = {
     activeFont: null,
     theme: null,
@@ -127,8 +132,8 @@ class TwoPanePreview extends React.Component<PreviewProps> {
       eventInfo,
       previewOptions,
       previewContainerId,
-      theme,
-      title
+      coverPhotoSectionPreview,
+      theme
     } = this.props;
 
     const {
@@ -139,13 +144,17 @@ class TwoPanePreview extends React.Component<PreviewProps> {
       message
     } = getDefaultEventFields(eventInfo);
 
-    const coverPhoto = getCoverPhotoForPage('welcome', coverPhotos);
+    const coverPhoto = getCoverPhotoForPage(
+      coverPhotoSectionPreview ? coverPhotoSectionPreview : 'welcome',
+      coverPhotos
+    );
 
     let {
       leftPaneHeaderRules,
       rightPaneHeaderRules,
       fontStylesheetLink
     } = this.getFontOverrides(activeFont);
+    const topBarTitle = weddingNameString(ownerName, fianceeName);
     return (
       <Fragments>
         {fontStylesheetLink}
@@ -159,16 +168,16 @@ class TwoPanePreview extends React.Component<PreviewProps> {
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
           >
-            <WebPreviewTopBar title={title} />
+            <WebPreviewTopBar title={topBarTitle} />
             <div {...contentRules}>
-              <TwoPanePreviewLeft
+              <AlohaLeftPane
                 coverPhoto={coverPhoto.url}
                 fontOverrides={leftPaneHeaderRules}
                 fianceeName={fianceeName}
                 ownerName={ownerName}
                 message={message}
               />
-              <TwoPanePreviewRight
+              <AlohaRightPane
                 activeFont={activeFont}
                 baseColor={baseColor}
                 textColor={baseText}
@@ -184,4 +193,4 @@ class TwoPanePreview extends React.Component<PreviewProps> {
   }
 }
 
-export { TwoPanePreview };
+export { AlohaPreview };
