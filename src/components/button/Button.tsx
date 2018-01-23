@@ -201,7 +201,6 @@ const buttonStyleRules = (
   css(
     buttonRules[type],
     { textTransform: uppercase ? 'uppercase' : null },
-    iconRules(icon, noChildren),
     {
       cursor: 'pointer',
       fontSize: '10px',
@@ -263,7 +262,7 @@ const Button = ({
     >
       {icon ? (
         typeof icon === 'string' ? (
-          <img {...iconRules} {...iconOnlyRules(!children) } src={icon} />
+          <img {...iconRules(icon, !children)} {...iconOnlyRules(!children) } src={icon} />
         ) : (
             icon
           )
