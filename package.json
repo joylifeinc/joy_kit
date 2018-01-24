@@ -1,6 +1,6 @@
 {
   "name": "@withjoy/joykit",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "JoyKit UI Components",
   "main": "./lib/joykit.esm.js",
   "module": "./lib/joykit.esm.js",
@@ -35,7 +35,6 @@
   "license": "ISC",
   "homepage": "https://github.com/joylifeinc/joy_kit",
   "dependencies": {
-    "@types/react": "^16.0.34",
     "debug": "^3.1.0",
     "glamor": "^2.20.40",
     "moment": "^2.19.3",
