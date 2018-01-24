@@ -2,7 +2,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import url from "rollup-plugin-url";
-import Visualizer from 'rollup-plugin-visualizer';
 
 
 export default {
@@ -40,9 +39,6 @@ export default {
         "**/*.png",
         "**/*.jpg"
       ]
-    }),
-    Visualizer({
-      filename: './stats/statistics.html'
     })
   ]
 };
