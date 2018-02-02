@@ -16,6 +16,8 @@ export interface Props {
   /** Button Text */
   children?: string;
 
+  title?: string;
+
   /** Determines button styles and colors: 'standard', 'primary', 'success', 'security', 'link', 'outline'. Defaults to standard */
   type?: ButtonType;
 
@@ -57,7 +59,7 @@ export interface ButtonCustomOptions {
   };
 }
 
-const buttonRules: {[index in ButtonType]: any } = {
+const buttonRules: { [index in ButtonType]: any } = {
   standard: {
     color: '#FFF',
     backgroundColor: '#121212',
@@ -145,48 +147,48 @@ const buttonRules: {[index in ButtonType]: any } = {
 const disabledRules = (disabled: boolean, type: ButtonType) => {
   return disabled
     ? {
-      color: 'black',
-      backgroundColor: type !== 'link' ? '#D0D0D0' : 'none',
-      ':hover': {
         color: 'black',
-        border: 'none',
         backgroundColor: type !== 'link' ? '#D0D0D0' : 'none',
-        filter: 'none',
-        transform: 'translateY(0px)',
-        transition: 'none',
-        boxShadow: 'none'
-      },
-      cursor: 'not-allowed'
-    }
+        ':hover': {
+          color: 'black',
+          border: 'none',
+          backgroundColor: type !== 'link' ? '#D0D0D0' : 'none',
+          filter: 'none',
+          transform: 'translateY(0px)',
+          transition: 'none',
+          boxShadow: 'none'
+        },
+        cursor: 'not-allowed'
+      }
     : null;
 };
 
 const iconRules = (icon: string, noChildren: boolean) => {
   return icon
     ? {
-      paddingLeft: noChildren ? '0' : '15px',
-      marginRight: noChildren ? '0' : '10px'
-    }
+        paddingLeft: noChildren ? '0' : '15px',
+        marginRight: noChildren ? '0' : '10px'
+      }
     : null;
 };
 
 const noChildrenRules = (noChildren: boolean) => {
   return noChildren
     ? css({
-      padding: '15px',
-      minWidth: '0'
-    })
+        padding: '15px',
+        minWidth: '0'
+      })
     : null;
 };
 
 const iconOnlyRules = (noChildren: boolean) => {
   return noChildren
     ? css({
-      marginRight: '0'
-    })
+        marginRight: '0'
+      })
     : css({
-      marginRight: '15px'
-    });
+        marginRight: '15px'
+      });
 };
 
 const buttonStyleRules = (
@@ -222,12 +224,12 @@ const buttonStyleRules = (
       backgroundColor: backgroundColorOverride ? backgroundColorOverride : null,
       ':hover': backgroundColorOverride
         ? {
-          backgroundColor: backgroundColorOverride,
-          filter: 'brightness(120%)',
-          transform: 'translateY(-2px)',
-          transition: 'all 0.2s ease',
-          boxShadow: '0px 2px 5px #888888'
-        }
+            backgroundColor: backgroundColorOverride,
+            filter: 'brightness(120%)',
+            transform: 'translateY(-2px)',
+            transition: 'all 0.2s ease',
+            boxShadow: '0px 2px 5px #888888'
+          }
         : null,
       color: colorOverride ? colorOverride : null
     },
@@ -243,32 +245,38 @@ const Button = ({
   icon,
   backgroundColorOverride,
   colorOverride,
-  styleOverride
+  styleOverride,
+  title
 }: Props) => (
-    <button
-      disabled={disabled}
-      {...buttonStyleRules(
-        type ? type : 'standard',
-        uppercase,
-        disabled,
-        icon,
-        backgroundColorOverride,
-        colorOverride,
-        !children
-      ) }
-      {...noChildrenRules(!children) }
-      {...css(styleOverride) }
-      onClick={handleOnClick}
-    >
-      {icon ? (
-        typeof icon === 'string' ? (
-          <img {...iconRules(icon, !children)} {...iconOnlyRules(!children) } src={icon} />
-        ) : (
-            icon
-          )
-      ) : null}
-      <span>{children}</span>
-    </button>
-  );
+  <button
+    disabled={disabled}
+    {...buttonStyleRules(
+      type ? type : 'standard',
+      uppercase,
+      disabled,
+      icon,
+      backgroundColorOverride,
+      colorOverride,
+      !children
+    )}
+    {...noChildrenRules(!children)}
+    {...css(styleOverride)}
+    onClick={handleOnClick}
+    title={title}
+  >
+    {icon ? (
+      typeof icon === 'string' ? (
+        <img
+          {...iconRules(icon, !children)}
+          {...iconOnlyRules(!children)}
+          src={icon}
+        />
+      ) : (
+        icon
+      )
+    ) : null}
+    <span>{children}</span>
+  </button>
+);
 
 export { Button };

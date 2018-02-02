@@ -7,6 +7,7 @@ import iconForwardArrow from '../../../assets/iconForwardArrowBlk.svg';
 export interface Props {
   icon?: string;
   content: React.ReactNode;
+  title?: string;
   handleOnClick?: () => any;
 }
 
@@ -53,11 +54,15 @@ const svgRules = css({
 export const PanelNavItem: React.SFC<Props> = ({
   content,
   handleOnClick,
+  title,
   icon
 }) => {
   return (
     <div
       className="panel-navigator__nav-item"
+      role="button"
+      tabIndex={0}
+      title={title}
       {...navItemRules}
       onClick={handleOnClick}
     >
