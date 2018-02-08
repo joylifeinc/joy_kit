@@ -61,10 +61,14 @@ const descriptionRules = css({
   letterSpacing: 0.2
 });
 
-const navItemRules = css({
+const baseNavItemRules = css({
   flexGrow: 1,
   margin: '40px 0',
   overflow: 'scroll',
+  height: '100%'
+});
+
+const navItemRules = css(baseNavItemRules, {
   '> div:last-child': {
     borderBottom: `1px solid ${COLORS.GRAY_SECONDARY}`
   }
@@ -120,9 +124,7 @@ export const PanelNavigator: React.SFC<Props> = ({
         </div>
       )}
       {children ? (
-        <div {...css({ flexGrow: 1, overflow: 'scroll', margin: '40px 0' })}>
-          {children}
-        </div>
+        <div {...baseNavItemRules}>{children}</div>
       ) : (
         <div {...navItemRules}>{renderNavItems(navItems)}</div>
       )}
