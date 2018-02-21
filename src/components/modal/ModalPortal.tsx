@@ -157,6 +157,7 @@ export class ModalPortal extends React.Component<Props, State> {
   }
   componentWillUnmount() {
     const { onUnmount } = this.props;
+    document.body.style.overflow = 'auto';
     onUnmount && onUnmount(this.props);
   }
 
