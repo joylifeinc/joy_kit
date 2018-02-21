@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from 'glamor';
 
 import { COLORS } from '../../styles/variables';
+
 export interface Props {
   /** Function to call when input is updated */
   handleChange: (e) => void;
@@ -92,9 +93,9 @@ const labelRules = (value: string, error: string) =>
     },
     value
       ? {
-          transform: labelValueTransform,
-          fontWeight: 600
-        }
+        transform: labelValueTransform,
+        fontWeight: 600
+      }
       : null,
     error && { color: COLORS.RED_PRIMARY }
   );
@@ -158,7 +159,7 @@ export const InputLine: React.SFC<Props> = ({
   };
 
   return (
-    <div {...inputGroupRules(value, error)}>
+    <div {...inputGroupRules(value, error) }>
       <input
         type="text"
         placeholder={placeholder ? placeholder : null}
@@ -171,10 +172,10 @@ export const InputLine: React.SFC<Props> = ({
       />
 
       {!error ? (
-        <span className="bar" {...barRules(Boolean(error))} />
+        <span className="bar" {...barRules(Boolean(error)) } />
       ) : (
-        <span className="error-bar" {...errorBarRules} />
-      )}
+          <span className="error-bar" {...errorBarRules} />
+        )}
 
       {!hideError && <span {...errorText}>{error}</span>}
       {label ? <label>{label}</label> : null}
