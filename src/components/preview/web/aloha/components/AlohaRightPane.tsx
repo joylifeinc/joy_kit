@@ -131,7 +131,7 @@ const AlohaRightPane: React.SFC<Props> = ({
                 eventDateMoment.format('dddd, MMMM D, YYYY')}
             </h4>
             {hideCountdown ? null : <CountdownTimer eventDate={date} />}
-            <div {...ctaButtonContainer}>
+            <div id="cta-update" {...ctaButtonContainer}>
               <div className="rsvp-button" {...guestNameRules}>
                 Hi guest name!
               </div>

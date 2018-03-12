@@ -40,11 +40,11 @@ const overlayRules = css({
 
 const menuRules = css({
   fontSize: '12px',
-  height: '20px',
+  height: 35,
   left: '25px',
   position: 'absolute',
   top: '30px',
-  width: '20px'
+  width: 35
 });
 
 const introRules = css({
@@ -75,8 +75,9 @@ const contentRules = coverPhoto =>
   );
 
 const greetingRules = css({
-  fontSize: '14px',
   marginBottom: 30,
+  fontSize: '1.75rem',
+  fontWeight: '300',
   marginTop: '5.5%'
 });
 
@@ -88,9 +89,8 @@ const weddingNameRules = fontOverrides =>
   css(
     {
       margin: 0,
-      fontSize: '76px',
-      transform: 'scale(.7)',
-      transformOrigin: 'bottom left'
+      fontSize: 76,
+      fontWeight: 400
     },
     fontOverrides
   );
@@ -114,12 +114,15 @@ export const AlohaLeftPane: React.SFC<Props> = ({
         <div className="joy-wedding-intro" {...introRules}>
           <WeddingName
             wrap
+            id="wedding-names"
             owner={ownerName}
             fiancee={fianceeName}
             styles={weddingNameRules(fontOverrides)}
           />
 
-          <div {...greetingRules}>{message}</div>
+          <h3 id="wedding-message" {...greetingRules}>
+            {message}
+          </h3>
         </div>
       </div>
     </div>

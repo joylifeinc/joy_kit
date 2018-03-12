@@ -28,6 +28,7 @@ const previewRules = (height, width) =>
     flexDirection: 'column',
     fontFamily: 'proxima-nova,Helvetica Neue,sans-serif',
     fontSize: '15px',
+    overflow: 'hidden',
     fontWeight: '300',
     height,
     pointerEvents: 'none',
