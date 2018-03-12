@@ -16,7 +16,6 @@ import { TextBox } from './textBox/TextBox';
 import { TopNav } from './topNav/TopNav';
 import { WeddingName } from './weddingName/WeddingName';
 import { AlohaPreview } from './preview/web/aloha/AlohaPreview';
-import { SimpleLayoutPreview } from './preview/web/simpleLayout/SimpleLayoutPreview';
 import { CountdownTimer } from './countdownTimer/CountdownTimer';
 import { SpinnerLoader } from './loader/SpinnerLoader';
 import { AddToCalendarWidget } from './addToCalendarWidget/AddToCalendarWidget';
@@ -42,7 +41,6 @@ export {
   TextBox,
   WeddingName,
   AlohaPreview,
-  SimpleLayoutPreview,
   CountdownTimer,
   SpinnerLoader,
   AddToCalendarWidget,

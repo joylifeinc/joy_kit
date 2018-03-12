@@ -6,7 +6,8 @@ const moment = require('moment');
 
 export interface Props {
   fontOverrides?: any;
-  eventDate: string;
+  date: string;
+  hideCountdown?: boolean;
   location: string;
   textColor?: Color;
   baseColor?: Color;
@@ -33,7 +34,7 @@ const rightPaneRules = (backgroundColor = '#fff') =>
 const weddingInfoContainerRules = css({
   borderRadius: '0 0 5px',
   fontSize: '15px',
-  height: '464px'
+  height: '100%'
 });
 
 const welcomeContainerRules = (color = 'rgb(58, 60, 62)') =>
@@ -47,13 +48,11 @@ const welcomeContainerRules = (color = 'rgb(58, 60, 62)') =>
     justifyContent: 'center'
   });
 
-const infoPreviewRules = css({
-  transform: 'scale(.7)'
-});
+const infoPreviewRules = css({});
 
 const locationRules = css({
   margin: '20px 0',
-  fontSize: '25px',
+  fontSize: 50,
   fontWeight: 300,
   lineHeight: '36px'
 });
@@ -103,11 +102,12 @@ const AlohaRightPane: React.SFC<Props> = ({
   activeFont,
   baseColor,
   textColor,
-  eventDate,
+  date,
   fontOverrides,
+  hideCountdown,
   location
 }) => {
-  let eventDateMoment = moment(eventDate);
+  let eventDateMoment = moment(date);
   const fontColor = rgbaObjectToString(textColor);
   const backgroundColor = rgbaObjectToString(baseColor);
 
@@ -130,7 +130,7 @@ const AlohaRightPane: React.SFC<Props> = ({
               {eventDateMoment.isValid() &&
                 eventDateMoment.format('dddd, MMMM D, YYYY')}
             </h4>
-            <CountdownTimer eventDate={eventDate} />
+            {hideCountdown ? null : <CountdownTimer eventDate={date} />}
             <div {...ctaButtonContainer}>
               <div className="rsvp-button" {...guestNameRules}>
                 Hi guest name!
