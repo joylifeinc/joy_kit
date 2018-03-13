@@ -67,7 +67,6 @@ const dateRules = css({
 
 const ctaButtonContainer = css({
   margin: '20px',
-  padding: '15px',
   textAlign: 'center'
 });
 
@@ -85,7 +84,9 @@ const ctaButtonRules = css({
   backgroundColor: 'transparent',
   border: '2px solid #3A3C3E',
   borderRadius: '5px',
-  minWidth: '240px',
+  minWidth: 200,
+  maxWidth: 200,
+  margin: '0 auto',
   fontSize: 15,
   padding: '0 20px',
   textAlign: 'center'
@@ -122,7 +123,7 @@ const AlohaRightPane: React.SFC<Props> = ({
           className="joy-content-card joy-content-intro"
           {...welcomeContainerRules(fontColor)}
         >
-          <div className="info-preview" {...infoPreviewRules}>
+          <div className="welcomeDetails info-preview" {...infoPreviewRules}>
             <h2 {...locationRules} {...fontOverrides}>
               {location}
             </h2>

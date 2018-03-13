@@ -78,7 +78,10 @@ const greetingRules = css({
   marginBottom: 30,
   fontSize: '1.75rem',
   fontWeight: '300',
-  marginTop: '5.5%'
+  marginTop: '5.5%',
+  ' p': {
+    margin: 0
+  }
 });
 
 /**
@@ -104,30 +107,21 @@ export const AlohaLeftPane: React.SFC<Props> = ({
   ownerName,
   message
 }) => {
-  return (
-    <div
-      className="desktop-preview-screen joy-wedding-page"
-      {...containerRules(accentTextColor)}
-    >
+  return <div className="joy-primary-pane joy-primary-pane-welcome" {...containerRules(accentTextColor)}>
       <div className="left-pane" {...contentRules(coverPhoto)}>
         {coverPhoto && <div {...overlayRules} />}
         <img {...menuRules} className="menu" src={menuIcon} />
         <div className="joy-wedding-intro" {...introRules}>
-          <WeddingName
-            wrap
-            id="wedding-names"
-            owner={ownerName}
-            fiancee={fianceeName}
-            styles={weddingNameRules(fontOverrides)}
-          />
+          <div className="intro-contents">
+            <WeddingName wrap id="wedding-names" owner={ownerName} fiancee={fianceeName} styles={weddingNameRules(fontOverrides)} />
 
-          <h3 id="wedding-message" {...greetingRules}>
-            {message}
-          </h3>
+            <h3 id="wedding-message" {...greetingRules}>
+              <p>{message}</p>
+            </h3>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
 
 AlohaLeftPane.defaultProps = {
