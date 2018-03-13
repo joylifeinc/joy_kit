@@ -90,7 +90,8 @@ const weddingNameRules = fontOverrides =>
     {
       margin: 0,
       fontSize: 76,
-      fontWeight: 400
+      fontWeight: 400,
+      lineHeight: '76px'
     },
     fontOverrides
   );

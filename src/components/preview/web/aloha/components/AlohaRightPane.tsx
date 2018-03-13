@@ -54,7 +54,7 @@ const locationRules = css({
   margin: '20px 0',
   fontSize: 50,
   fontWeight: 300,
-  lineHeight: '36px'
+  lineHeight: '50px'
 });
 
 const dateRules = css({
