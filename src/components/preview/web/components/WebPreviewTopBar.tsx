@@ -13,15 +13,16 @@ const containerRules = backgroundColor =>
     backgroundColor,
     width: '100%',
     textAlign: 'center',
-    lineHeight: '36px',
-    minHeight: 36
+    lineHeight: '50px',
+    minHeight: 50,
+    position: 'relative'
   });
 
 const buttonContainerRules = css({
   position: 'absolute',
   left: '10px',
   top: '0',
-  height: '36px',
+  height: '100%',
   display: 'flex',
   alignItems: 'center'
 });
@@ -46,7 +47,7 @@ const expandButtonRules = css({
 });
 
 const titleRules = css(containerRules, {
-  fontSize: '10px',
+  fontSize: '17px',
   textTransform: 'uppercase',
   fontWeight: '600',
   letterSpacing: '.2px',

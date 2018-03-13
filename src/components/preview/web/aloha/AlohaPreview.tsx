@@ -28,6 +28,7 @@ const previewRules = (height, width) =>
     flexDirection: 'column',
     fontFamily: 'proxima-nova,Helvetica Neue,sans-serif',
     fontSize: '15px',
+    overflow: 'hidden',
     fontWeight: '300',
     height,
     pointerEvents: 'none',
@@ -36,11 +37,19 @@ const previewRules = (height, width) =>
     minWidth: width
   });
 
+const containerRules = css({
+  transform: 'scale(calc(900/1440))',
+  transformOrigin: 'top left',
+  width: '1440px'
+});
+
 const contentRules = css({
   display: 'flex',
   position: 'relative',
   flexGrow: '1',
-  maxHeight: 'calc(100% - 36px)'
+  // maxHeight: 'calc(100% - 36px)'
+  width: '1440px',
+  height: 900
 });
 
 class AlohaPreview extends React.Component<PreviewProps> {
@@ -48,8 +57,8 @@ class AlohaPreview extends React.Component<PreviewProps> {
     activeFont: null,
     theme: null,
     previewOptions: {
-      height: 500,
-      width: 800
+      height: 593,
+      width: 900
     },
     useThemeColors: true
   };
@@ -133,13 +142,14 @@ class AlohaPreview extends React.Component<PreviewProps> {
       previewOptions,
       previewContainerId,
       coverPhotoSectionPreview,
-      theme
+      theme,
+      hideCountdown
     } = this.props;
 
     const {
       ownerName,
       fianceeName,
-      eventDate,
+      date,
       location,
       message
     } = getDefaultEventFields(eventInfo);
@@ -159,32 +169,31 @@ class AlohaPreview extends React.Component<PreviewProps> {
       <Fragments>
         {fontStylesheetLink}
         {this.getStyleOverrides()}
-        <PreviewWrapper
-          for="twoPane"
-          previewContainerId={previewContainerId}
-          previewOptions={previewOptions}
-        >
+        <PreviewWrapper previewOptions={previewOptions}>
           <div
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
           >
-            <WebPreviewTopBar title={topBarTitle} />
-            <div {...contentRules}>
-              <AlohaLeftPane
-                coverPhoto={coverPhoto.url}
-                fontOverrides={leftPaneHeaderRules}
-                fianceeName={fianceeName}
-                ownerName={ownerName}
-                message={message}
-              />
-              <AlohaRightPane
-                activeFont={activeFont}
-                baseColor={baseColor}
-                textColor={baseText}
-                eventDate={eventDate}
-                fontOverrides={rightPaneHeaderRules}
-                location={location}
-              />
+            <div {...containerRules}>
+              <WebPreviewTopBar title={topBarTitle} />
+              <div {...contentRules}>
+                <AlohaLeftPane
+                  coverPhoto={coverPhoto.url}
+                  fontOverrides={leftPaneHeaderRules}
+                  fianceeName={fianceeName}
+                  ownerName={ownerName}
+                  message={message}
+                />
+                <AlohaRightPane
+                  activeFont={activeFont}
+                  baseColor={baseColor}
+                  textColor={baseText}
+                  date={date}
+                  fontOverrides={rightPaneHeaderRules}
+                  hideCountdown={hideCountdown}
+                  location={location}
+                />
+              </div>
             </div>
           </div>
         </PreviewWrapper>

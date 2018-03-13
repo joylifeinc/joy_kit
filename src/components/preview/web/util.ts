@@ -1,4 +1,5 @@
 export interface PreviewProps {
+  hideCountdown?: boolean;
   activeFont?: Activefont;
   theme?: string;
   coverPhotos?: {
@@ -79,14 +80,14 @@ export const getCoverPhotoForPage = (page: string, coverPhotos = {}) => {
 export const getDefaultEventFields = ({
   ownerName,
   fianceeName,
-  eventDate,
+  date,
   location,
   message
 }: any) => {
   return {
     ownerName: ownerName || 'Romeo',
     fianceeName: fianceeName || 'Juliet',
-    eventDate: eventDate || new Date().toString(),
+    date: date || new Date().toString(),
     location: location || 'San Francisco, CA',
     message:
       message ||

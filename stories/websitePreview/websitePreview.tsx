@@ -56,6 +56,7 @@ stories.add('Aloha', () => {
   const theme = select('Theme', themeOptions, 'blank');
   const font = select('Font', fontOptions, 'Roboto');
   const useThemeColors = boolean('Use Theme Colors', true);
+  const hideCountdown = boolean('hideCountdown', false);
 
   const textColor =
     baseTextColor === 'light'
@@ -71,6 +72,7 @@ stories.add('Aloha', () => {
           baseColor={baseColor}
           baseText={textColor}
           activeFont={fontMap[font]}
+          hideCountdown={hideCountdown}
           coverPhotos={{ welcome: { page: 'welcome', url: coverPhoto } }}
           eventInfo={{
             location,
@@ -95,9 +97,10 @@ stories.add('Aloha', () => {
             url: '${coverPhoto}'
           }
         }}
+        hideCountdown={${hideCountdown}}
         eventInfo={{
           location: '${location}',
-          eventDate: '${eventDate}',
+          date: '${eventDate}',
           message: '${message}',
           ownerName: '${ownerName}',
           fianceeName: '${fianceeName}'
