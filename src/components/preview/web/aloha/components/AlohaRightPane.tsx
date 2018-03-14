@@ -45,7 +45,8 @@ const welcomeContainerRules = (color = 'rgb(58, 60, 62)') =>
     alignItems: 'center',
     flexDirection: 'column',
     height: '100%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    transition: 'color .5s ease'
   });
 
 const infoPreviewRules = css({});
@@ -78,11 +79,12 @@ const guestNameRules = css({
   textTransform: 'uppercase'
 });
 
-const ctaButtonRules = css({
+const ctaButtonRules = (color) => css({
   fontWeight: 300,
   lineHeight: '42px',
   backgroundColor: 'transparent',
-  border: '2px solid #3A3C3E',
+  border: `2px solid ${color}`,
+  transition: 'border-color .5s ease',
   borderRadius: '5px',
   minWidth: 200,
   maxWidth: 200,
@@ -136,7 +138,7 @@ const AlohaRightPane: React.SFC<Props> = ({
               <div className="rsvp-button" {...guestNameRules}>
                 Hi guest name!
               </div>
-              <div className="rsvp-button" {...ctaButtonRules}>
+              <div className="rsvp-button" {...ctaButtonRules(fontColor)}>
                 Don't Forget to RSVP
               </div>
             </div>
