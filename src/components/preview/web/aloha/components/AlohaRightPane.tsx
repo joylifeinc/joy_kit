@@ -76,7 +76,8 @@ const guestNameRules = css({
   lineHeight: '42px',
   letterSpacing: '2px',
   fontWeight: 600,
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  border: 'none'
 });
 
 const ctaButtonRules = (color) => css({

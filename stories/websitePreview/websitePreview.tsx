@@ -90,7 +90,7 @@ stories.add('Aloha', () => {
         codeblock={` <AlohaPreview
         activeFont={${JSON.stringify(fontMap[font])}}
         baseColor={${JSON.stringify(baseColor)}}
-        baseTextColor={${JSON.stringify(textColor)}}
+        baseText={${JSON.stringify(textColor)}}
         coverPhotos={{
           welcome: {
             page: 'welcome',
