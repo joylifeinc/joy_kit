@@ -45,7 +45,8 @@ const welcomeContainerRules = (color = 'rgb(58, 60, 62)') =>
     alignItems: 'center',
     flexDirection: 'column',
     height: '100%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    transition: 'color .5s ease'
   });
 
 const infoPreviewRules = css({});
@@ -54,7 +55,7 @@ const locationRules = css({
   margin: '20px 0',
   fontSize: 50,
   fontWeight: 300,
-  lineHeight: '36px'
+  lineHeight: '50px'
 });
 
 const dateRules = css({
@@ -67,7 +68,6 @@ const dateRules = css({
 
 const ctaButtonContainer = css({
   margin: '20px',
-  padding: '15px',
   textAlign: 'center'
 });
 
@@ -76,32 +76,33 @@ const guestNameRules = css({
   lineHeight: '42px',
   letterSpacing: '2px',
   fontWeight: 600,
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  border: 'none'
 });
 
-const ctaButtonRules = css({
+const ctaButtonRules = (color) => css({
   fontWeight: 300,
   lineHeight: '42px',
   backgroundColor: 'transparent',
-  border: '2px solid #3A3C3E',
+  border: `2px solid ${color}`,
+  transition: 'border-color .5s ease',
   borderRadius: '5px',
-  minWidth: '240px',
+  minWidth: 200,
+  maxWidth: 200,
+  margin: '0 auto',
   fontSize: 15,
   padding: '0 20px',
   textAlign: 'center'
 });
 
 const rgbaObjectToString = (color?: Color) => {
-  return (
-    color &&
-    `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${color.a})`
-  );
+  return color ? `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${color.a})` : 'rgba(58, 60, 62, 1)';
 };
 
 const AlohaRightPane: React.SFC<Props> = ({
   activeFont,
   baseColor,
-  textColor,
+  textColor = {r: 58, g: 60,b: 62, a: 1},
   date,
   fontOverrides,
   hideCountdown,
@@ -122,7 +123,7 @@ const AlohaRightPane: React.SFC<Props> = ({
           className="joy-content-card joy-content-intro"
           {...welcomeContainerRules(fontColor)}
         >
-          <div className="info-preview" {...infoPreviewRules}>
+          <div className="welcomeDetails info-preview" {...infoPreviewRules}>
             <h2 {...locationRules} {...fontOverrides}>
               {location}
             </h2>
@@ -135,7 +136,7 @@ const AlohaRightPane: React.SFC<Props> = ({
               <div className="rsvp-button" {...guestNameRules}>
                 Hi guest name!
               </div>
-              <div className="rsvp-button" {...ctaButtonRules}>
+              <div className="rsvp-button" {...ctaButtonRules(fontColor)}>
                 Don't Forget to RSVP
               </div>
             </div>

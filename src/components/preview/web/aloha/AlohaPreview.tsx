@@ -80,10 +80,12 @@ class AlohaPreview extends React.Component<PreviewProps> {
       return {
         leftPaneHeaderRules: css(baseRules, {
           fontSize: `${h1}px`,
-          letterSpacing: `${letterSpacing}px`
+          letterSpacing: `${letterSpacing}px`,
+          lineHeight
         }),
         rightPaneHeaderRules: css(baseRules, {
-          fontSize: `${h2}px`
+          fontSize: `${h2}px`,
+          lineHeight
         }),
         fontStylesheetLink: (
           <link
@@ -176,7 +178,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
           >
             <div {...containerRules}>
               <WebPreviewTopBar title={topBarTitle} />
-              <div {...contentRules}>
+              <div id="joy-wedding-page" className="joy-wedding-page joy-wedding-home" {...contentRules}>
                 <AlohaLeftPane
                   coverPhoto={coverPhoto.url}
                   fontOverrides={leftPaneHeaderRules}
