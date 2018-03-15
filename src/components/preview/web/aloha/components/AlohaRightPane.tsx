@@ -96,16 +96,13 @@ const ctaButtonRules = (color) => css({
 });
 
 const rgbaObjectToString = (color?: Color) => {
-  return (
-    color &&
-    `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${color.a})`
-  );
+  return color ? `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${color.a})` : 'rgba(58, 60, 62, 1)';
 };
 
 const AlohaRightPane: React.SFC<Props> = ({
   activeFont,
   baseColor,
-  textColor,
+  textColor = {r: 58, g: 60,b: 62, a: 1},
   date,
   fontOverrides,
   hideCountdown,
