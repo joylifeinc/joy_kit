@@ -52,7 +52,8 @@ const overlayRules = (animationOverrideRules: Styles, styleRules: Styles) =>
       position: 'fixed',
       top: 0,
       right: 0,
-      opacity: 0
+      opacity: 0,
+      zIndex: 10
     },
     styleRules
   );
