@@ -57,6 +57,7 @@ stories.add('Aloha', () => {
   const font = select('Font', fontOptions, 'Roboto');
   const useThemeColors = boolean('Use Theme Colors', true);
   const hideCountdown = boolean('hideCountdown', false);
+  const cssOverrides = text('CSS Overrides', '');
 
   const textColor =
     baseTextColor === 'light'
@@ -83,6 +84,7 @@ stories.add('Aloha', () => {
           }}
           theme={theme}
           useThemeColors={useThemeColors}
+          cssOverrides={cssOverrides}
         />
       </div>
       <SyntaxHighlight
@@ -107,6 +109,7 @@ stories.add('Aloha', () => {
         }}
         theme="${theme}"
         useThemeColors={${useThemeColors}}
+        cssOverrides={'${cssOverrides}'}
       />
       `}
       />

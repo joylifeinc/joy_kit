@@ -32,6 +32,7 @@ export interface PreviewProps {
 
   // Hack for the mock aloha preview
   coverPhotoSectionPreview?: string;
+  cssOverrides?: string;
 }
 
 export interface Layout {

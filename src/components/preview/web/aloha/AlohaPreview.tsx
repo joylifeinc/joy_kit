@@ -112,7 +112,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
   };
 
   private getStyleOverrides = () => {
-    const { theme, activeFont, useThemeColors } = this.props;
+    const { theme, activeFont, useThemeColors, cssOverrides } = this.props;
     return (
       <div data-style-overrides="">
         {theme &&
@@ -136,6 +136,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
               )}
             </Fragments>
           )}
+        {cssOverrides && <style>{cssOverrides}</style>}
       </div>
     );
   };
@@ -151,6 +152,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
       previewContainerId,
       coverPhotoSectionPreview,
       theme,
+      cssOverrides,
       hideCountdown
     } = this.props;
 
