@@ -73,8 +73,28 @@ export interface Activefont {
   _comment?: string;
 }
 
-export const getCoverPhotoForPage = (page: string, coverPhotos = {}) => {
-  return coverPhotos[page] ? coverPhotos[page] : {};
+const DEFAULT_COVER_PHOTO_URL =
+  'https://d2uft7zh7kxc3y.cloudfront.net/blue_lights.jpg';
+
+export const getCoverPhotoForPage = (
+  page: string,
+  coverPhotos = {}
+): CoverPhoto => {
+  const coverPhoto = coverPhotos[page]
+    ? coverPhotos[page]
+    : {
+        page,
+        url: DEFAULT_COVER_PHOTO_URL
+      };
+
+  if (
+    (coverPhoto.url && coverPhoto.url.trim().length === 0) ||
+    !Boolean(coverPhoto.url)
+  ) {
+    coverPhoto.url = DEFAULT_COVER_PHOTO_URL;
+  }
+
+  return coverPhoto;
 };
 
 export const getDefaultEventFields = ({
