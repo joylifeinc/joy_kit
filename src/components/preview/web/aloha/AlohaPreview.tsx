@@ -38,7 +38,7 @@ const previewRules = (height, width) =>
   });
 
 const containerRules = css({
-  transform: 'scale(calc(900/1440))',
+  transform: `scale(${900 / 1400})`,
   transformOrigin: 'top left',
   width: '1440px'
 });
@@ -59,6 +59,12 @@ class AlohaPreview extends React.Component<PreviewProps> {
     previewOptions: {
       height: 593,
       width: 900
+    },
+    coverPhotos: {
+      welcome: {
+        page: 'welcome',
+        url: 'https://d2uft7zh7kxc3y.cloudfront.net/blue_lights.jpg'
+      }
     },
     useThemeColors: true
   };
@@ -106,7 +112,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
   };
 
   private getStyleOverrides = () => {
-    const { theme, activeFont, useThemeColors } = this.props;
+    const { theme, activeFont, useThemeColors, cssOverrides } = this.props;
     return (
       <div data-style-overrides="">
         {theme &&
@@ -130,6 +136,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
               )}
             </Fragments>
           )}
+        {cssOverrides && <style>{cssOverrides}</style>}
       </div>
     );
   };
@@ -145,6 +152,7 @@ class AlohaPreview extends React.Component<PreviewProps> {
       previewContainerId,
       coverPhotoSectionPreview,
       theme,
+      cssOverrides,
       hideCountdown
     } = this.props;
 
@@ -178,7 +186,11 @@ class AlohaPreview extends React.Component<PreviewProps> {
           >
             <div {...containerRules}>
               <WebPreviewTopBar title={topBarTitle} />
-              <div id="joy-wedding-page" className="joy-wedding-page joy-wedding-home" {...contentRules}>
+              <div
+                id="joy-wedding-page"
+                className="joy-wedding-page joy-wedding-home"
+                {...contentRules}
+              >
                 <AlohaLeftPane
                   coverPhoto={coverPhoto.url}
                   fontOverrides={leftPaneHeaderRules}
