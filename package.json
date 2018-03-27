@@ -1,6 +1,6 @@
 {
   "name": "@withjoy/joykit",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "JoyKit UI Components",
   "main": "./lib/joykit.esm.js",
   "module": "./lib/joykit.esm.js",
