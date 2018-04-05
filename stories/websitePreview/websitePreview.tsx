@@ -58,6 +58,8 @@ stories.add('Aloha', () => {
   const useThemeColors = boolean('Use Theme Colors', true);
   const hideCountdown = boolean('hideCountdown', false);
   const cssOverrides = text('CSS Overrides', '');
+  const ariaLabel = text('Aria Label', '');
+  const handleClick = boolean('Toggle preview click alert', false);
 
   const textColor =
     baseTextColor === 'light'
@@ -70,6 +72,14 @@ stories.add('Aloha', () => {
     <div>
       <div {...css({ height: 700, position: 'relative' })}>
         <AlohaPreview
+          handleClick={
+            handleClick
+              ? () => {
+                  window.alert('preview has been clicked');
+                }
+              : undefined
+          }
+          ariaLabel={ariaLabel}
           baseColor={baseColor}
           baseText={textColor}
           activeFont={fontMap[font]}
@@ -90,6 +100,14 @@ stories.add('Aloha', () => {
       <SyntaxHighlight
         syntax={'jsx'}
         codeblock={` <AlohaPreview
+        ariaLabel="${ariaLabel}"
+        handleClick={${
+          handleClick
+            ? () => {
+                window.alert('preview has been clicked');
+              }
+            : undefined
+        }}
         activeFont={${JSON.stringify(fontMap[font])}}
         baseColor={${JSON.stringify(baseColor)}}
         baseText={${JSON.stringify(textColor)}}

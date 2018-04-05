@@ -31,7 +31,6 @@ const previewRules = (height, width) =>
     overflow: 'hidden',
     fontWeight: '300',
     height,
-    pointerEvents: 'none',
     userSelect: 'none',
     width,
     minWidth: width
@@ -52,7 +51,12 @@ const contentRules = css({
   height: 900
 });
 
-class AlohaPreview extends React.Component<PreviewProps> {
+class AlohaPreview extends React.Component<
+  PreviewProps & {
+    ariaLabel?: string;
+    handleClick?: () => any;
+  }
+> {
   static defaultProps = {
     activeFont: null,
     theme: null,
@@ -181,6 +185,8 @@ class AlohaPreview extends React.Component<PreviewProps> {
         {this.getStyleOverrides()}
         <PreviewWrapper previewOptions={previewOptions}>
           <div
+            aria-label={this.props.ariaLabel}
+            onClick={this.props.handleClick}
             className="joy-website-preview"
             {...previewRules(previewOptions.height, previewOptions.width)}
           >
